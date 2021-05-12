@@ -1,0 +1,1432 @@
+button{
+    cursor: pointer;
+}
+
+.label{
+    color: $color-label;
+}
+
+// ÷÷÷÷ Button Primary Initial ÷÷÷÷
+
+.btn-l-pry-in{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-l;
+    display: inline-block;
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-xl-pry-in{
+    border-radius: 16px;
+    background: $color-secondary;
+    color: $color-off-white;
+    padding: 1.5rem 3rem;
+    opacity: 1;
+    display: inline-block;
+    width: 34.5rem;
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-l-sec-in{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-l;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-l-sbt-in{
+    @include border-radius;
+    @include border-subtle;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include padding-btn-l;
+    display: inline-block;
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        border: transparent;
+    }
+   
+}
+
+.btn-l-txt-in{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-l;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+//  ÷÷÷÷ Button Primary Hover ÷÷÷÷
+
+.btn-l-pry-hv{
+    @include border-radius;
+    @include tb;
+    background: $color-Secondary-dark;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-l;
+    display: inline-block;
+   
+}
+
+.btn-l-sec-hv{
+    @include border-radius;
+    @include tb;
+    @include border;
+    background: $color-input-background;
+    color: $color-body;
+    @include padding-btn-l;
+    display: inline-block;
+
+   
+}
+
+.btn-l-sbt-hv{
+    @include border-radius;
+    @include tb;
+    background: $color-placeholder;
+    color: $color-off-white;
+    @include border-subtle;
+    @include padding-btn-l;
+    display: inline-block;
+   
+}
+
+.btn-l-txt-hv{
+    @include tb;
+    border: transparent;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-radius;
+    @include padding-btn-l;
+    display: inline-block;
+
+}
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-l-pry-ic{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-l-sec-ic{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-l-sbt-ic{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-l-txt-ic{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-l-pry-ld{
+    @include border-radius;
+    background: $color-secondary;
+    border: transparent;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 2.4rem;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-l-sec-ld{
+    @include border-radius;
+    @include tb;
+    background: none;
+    @include border;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-l-sbt-ld{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    @include border-subtle;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-l-txt-ld{
+    @include tb;
+    border: transparent;
+    background: none;
+    @include padding-btn-l;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+// Disabled ÷÷÷÷
+
+.btn-l-pry-ds{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-l;
+    display: inline-block;
+    pointer-events: none;
+    opacity: 0.5;
+   
+}
+
+.btn-l-sec-ds{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-l;
+    display: inline-block;
+    pointer-events: none;
+    opacity: 0.5;
+   
+}
+
+.btn-l-sbt-ds{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    pointer-events: none;
+    @include padding-btn-l;
+    opacity: 0.5;
+   
+}
+
+.btn-l-txt-ds{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-l;
+    pointer-events: none;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+
+
+// ÷÷÷÷ Button Medium ÷÷÷÷
+
+
+// ÷÷÷÷ Initial ÷÷÷÷
+
+.btn-m-pry-in{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-m;
+    display: inline-block;
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-m-sec-in{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-m;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-m-sbt-in{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include padding-btn-m;
+    @include border-subtle;
+    display: inline-block;
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        border: transparent;
+    }
+   
+}
+
+.btn-m-txt-in{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-m;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+//  ÷÷÷÷ Button Primary Hover ÷÷÷÷
+
+.btn-m-pry-hv{
+    @include border-radius;
+    @include tb;
+    background: $color-Secondary-dark;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-m;
+    display: inline-block;
+   
+}
+
+.btn-m-sec-hv{
+    @include border-radius;
+    @include tb;
+    @include border;
+    background: $color-input-background;
+    color: $color-body;
+    @include padding-btn-m;
+    display: inline-block;
+
+   
+}
+
+.btn-m-sbt-hv{
+    @include border-radius;
+    @include tb;
+    background: $color-placeholder;
+    color: $color-off-white;
+    @include border-subtle;
+    @include padding-btn-m;
+    display: inline-block;
+   
+}
+
+.btn-m-txt-hv{
+    @include tb;
+    border: transparent;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-radius;
+    @include padding-btn-m;
+    display: inline-block;
+
+}
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-m-pry-ic{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-m-sec-ic{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-m-sbt-ic{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-m-txt-ic{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+        @include margin-left-sm;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-m-pry-ld{
+    @include border-radius;
+    background: $color-secondary;
+    border: transparent;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 2.4rem;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-m-sec-ld{
+    @include border-radius;
+    @include tb;
+    background: none;
+    @include border;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-m-sbt-ld{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    @include border-subtle;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-m-txt-ld{
+    @include tb;
+    border: transparent;
+    background: none;
+    @include padding-btn-m;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 2.4rem;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+// Disabled ÷÷÷÷
+
+.btn-m-pry-ds{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-m;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-m-sec-ds{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-m;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-m-sbt-ds{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-m;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-m-txt-ds{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-m;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+
+// ÷÷÷÷ Button Small ÷÷÷÷
+
+
+// ÷÷÷÷ Initial ÷÷÷÷
+
+.btn-sm-pry-in{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-sm-sec-in{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-sm-sbt-in{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        border: transparent;
+    }
+   
+}
+
+.btn-sm-txt-in{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+//  ÷÷÷÷ Button Primary Hover ÷÷÷÷
+
+.btn-sm-pry-hv{
+    @include border-radius;
+    @include tb;
+    background: $color-Secondary-dark;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+   
+}
+
+.btn-sm-sec-hv{
+    @include border-radius;
+    @include tb;
+    @include border;
+    background: $color-input-background;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+
+   
+}
+
+.btn-sm-sbt-hv{
+    @include border-radius;
+    @include tb;
+    background: $color-placeholder;
+    color: $color-off-white;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+   
+}
+
+.btn-sm-txt-hv{
+    @include tb;
+    border: transparent;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-radius;
+    @include padding-btn-sm;
+    display: inline-block;
+
+}
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-sm-pry-ic{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-sm-sec-ic{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-sm-sbt-ic{
+    @include border-radius;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-sm-txt-ic{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-sm-pry-ld{
+    @include border-radius;
+    background: $color-secondary;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 1.6rem;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-sm-sec-ld{
+    @include border-radius;
+    @include tb;
+    background: none;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-sm-sbt-ld{
+    @include border-radius;
+    background: $color-input-background;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-sm-txt-ld{
+    @include tb;
+    border: transparent;
+    background: none;
+    @include padding-btn-sm;
+    display: inline-block;
+    pointer-events: none;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+// Disabled ÷÷÷÷
+
+.btn-sm-pry-ds{
+    @include border-radius;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-sm-sec-ds{
+    @include border-radius;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-sm-sbt-ds{
+    @include border-radius;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-sm;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-sm-txt-ds{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+
+// ÷÷÷÷ Button Pill ÷÷÷÷
+
+
+// ÷÷÷÷ Initial ÷÷÷÷
+
+.btn-pill-pry-in{
+    @include border-radiusb;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-pill-sec-in{
+    @include border-radiusb;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-pill-sbt-in{
+    @include border-radiusb;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        border: transparent;
+    }
+   
+}
+
+.btn-pill-txt-in{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+//  ÷÷÷÷ Button Primary Hover ÷÷÷÷
+
+.btn-pill-pry-hv{
+    @include border-radiusb;
+    @include tb;
+    background: $color-Secondary-dark;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+   
+}
+
+.btn-pill-sec-hv{
+    @include border-radiusb;
+    @include tb;
+    @include border;
+    background: $color-input-background;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+
+   
+}
+
+.btn-pill-sbt-hv{
+    @include border-radiusb;
+    @include tb;
+    background: $color-placeholder;
+    color: $color-off-white;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+   
+}
+
+.btn-pill-txt-hv{
+    @include tb;
+    border: transparent;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-radius;
+    @include padding-btn-sm;
+    display: inline-block;
+
+}
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-pill-pry-ic{
+    @include border-radiusb;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-pill-sec-ic{
+    @include border-radiusb;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-pill-sbt-ic{
+    @include border-radiusb;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-pill-txt-ic{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+        @include margin-left-s;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+//  ÷÷÷÷ Button Primary Icon ÷÷÷÷
+
+
+.btn-pill-pry-ld{
+    @include border-radiusb;
+    background: $color-secondary;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-off-white;
+        height: 1.6rem;
+    }
+
+    &:hover{
+        background: $color-Secondary-dark;
+    }
+   
+}
+
+.btn-pill-sec-ld{
+    @include border-radiusb;
+    @include tb;
+    background: none;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+
+    &:hover{
+        background: $color-input-background;
+       color: $color-body;
+    }
+   
+}
+
+.btn-pill-sbt-ld{
+    @include border-radiusb;
+    @include tb;
+    background: $color-input-background;
+    @include border-subtle;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+
+    &:hover{
+        background: $color-placeholder;
+        color: $color-off-white;
+        @include border-subtle;
+    }
+   
+}
+
+.btn-pill-txt-ld{
+    @include tb;
+    border: transparent;
+    background: none;
+    @include padding-btn-sm;
+    display: inline-block;
+
+    .btn-icon-lg{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+
+    .btn-icon-lg:hover{
+        fill: $color-secondary;
+    }
+
+    &:hover{
+        background: $color-input-background;
+        color: $color-secondary;
+        border: transparent;
+        @include border-radius;
+    }
+}
+
+
+// Disabled ÷÷÷÷
+
+.btn-pill-pry-ds{
+    @include border-radiusb;
+    @include tb;
+    background: $color-secondary;
+    color: $color-off-white;
+    border: transparent;
+    @include padding-btn-sm;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-pill-sec-ds{
+    @include border-radiusb;
+    @include tb;
+    background: none;
+    color: $color-body;
+    @include border;
+    @include padding-btn-sm;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-pill-sbt-ds{
+    @include border-radiusb;
+    @include tb;
+    background: $color-input-background;
+    color: $color-body;
+    @include border-subtle;
+    @include padding-btn-sm;
+    opacity: 0.5;
+    pointer-events: none;
+   
+}
+
+.btn-pill-txt-ds{
+    @include tb;
+    border: transparent;
+    background: none;
+    color: $color-body;
+    @include padding-btn-sm;
+    display: inline-block;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+@media screen and (max-width: 1919px) {
+    .btn-xl-pry-in{
+        width: 28.5rem;
+        
+    }
+}

@@ -1,0 +1,81 @@
+.form-outline{
+    // background: rgb(63, 63, 63) 0% 0% no-repeat padding-box;
+    background-color : rgba(63, 63, 63,0.7);
+border: 1px solid #707070;
+border-radius: 43px;
+opacity: 0.42;
+width: 40rem;
+height: 40rem;
+// padding-left: 4rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+// padding-right: 16px;
+}
+.form-text-box{
+    margin-bottom: 1.5rem;
+    h1{
+        color: #F2F2F2;
+        opacity: 1;
+        font-size: 35px;
+    }
+    p{
+        letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 0.55
+    }
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    // top: 20%;
+    // left: 50%;
+    height: 75px;
+}
+
+.sign-up{
+    height: 45rem
+}
+
+.forgot-password{
+    width:34rem;
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    color:white;
+    text-decoration: underline;
+    margin-bottom: 2.5rem;
+}
+
+.signup, .signin{
+        text-align: center;
+        
+    p{
+        
+        color: #fff;
+        opacity: 1;
+        letter-spacing: 0.22px;
+    
+    a{
+        text-decoration: none;
+    color:white;
+    margin-left: 4rem;
+    text-decoration: underline;
+    font-weight: 500;
+    
+    }
+}
+}
+
+@media screen and (max-width: 1919px) {
+    .form-outline{
+        width: 33rem;
+        height: 36rem
+    }
+    .forgot-password{
+        width: 28rem
+    }
+    .sign-up{
+        height: 42rem
+    }
+  }

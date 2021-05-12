@@ -1,0 +1,71 @@
+.main {
+    height: 120vh;
+    background-image: url('/assets/images/bg.png');
+    // background:  transparent  0% 0% cover padding-box;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    opacity: 1;   
+}
+.logo-box{
+    position: absolute;
+    left: 7%;
+    top: 40px;
+}
+
+.logo{
+    height: 60px;
+}
+
+.text-box{
+    position: absolute;
+    top: 30%;
+    left: 7%;
+width: 630px;
+height: 164px;
+text-align: left;
+color: #FFFFFF;
+opacity: 1;
+}
+.heading-primary{
+    color: #fff; 
+    backface-visibility: hidden;
+    margin-bottom: 20px;
+}
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 84px;
+    letter-spacing: 0px;
+}
+.heading-primary-sub{
+    display: block;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 55px;
+    letter-spacing: 0px;
+    opacity: 0.75;
+}
+.forms{
+    position: absolute;
+    top: 15%;
+    left: 54%;
+    width: 604px;
+    height: 816px;
+}
+
+@media screen and (max-width: 1919px) {
+    .main {
+        height: 99vh;
+        overflow: hidden;
+    }
+
+    .forms{
+        top: 12%;
+        left: 58%;
+        width: 400px;
+        height: 600px
+    }
+  }
+

@@ -1,0 +1,171 @@
+
+// drop shadows
+
+@mixin shadow-soft {
+  box-shadow: 0rem .8rem 1.6rem 0rem rgba($color-body, .04);
+}
+
+
+@mixin shadow-large {
+  box-shadow: 0rem 3.2rem 6.4rem 0rem rgba($color-body, .08);
+}
+
+// Grid display
+
+@mixin c-flex-row{
+    display: flex;
+    flex-direction: row; 
+
+    @media only screen and (max-width:425px) {
+      flex-direction: column;
+    }
+}
+
+@mixin c-flex-column{
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width:425px) {
+    flex-direction: row;
+  }
+}
+// border-radius
+@mixin border-radius{
+border-radius: .8rem;
+}
+
+@mixin border-radiusb{
+border-radius: 3.2rem;
+}
+
+@mixin tb{
+//styleName: Typography/Text/Button;
+font-size: 1.6rem;
+font-weight: 500;
+line-height: 2.4rem;
+letter-spacing: .2rem;
+}
+
+// Border-line
+@mixin border-subtle{
+border: .03rem solid $color-line;
+}
+
+
+@mixin border{
+border: .1rem solid $color-line;
+}
+
+@mixin border-secondary{
+border: .2rem solid $color-secondary;
+}
+
+@mixin border-placeholder{
+border: .2rem solid $color-placeholder;
+}
+
+// Button padding
+
+@mixin padding-btn-l{
+padding: 2.4rem 3.2rem;
+}
+
+@mixin padding-btn-m{
+padding: 1.6rem 2.4rem;
+}
+
+@mixin padding-btn-sm{
+padding: .8rem 1.6rem;
+}
+
+// Margins
+
+/* Margin left */
+@mixin margin-left-sm {
+
+margin-left: 1.6rem;
+
+}
+@mixin margin-left-s {
+
+margin-left: .8rem;
+
+}
+
+@mixin margin-right-sm {
+
+margin-right: 1.6rem;
+
+}
+
+@mixin margin-top-sm {
+
+margin-top: 1.6rem;
+
+}
+
+@mixin margin-btm-sm {
+
+margin-bottom: 1.6rem;
+
+}
+
+// Padding
+@mixin padding {
+padding: .8rem;
+
+}
+@mixin padding-sm{
+padding: 1.6rem;
+}
+
+@mixin padding-md{
+padding: 2.4rem;
+}
+
+@mixin padding-lg{
+padding: 3.2rem;
+}
+
+
+// Border-Input
+
+
+@mixin border-error {
+border: .1rem solid $color-error;
+}
+
+@mixin border-success {
+border: .1rem solid $color-success;
+}
+
+@mixin border-filled {
+border: .1rem solid $color-line;
+}
+@mixin border-active {
+border: .1rem solid $color-body;
+}
+
+
+
+
+@mixin media($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin keyframeMaker($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+}
