@@ -334,7 +334,7 @@ input{
 @media screen and (max-width: 1919px) {
     .input-init{
         @include border;
-    @include padding-sm;
+    // @include padding-sm;
     width: 25rem;
     opacity: 0.42;
     margin-bottom: 2rem;

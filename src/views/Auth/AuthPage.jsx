@@ -5,7 +5,7 @@ import SignUpForm from "./SignUpForm"
 
 function AuthPage() {
   return (
-    <div className="main">
+    <div className="main-container">
       <div className="logo-box">
         <img src={Logo} alt="Logo" className="logo" />
       </div>
@@ -21,8 +21,14 @@ function AuthPage() {
         </p>
       </div>
       <div className="forms"> 
+      {/* <div className={classes.grid2}>
+            <Button onClick={toggleActivity} className={classes.button}>
+              {activity ? `SIGN IN` : `SIGN UP`}
+            </Button>
+          </div> */}
         <SignUpForm/>
       </div>
+      
     </div>
   );
 }

@@ -4,12 +4,14 @@
 border: 1px solid #707070;
 border-radius: 43px;
 opacity: 0.42;
-width: 40rem;
-height: 40rem;
-// padding-left: 4rem;
+width: 604px;
+// width: 37rem;
+// height: 40rem;
+// padding: 4rem;
 display: flex;
 flex-direction: column;
-align-items: center;
+text-align: center;
+
 // padding-right: 16px;
 }
 .form-text-box{
@@ -26,8 +28,8 @@ opacity: 0.55
     }
 }
 .form{
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     // top: 20%;
     // left: 50%;
     height: 75px;
