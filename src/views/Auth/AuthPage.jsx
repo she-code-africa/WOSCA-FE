@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/images/she-code-africa-logo.svg";
-import LoginForm from "./LoginForm"
-import SignUpForm from "./SignUpForm"
+import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 
-function AuthPage() {
+function AuthPage({children}) {
+  const [activity, setActivity] = useState(false);
+
+  const toggleActivity = () => {
+    setActivity(!activity);
+    console.log(activity);
+  };
   return (
     <div className="main-container">
       <div className="logo-box">
@@ -20,15 +26,9 @@ function AuthPage() {
           contributor
         </p>
       </div>
-      <div className="forms"> 
-      {/* <div className={classes.grid2}>
-            <Button onClick={toggleActivity} className={classes.button}>
-              {activity ? `SIGN IN` : `SIGN UP`}
-            </Button>
-          </div> */}
-        <SignUpForm/>
+      <div className="forms">
+        {children}
       </div>
-      
     </div>
   );
 }

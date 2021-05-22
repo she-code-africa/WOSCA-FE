@@ -1,8 +1,8 @@
 import React from "react";
-
+import Auth from "./AuthPage"
 const LoginForm = () => {
   return (
-    <div>
+    <Auth>
       <div className="form-outline sign-up">
         <div className="form-text-box">
           <h1>Sign Up</h1>
@@ -42,14 +42,14 @@ const LoginForm = () => {
           <div className="signup">
             <p className="">
               Already have an account ?
-              <a href="#" className="signup-link">
+              <a href="/signin" className="signup-link">
                 Sign In
               </a>
             </p>
           </div>
         </form>
       </div>
-    </div>
+    </Auth>
   );
 };
 

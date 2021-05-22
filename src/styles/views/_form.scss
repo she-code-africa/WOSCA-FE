@@ -5,17 +5,21 @@ border: 1px solid #707070;
 border-radius: 43px;
 opacity: 0.42;
 width: 604px;
+height: 723px;
 // width: 37rem;
 // height: 40rem;
 // padding: 4rem;
 display: flex;
 flex-direction: column;
 text-align: center;
+position: relative;
 
 // padding-right: 16px;
 }
 .form-text-box{
     margin-bottom: 1.5rem;
+    text-align: left;
+    padding-left: 40px;
     h1{
         color: #F2F2F2;
         opacity: 1;
@@ -27,12 +31,13 @@ color: #FFFFFF;
 opacity: 0.55
     }
 }
-.form{
+.form-outline .form{
     // display: flex;
     // flex-direction: column;
     // top: 20%;
     // left: 50%;
     height: 75px;
+    z-index: 100;
 }
 
 .sign-up{
