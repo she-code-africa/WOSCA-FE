@@ -7,9 +7,13 @@
     text-align: center;
 }
 
-.jumbotrons h2,
 .jumbotrons p {
+    color: #FFFFFF78;
+}
+
+.jumbotrons h2 {
     color: #FFFFFF;
+    font-family: FTPolar;
 }
 
 form {
@@ -43,7 +47,7 @@ form {
 }
 
 .leads {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 2.0;
 }
 

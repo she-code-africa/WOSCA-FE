@@ -36,7 +36,7 @@ function FAQ() {
                 <div className="jumbotron">
                     <div className="row">
                         <div className="col"></div>
-                        <div className="col-md-8"> <h1 >Frequently Asked Questions</h1></div>
+                        <div className="col-md-9"> <h1 >Frequently Asked Questions</h1></div>
                         <div className="col"></div>
                     </div>
                     <div className="row">

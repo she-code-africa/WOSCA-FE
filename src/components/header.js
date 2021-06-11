@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from "../assets/images/she-code-africa-logo.svg";
+import Logo from "../assets/icons/Logo.png";
 import '../styles/components/header.css';
 
 class Header extends Component {
@@ -24,7 +24,7 @@ class Header extends Component {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="#">Resources</a>
@@ -33,13 +33,11 @@ class Header extends Component {
                                 <a className="nav-link" href="#">Events</a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">FAQs</a>
+                                <a className="nav-link" href="/faq">FAQs</a>
                             </li>
-
                         </ul>
-
-                        <a className="nav-link" href="#">Sign In</a>
-                        <button className="btn btn-outline my-2 my-sm-0">GET STARTED</button>
+                        <a className="nav-link" href="signin">Sign In</a>
+                        <a href="signup"><button className="btn btn-outline my-2 my-sm-0">GET STARTED</button></a>
                     </div>
                 </nav>
             </React.Fragment>

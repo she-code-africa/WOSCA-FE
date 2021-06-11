@@ -21,11 +21,12 @@ footer {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    font-family: 'FTPolar';
 }
 
 .f_img {
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     margin: 0px 30px 0px;
 }
 

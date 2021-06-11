@@ -19,10 +19,10 @@
 
 .btn-outline {
     width: 139px;
-    height: 47px;
+    height: 44px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 16px;
-    font-size: 12px;
+    border-radius: 12px;
+    font-size: 10px;
     color: #B70569;
     font-weight: bold;
 }
@@ -46,7 +46,7 @@
 .navbar-light .navbar-nav .show>.nav-link,
 .nav-link, .nav-link:hover
 {
-    color: #FFFFFF;
+    color: #FFFFFF85;
     font-size: 12px;
     padding-left: 20px;
     padding-right: 20px;

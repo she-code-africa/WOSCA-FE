@@ -8,8 +8,9 @@
 }
 
 .display-4, h1 {
-    font-size: 37px;
+    font-size: 45px;
     font-weight: bold;
+    font-family: FTPolar;
 }
 
 .pmail {
@@ -17,13 +18,15 @@
 }
 
 .lead {
-    font-size: 13px;
+    padding-top: 10px;
+    font-size: 12px;
     line-height: 2.0;
 }
 
 .faqs h5 {
     font-weight: bold;
     color: #F2F2F2;
+    font-family: FTPolar;
 }
 
 .card {
@@ -83,7 +86,7 @@ hr {
 
 @media (min-width: 1200px) {
     .lead {
-        padding: 0 45px 0;
+        padding: 10px 45px 0;
     }
 
     .faqs {
