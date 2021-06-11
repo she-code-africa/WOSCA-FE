@@ -1,0 +1,95 @@
+.jumbotron {
+    margin-bottom: 2rem;
+    background-color: transparent!important;
+    border-radius: .3rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 110px;
+}
+
+.display-4, h1 {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: FTPolar;
+}
+
+.pmail {
+    color: #B70569;
+}
+
+.lead {
+    padding-top: 10px;
+    font-size: 12px;
+    line-height: 2.0;
+}
+
+.faqs h5 {
+    font-weight: bold;
+    color: #F2F2F2;
+    font-family: FTPolar;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    
+}
+
+.card-header {
+    padding: .75rem 1.25rem 0px 0px;
+    background-color: transparent;
+    color: #BCBCBC;
+    font-size: 13px;
+}
+
+.open::after {
+    content:'+';
+    font-size: 16px;
+    float: right; 
+}
+
+.clos::after {
+    content:'-';
+    font-size: 16px;
+    float: right; 
+}
+
+.accordion.collapsed::after {
+    content:'-';
+    font-size: 16px;
+    float: right;
+}
+
+.card-header.collapsed::after {
+    content:'-';
+    font-size: 16px;
+    float: right;
+}
+
+.accordion {
+    padding-bottom: 100px;
+}
+
+.card-body {
+    padding: 1.25rem 1.25rem 0 0;
+    text-align: left;
+    color: #FFFFFF;
+    opacity: 0.54;
+    font-size: 10px;
+}
+
+hr {
+    border-bottom: 1px solid #707070;
+    opacity: 0.42;
+}
+
+@media (min-width: 1200px) {
+    .lead {
+        padding: 10px 45px 0;
+    }
+
+    .faqs {
+        padding: 0 48px 0;
+    }
+}
