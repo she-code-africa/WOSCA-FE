@@ -47,7 +47,6 @@ input{
 .input-init{
     @include border;
     padding:1.3rem;
-    width: 31rem;
     opacity: 0.42;
     margin-bottom: 2rem;
     ::placeholder {
@@ -335,7 +334,6 @@ input{
     .input-init{
         @include border;
     // @include padding-sm;
-    width: 25rem;
     opacity: 0.42;
     margin-bottom: 2rem;
     }

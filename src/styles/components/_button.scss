@@ -27,10 +27,12 @@ button{
     border-radius: 16px;
     background: $color-secondary;
     color: $color-off-white;
-    padding: 1.5rem 3rem;
+    padding: 1.2rem 3rem;
     opacity: 1;
     display: inline-block;
-    width: 34.5rem;
+    // width: 34.5rem;
+    border-color: $color-secondary;
+    flex-basis: 80%;
 
     &:hover{
         background: $color-Secondary-dark;
@@ -1426,7 +1428,7 @@ button{
 
 @media screen and (max-width: 1919px) {
     .btn-xl-pry-in{
-        width: 28.5rem;
+        // width: 28.5rem;
         
     }
 }
