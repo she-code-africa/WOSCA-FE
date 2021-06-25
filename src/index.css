@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   height: 100%;
-
+}
 @font-face {
   font-family: 'Axiforma';
   src: url('../src/assets/fonts/Axiforma-Regular.eot');
