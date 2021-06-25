@@ -1,11 +1,11 @@
 .main-container{
     background: rgb(3, 1, 36) 0% 0% no-repeat border-box;
     background-image:  linear-gradient(to bottom, rgba(3, 1, 36, 0.38), rgba(3, 1, 36,0.38)), url('/assets/images/bg-white.png');
-    background-position: 0 650px;
+    background-position: 0 500px;
     height: 100vh;
     background-blend-mode: color-dodge;
     padding: 1em;
-   
+    // margin-top: 3em;
 }
 
 .inner-container{
@@ -17,6 +17,7 @@
 .text-box{
     flex: 1;
     margin-right: 10em;
+    
 }
 
 .logo-box{
@@ -27,13 +28,24 @@
     height: 60px;
 }
 
+.heading-primary-main{
+    font-size: 3rem;;
+}
+
+.heading-primary-sub{
+    font-size: 1.5em;
+}
 
 
 @media (min-width: 60em) {
     .main-body{
         display: flex;
         align-items: center;
-        margin-top: 5em;
+        // margin-top: 4em;
+        background: rgb(3, 1, 36) 0% 0% no-repeat border-box;
+        background-image:  linear-gradient(to bottom, rgba(3, 1, 36, 0.38), rgba(3, 1, 36,0.38)), url('/assets/images/bg-white.png');
+        background-position: 0 350px;
+        background-blend-mode: color-dodge;
         // justify-content: center;
     }
 
