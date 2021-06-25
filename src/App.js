@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AuthPage from '../src/views/Auth/AuthPage';
 import LoginForm from "./views/Auth/LoginForm";
 import SignUpForm from "./views/Auth/SignUpForm";
+import FAQ from '../src/views/faq/faq';
+import Home from '../src/views/home/home';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       path="/signin"
       name="LoginForm"
       component={LoginForm}/>
+      <Route path="/faq"> <FAQ /> </Route>
+       <Route path="/"> <Home /> </Route>
     
     </Switch>
     </BrowserRouter>
