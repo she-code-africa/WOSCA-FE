@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Dashboard from '../src/views/Dashboard/Dashboard';
 import LoginForm from "./views/Auth/LoginForm";
 import SignUpForm from "./views/Auth/SignUpForm";
+import FAQ from '../src/views/faq/faq';
+import Home from '../src/views/home/home';
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
       path ="/dashboard"
       component={Dashboard}
       />
+      <Route path="/faq"> <FAQ /> </Route>
+       <Route path="/"> <Home /> </Route>
+    
     </Switch>
     </BrowserRouter>
   );
