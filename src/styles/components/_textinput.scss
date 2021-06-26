@@ -1,0 +1,340 @@
+label{
+    display: block;
+    color: $color-label;
+}
+
+/* Remove input outline */
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+outline: none;
+}
+
+/* Remove background autofill colour */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px $color-white inset !important;
+}
+input, select, textarea, button {   
+    font-family:inherit;
+}
+
+input{
+    @include border-radius;
+    border: 0;
+    // background: transparent;    
+
+    ::-webkit-input-placeholder { /* Edge */
+        color: $color-placeholder;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color-placeholder;
+      }
+      ::placeholder {
+        color: $color-placeholder;
+        font-size: 1.4rem;
+       
+      }
+    //   @include typo-ts;
+}
+
+// Input default
+.input-init{
+    @include border;
+    padding:1.3rem;
+    opacity: 0.42;
+    margin-bottom: 2rem;
+    ::placeholder {
+        color: $color-placeholder;
+        font-size: 1.4rem;
+       
+      }
+     
+    // background: #3f3f3f 0% 0% no-repeat padding-box
+}
+
+.input-init-ic{
+    @include border;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+  
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+.input-init-ic:hover, 
+.input-init:hover {
+    border: .1rem solid $color-body;
+}
+
+
+//  Hover
+.input-hover{
+    @include border-active;
+    @include padding-sm;
+    width: 40rem;
+}
+
+.input-hov-ic{
+    @include border-active;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    
+    
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+
+// Filled
+.input-filled{
+    @include border-filled;
+    @include padding-sm;
+    width: 40rem;
+}
+
+.input-fill-ic{
+    @include border-filled;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    
+    
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+        ::-webkit-input-placeholder { /* Edge */
+            color: $color-body !important;
+          }
+          :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $color-body !important;
+          }
+          ::placeholder {
+            color: $color-body !important;
+          }
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+
+// Disabled
+.input-disabled{
+    @include border-filled;
+    @include padding-sm;
+    width: 40rem;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.input-fill-dsbld{
+    @include border-filled;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    pointer-events: none;
+
+   
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+
+// Caption
+.input-caption{
+    @include border-filled;
+    @include padding-sm;
+    width: 40rem;
+}
+
+.input-fill-capt{
+    @include border-filled;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+
+// Success
+.input-success{
+    @include border-success;
+    @include padding-sm;
+    width: 40rem;
+}
+
+.input-fill-scs{
+    @include border-success;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+   
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+.text-caption-scs{
+    color: $color-success;
+}
+
+.text-caption-ero{
+    color: $color-error;
+}
+
+
+// Error
+
+.input-error{
+    @include border-error;
+    @include padding-sm;
+    width: 40rem;
+}
+
+.input-fill-ero{
+    @include border-error;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    display: flex;
+    align-items: center;
+   
+    input{
+        margin-left: 1.6rem;
+        flex-basis: 90%;
+    }
+
+    .input-icon{
+        fill: $color-body;
+        height: 1.6rem;
+    }
+}
+
+// Text area
+
+/* Text area - Init */
+
+.texta-init{
+    @include border;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    height: 12.8rem;
+    background: transparent;
+}
+
+.texta-actv{
+    @include border-active;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    height: 12.8rem;
+    background: transparent;
+}
+
+.texta-scs{
+    @include border-success;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    height: 12.8rem;
+    background: transparent;
+}
+
+.texta-disabled{
+    @include border;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    height: 12.8rem;
+    background: transparent;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.texta-caption{
+    @include border;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    height: 12.8rem;
+    background: transparent;
+}
+
+.texta-error{
+    @include border-error;
+    @include border-radius;
+    @include padding-sm;
+    width: 40rem;
+    height: 12.8rem;
+    background: transparent;
+}
+
+
+@media screen and (max-width: 1919px) {
+    .input-init{
+        @include border;
+    // @include padding-sm;
+    opacity: 0.42;
+    margin-bottom: 2rem;
+    }
+}

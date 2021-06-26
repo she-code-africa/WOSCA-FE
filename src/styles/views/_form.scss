@@ -1,0 +1,49 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-outline{
+    // background: rgb(63, 63, 63) 0% 0% no-repeat padding-box;
+    
+border: 1px solid #707070;
+border-radius: 43px;
+// opacity: 0.42;
+padding: 2em;
+position: relative;
+}
+
+.form-outline::before {
+    content: "";
+    background-color : rgba(63, 63, 63,0.7);
+    position: absolute;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.forgot-password{
+    color:white;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+    text-align: right;
+    font-weight: 200;
+}
+
+.signup, .signin{
+        text-align: center;
+        font-weight: 200;
+        
+    p{
+        letter-spacing: 0.22px;
+    
+    a{
+        text-decoration: none;
+    color:white;
+    margin-left: 4rem;
+    text-decoration: underline;
+    font-weight: 500;
+    
+    }
+}
+}
