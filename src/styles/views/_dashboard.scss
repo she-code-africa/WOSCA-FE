@@ -1,0 +1,30 @@
+.dashboard{
+    margin: 2.5em 5em;
+}
+
+.contribution-cards{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4em;
+}
+
+
+@media (min-width: 60em) {
+    .dashboard-body{
+        align-items: center;
+        margin: 2em 5em;
+        padding: 1em 4em
+        // margin-top: 4em;
+
+        // justify-content: center;
+    }
+
+    .text-box{
+        flex: 1;
+        margin-right: 10em;
+    }
+
+    .forms{
+        flex: 1
+    }
+}
