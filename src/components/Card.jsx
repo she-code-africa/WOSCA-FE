@@ -1,24 +1,25 @@
 import React from "react";
 
-export function Card({ title, icon, subtitle, details }) {
+export function Card({ title, icon, subtitle, details, value }) {
 
   return (
-    <div class="card-box">
-      <div class="card-title tr">
-        <p class="lx-s">Hacktoberfest Online Meetup in La Défense</p>
+    <div className="card-box">
+      <div className="card-title tr">
+        <p className="value">{value}</p>
       </div>
-      <p class="ts">2020/10/01 CET</p>
+      <p className="card-title">{title}</p>
     </div>
   );
 }
 
-export function BigCard({ title }) {
+export function BigCard({ title, subtitle }) {
   return (
-    <div class="card-box-lg">
-      <div class="card-title tr">
-        <p class="lx-s"> {title}</p>
+    <div className="card-box-lg withOverflowingBackground">
+      <div className="card-title tr">
+        <h6 className="lx-s"> {title}</h6>
+        <p>{subtitle}</p>
       </div>
-      <p class="lm">5 Tonnes</p>
+      <p className="lm">5 Tonnes</p>
     </div>
   );
 }
