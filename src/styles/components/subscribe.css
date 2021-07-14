@@ -25,9 +25,13 @@ form {
     border: 1px solid #70707042;
     border-radius: .5rem;
     color: #D1D1D1;
-    /* border: 0; */
+    padding: .375rem .15rem;
     font-size: 10px;
     height: 40px;
+}
+
+.btn {
+    padding: .375rem .15rem;
 }
 
 .sub-button {

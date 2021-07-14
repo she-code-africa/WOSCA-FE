@@ -1,0 +1,26 @@
+.header-img {
+    height: 30px;
+    width: 30px;
+}
+
+.up img {
+    vertical-align: top;
+    height: 100px;
+    width: 100px;
+}
+
+.down img {
+    height: 110px;
+    width: 110px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.mid {
+    padding-top: 50px;
+}
+
+.form {
+    padding-top: 25px;
+}

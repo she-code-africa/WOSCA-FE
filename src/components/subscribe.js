@@ -25,7 +25,7 @@ class Subscribe extends Component {
                                 <p className="leads"> Support open source and pick a limited edition T-shirt or plant a tree.</p>
                                 <Form>
                                     <Form.Row>
-                                        <Col md={8}>
+                                        <Col md={8} sm={7}>
                                             <Form.Control placeholder="Email Address" />
                                         </Col>
                                         <Col >

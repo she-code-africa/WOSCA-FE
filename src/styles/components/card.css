@@ -1,0 +1,71 @@
+.event-card {
+    width: 30%;
+    text-align: left;
+    background: #3F3F3F42 0% 0% no-repeat padding-box;
+    border: 1px solid #70707042;
+    border-radius: 15px;
+    margin: 16px 16px;
+}
+
+.card-body {
+   opacity: 1;
+}
+
+.card-title {
+    text-align: left;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 15px 25px;
+    font-family: FTPolar;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #FFFFFF80;
+    padding: 0px 25px;
+    font-weight: bold;
+    font-family: Axiforma;
+}
+
+.card-text {
+    text-align: left;
+    font-family: Axiforma;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #B70569;
+    padding: 40px 25px 35px;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .event-card {
+        width: 29%;
+        margin: 16px 20px;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .event-card {
+        width: 45%;
+        margin: 16px 17px;
+    }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+    .event-card {
+        width: 46%;
+        margin: 16px 10px;
+    }
+}
+
+@media (max-width: 559px) {
+    .event-card {
+        width: 50%;
+        margin: 16px auto;
+    }
+}
