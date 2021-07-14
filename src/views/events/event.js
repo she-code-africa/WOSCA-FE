@@ -52,7 +52,7 @@ function Events() {
                             <Col >
                                 <Button className="sub-button" type="submit">SEARCH</Button>
                             </Col>
-                            <Col></Col>
+                            <Col className="hide-form"></Col>
                         </Form.Row>
                     </Form>
                 </div>

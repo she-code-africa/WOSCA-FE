@@ -24,3 +24,9 @@
 .form {
     padding-top: 25px;
 }
+
+@media (max-width: 767px) {
+    .up img, .down img, .hide-form {
+        display: none;
+    }
+}
