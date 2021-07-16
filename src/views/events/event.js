@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Subscribe from '../../components/subscribe';
-import Card from '../../components/card';
+import Card from '../../components/eventcard';
 import woman from '../../assets/images/eventwoman.png';
 import man from '../../assets/images/eventman.png';
 import '../../styles/views/event.css';
@@ -50,7 +50,7 @@ function Events() {
                                 <Form.Control placeholder="Keyword" />
                             </Col>
                             <Col >
-                                <Button className="sub-button" type="submit">SEARCH</Button>
+                                <Button className="sub-button event-button" type="submit">SEARCH</Button>
                             </Col>
                             <Col className="hide-form"></Col>
                         </Form.Row>

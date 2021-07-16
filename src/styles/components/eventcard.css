@@ -65,7 +65,7 @@
 
 @media (max-width: 559px) {
     .event-card {
-        width: 50%;
+        width: 60%;
         margin: 16px auto;
     }
 }
