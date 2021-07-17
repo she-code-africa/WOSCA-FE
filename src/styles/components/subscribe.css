@@ -70,3 +70,9 @@ form {
         margin: 1rem 4rem 2rem;
     }
 }
+
+@media (max-width: 575px) {
+    .xbs {
+        margin-top: 10px;
+    }
+}

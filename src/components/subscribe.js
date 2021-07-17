@@ -29,7 +29,7 @@ class Subscribe extends Component {
                                             <Form.Control placeholder="Email Address" />
                                         </Col>
                                         <Col >
-                                            <Button className="sub-button" type="submit">SUBSCRIBE</Button>
+                                            <Button className="sub-button xbs" type="submit">SUBSCRIBE</Button>
                                         </Col>
                                     </Form.Row>
                                 </Form>

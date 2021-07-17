@@ -56,7 +56,7 @@ function Events() {
                         </Form.Row>
                     </Form>
                 </div>
-                <div className="row">
+                <div className="row events">
                     {eventCards}
                 </div>
                 <Subscribe />
