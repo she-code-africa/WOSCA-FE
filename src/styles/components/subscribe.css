@@ -25,9 +25,19 @@ form {
     border: 1px solid #70707042;
     border-radius: .5rem;
     color: #D1D1D1;
-    /* border: 0; */
+    padding: .375rem .0rem;
     font-size: 10px;
     height: 40px;
+    padding-left: 3px;
+}
+
+.form-control:focus {
+    background-color: #FFFFFF50;
+   
+}
+
+.btn {
+    padding: .375rem .15rem;
 }
 
 .sub-button {
@@ -58,5 +68,11 @@ form {
 
     .jumbotrons {
         margin: 1rem 4rem 2rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .xbs {
+        margin-top: 10px;
     }
 }

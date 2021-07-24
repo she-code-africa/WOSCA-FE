@@ -14,7 +14,7 @@ class Header extends Component {
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-md navbar-lighter bg-lighter">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="/">
                         <img src={Logo} alt="Logo" className="logo" />
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ class Header extends Component {
                                 <a className="nav-link" href="#">Resources</a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Events</a>
+                                <a className="nav-link" href="/events">Events</a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="/faq">FAQs</a>
