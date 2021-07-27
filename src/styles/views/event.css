@@ -1,0 +1,45 @@
+.events {
+    margin-bottom: 35px;
+}
+
+.header-img {
+    height: 30px;
+    width: 30px;
+}
+
+.up img {
+    vertical-align: top;
+    height: 100px;
+    width: 100px;
+}
+
+.down img {
+    height: 110px;
+    width: 110px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.mid {
+    padding-top: 50px;
+}
+
+.form {
+    padding-top: 25px;
+}
+
+.event-button {
+    width: 66%;
+    float: left;
+}
+
+@media (max-width: 767px) {
+    .up img, .down img, .hide-form {
+        display: none;
+    }
+
+    .event-button {
+        width: 100%;
+    }
+}
