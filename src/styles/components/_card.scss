@@ -1,22 +1,40 @@
 .card-box{
     margin-bottom: 1em;
-    width: 201px;
+    width: 303px;
     border: 1px solid rgb(63, 63, 63), 0.42;
     border-radius: 20px;
     background: rgba(63, 63, 63, 0.42);
     padding: .8em;
     text-align: center;
     margin-right: 16px;
-    // height: 163px;
+    height: 173px;
+    .card-content{
+        padding: 1rem;
+    }
     .value{
         margin-bottom: auto;
+        text-align: left;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-left: 6px;
     }
     .card-title{
         margin-bottom: auto;
+        // padding: 0.8rem;
 
         .icon-cardbox{
             fill: $color-secondary;
             height: 2.4rem;
+            background-color: #B70569;
+            border: thin solid #B70569;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            svg{
+                padding: 26%;
+                font-size: 1.4rem;
+            }
         }
 
     };
@@ -27,6 +45,14 @@
 
     hr{
         margin-bottom: 2rem;
+    }
+
+    .title{
+        font-size: 10px;
+        text-align: left;
+        margin-top: 1.5rem;
+        margin-left: 6px;
+        opacity: 0.6;
     }
 }
 
@@ -39,7 +65,7 @@
 .card-box-lg{
     // background: transparent url('../../assets/images/Mask-Group-9.png') 50% 50% repeat padding-box;
     margin-bottom: 1em;
-    width: 301px;
+    width: 303px;
     position: relative;
     background-color: rgba(183, 5, 105, 1);
     color: #F2F2F2;
@@ -57,22 +83,52 @@
         flex-direction: column; 
         justify-content: space-between;
     }
+
+    button{
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 6px;
+        font-size: 10px;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 8px;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+
+        .card-btn-icon{
+            border: thin solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            display: inline;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin-left: 15px;
+            svg{
+                padding: 2px;
+                margin-top: 3px;
+            }
+        }
+    }
 }
 
 
 
-@media screen and (min-width: 90em) {
+
+@media screen and (min-width: 60em) {
     .card-box {
       display: inline-block;
-      width: 197px;
+      width: 157px;
       margin-right: 2.3em;
-      height: auto;
+      height: 173px;
     }
     .card-box-lg{
         width: 303px;
         margin-right: 2.3em
     }
-    .withOverflowingBackground::after {
+    .withOverflowingBackground::before {
         content: " ";
         position: absolute;
         width: 500px;
@@ -84,17 +140,27 @@
      }
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 90em) {
     .card-box {
       display: inline-block;
-      width: 197px;
+      width: 157px;
       margin-right: 2.3em;
-      height: auto;
+      height: 173px;
     }
     .card-box-lg{
         width: 303px;
         margin-right: 2.3em
     }
+    .withOverflowingBackground::before {
+        content: " ";
+        position: absolute;
+        width: 500px;
+        height: 210px;
+        // z-index: -1;
+        background-position: top;
+        background: url(../../assets/images/Mask-Group-9.png) -5% 0% no-repeat padding-box;
+        top: -15px
+     }
 }
 
 // @media screen and (min-width: 80em) {

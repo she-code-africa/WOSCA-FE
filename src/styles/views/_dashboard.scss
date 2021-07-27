@@ -14,19 +14,14 @@
 
 .contribution-cards{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     // justify-content: space-evenly;
 }
 
 
-@media (min-width: 80em) {
-    .dashboard{
-        margin: 2.5em 5em;
-    }
+@media (min-width: 768px) {
     .dashboard-body{
         align-items: center;
-        max-width: 70%;
-    margin: auto;
     }
 
     .contribution-cards{
@@ -53,9 +48,15 @@
     }
 }
 
-@media (min-width: 60em) {
+
+@media (min-width: 80em) {
+    .dashboard{
+        margin: 2.5em 5em;
+    }
     .dashboard-body{
         align-items: center;
+        max-width: 70%;
+    margin: auto;
     }
 
     .contribution-cards{
