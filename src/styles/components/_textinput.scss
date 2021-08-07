@@ -45,17 +45,15 @@ input{
 
 // Input default
 .input-init{
-    @include border;
-    padding:1.3rem;
-    opacity: 0.42;
-    margin-bottom: 2rem;
+    // @include border;
+    padding:.7rem;
     ::placeholder {
         color: $color-placeholder;
-        font-size: 1.4rem;
+        font-size: 10px;
        
       }
-     
-    // background: #3f3f3f 0% 0% no-repeat padding-box
+    background: rgba(63, 63, 63, 0.42) 0% 0% no-repeat padding-box;
+    width:240px;
 }
 
 .input-init-ic{
@@ -331,10 +329,9 @@ input{
 
 
 @media screen and (max-width: 1919px) {
-    .input-init{
-        @include border;
-    // @include padding-sm;
-    opacity: 0.42;
-    margin-bottom: 2rem;
-    }
+    // .input-init{
+    //     @include border;
+    // // @include padding-sm;
+    // opacity: 0.42;
+    // }
 }

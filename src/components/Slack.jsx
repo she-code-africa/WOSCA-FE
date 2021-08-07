@@ -1,15 +1,15 @@
 import React from 'react';
-import lady from '../assets/images/home_woman.png'
+import slack from '../assets/images/Slack.png'
 
-const Jumbotron = () => {
+const Slack = () => {
     return (
         <div className="jumbo">
-           <div className="text-box jumbo-text">
-           <span className="sub-text">GET THE BALL ROLLING</span>
+           <div className="jumbo-text slack">
+           <span className="sub-text">DISCUSSION</span>
             <div className="heading">
             <h1 className="heading-primary">
               <span className="heading-primary-main">
-              Open Source Projects Rewarded heavily
+              Join our conversation on Slack
               </span>
             </h1>
             <p className="heading-primary-sub">
@@ -18,16 +18,15 @@ const Jumbotron = () => {
             </div>
             <form>
               <div className="sub-div">
-              <input className="input-init" placeholder="Enter Email Address"/>
-            <button className="btn-sub">SUBSCRIBE</button>
+            <button className="btn-sub">Join conversation</button>
               </div>
           </form>
           </div> 
           <div>
-            <img src={lady} alt=".." className="home_woman"/>
+            <img src={slack} alt=".." className="slack-img"/>
           </div>
         </div>
     )
 }
 
-export default Jumbotron
+export default Slack
