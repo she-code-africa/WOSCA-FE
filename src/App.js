@@ -6,6 +6,7 @@ import FAQ from '../src/views/faq/faq';
 import Events from '../src/views/events/event';
 import Home from '../src/views/home/home';
 import Dashboard from "../src/views/Dashboard/Dashboard"
+import Resources from "../src/views/Resoures"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       />
         <Route path="/faq"> <FAQ /> </Route>
         <Route path="/events"> <Events /> </Route>
+        <Route path="/resources"> <Resources /> </Route>
         <Route path="/"> <Home /> </Route>
 
       </Switch>
