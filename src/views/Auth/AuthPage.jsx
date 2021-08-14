@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import Logo from "../../assets/images/she-code-africa-logo.svg";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
+import Logo from "../../assets/icons/Logo.png";
 
 function AuthPage({ children }) {
-  const [activity, setActivity] = useState(false);
-
-  const toggleActivity = () => {
-    setActivity(!activity);
-    console.log(activity);
-  };
   return (
     <div className="main-container">
       <div className="inner-container">
@@ -28,7 +20,7 @@ function AuthPage({ children }) {
               world-known contributor
             </p>
           </div>
-          <div className="forms">{children}</div>
+          <div className="auth-forms">{children}</div>
         </div>
       </div>
     </div>

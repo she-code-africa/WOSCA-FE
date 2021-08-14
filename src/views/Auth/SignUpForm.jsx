@@ -8,17 +8,17 @@ const LoginForm = () => {
           <h1>Sign Up</h1>
           <p>Please enter your registered details to sign in</p>
         </div>
-        <form className="form">
+        <form className="auth-form">
           <input
             type="text"
-            id="email"
-            name="email"
+            id="name"
+            name="name"
             className="input-init"
             placeholder="Enter Full Name"
           />
 
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             className="input-init"
@@ -26,21 +26,23 @@ const LoginForm = () => {
           />
 
           <input
-            type="text"
-            id="email"
-            name="email"
+            type="password"
+            id="password"
+            name="password"
             className="input-init"
             placeholder="Choose Password"
           />
 
-          <p href="#" className="forgot-password">
-            I accept the terms of use
-          </p>
+          <div class="round">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox"></label>
+              {/* <span>I accept the terms of use</span> */}
+            </div>
 
           <button className="btn-xl-pry-in">SIGN UP</button>
 
           <div className="signup">
-            <p className="">
+            <p className="prompt">
               Already have an account ?
               <a href="/signin" className="signup-link">
                 Sign In
