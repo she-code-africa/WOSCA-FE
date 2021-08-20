@@ -5,9 +5,9 @@ function AuthPage({ children }) {
   return (
     <div className="main-container">
       <div className="inner-container">
-        <div className="logo-box">
+        <a className="logo-box" href="/">
           <img src={Logo} alt="Logo" className="logo" />
-        </div>
+        </a>
         <div className="main-body">
           <div className="text-box">
             <h1 className="heading-primary">
