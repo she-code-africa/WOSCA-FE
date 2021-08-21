@@ -57,7 +57,7 @@ function Events() {
                     </Form>
                 </div>
                 <div className="row events">
-                    {eventCards}
+                    { eventCards }
                 </div>
                 <Subscribe />
             </div>

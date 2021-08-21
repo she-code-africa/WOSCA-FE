@@ -2,17 +2,10 @@ import React from 'react';
 import lady from '../assets/images/home_woman.png'
 
 
-const homepage = {
-  margin: "100px 70px 50px"
-}
-const homeform = {
-  padding: "20px 0px"
-}
-
 const Jumbotron = () => {
   return (
-    <div className="row" style={homepage}>
-      <div className="col">
+    <div className="row">
+      <div className="col"> 
         <span className="sub-text">GET THE BALL ROLLING</span>
         <div className="heading">
           <h1 className="heading-primary">
@@ -24,7 +17,7 @@ const Jumbotron = () => {
             Support open source and pick a limited edition T-shirt or plant a tree. SCA Open source challenge 2020 has ended. Keep contributing to open source & we'll see you next year!
           </p>
         </div>
-        <form style={homeform}>
+        <form className="homeform_">
           <div className="sub-div">
             <input className="input-init form-control" placeholder="Enter Email Address" />
             <button className="btn-sub btn-heading-sub">SUBSCRIBE</button>

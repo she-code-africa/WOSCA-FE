@@ -1,0 +1,49 @@
+.tac {
+    text-align: center;
+}
+
+.right_ img {
+    height: 100px;
+    width: 100px;
+    /* bottom: 0;
+    position: absolute;
+    left: 0; */
+}
+
+.left_up {
+    height: 90px;
+    width: 90px;
+    vertical-align: top;
+    right: 0;
+    position: absolute;
+}
+
+.left_down {
+    height: 120px;
+    width: 120px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.right_up {
+    vertical-align: top;
+    position: absolute;
+    right: 0;
+}
+
+.right_down {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+.test_mid {
+    padding: 65px 10px;
+}
+
+@media (max-width: 767px) {
+    .left_, .right_{
+        display: none;
+    }
+}

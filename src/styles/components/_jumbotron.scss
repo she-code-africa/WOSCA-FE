@@ -1,3 +1,7 @@
+.homeform_ {
+    padding: 20px 0px;
+}
+
 .jumbo {
     padding: 20px;
     margin-bottom: 30px;
@@ -44,11 +48,13 @@
 .home_woman {
     justify-content: center;
     align-self: center;
-}
+} 
 
 .home_woman img {
-    width: auto;
-    height: 480px;
+    // width: 675px;
+    width: 100%;
+    height: 435px;
+    object-fit: fill;
 }
 
 .btn-heading-sub {
@@ -75,4 +81,34 @@
         align-items: center;
     }
 
+}
+
+@media (min-width: 1051px) {
+    .heading-main {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1383px) and (min-width: 1301px) {
+    .heading-sub {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 1280px) {
+    .heading-sub {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .heading-sub {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home_woman {
+        display: none;
+    }
 }
