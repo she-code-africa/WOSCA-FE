@@ -62,9 +62,21 @@
     } 
 }
 
-@media (max-width: 584px) {
+@media (min-width: 580px) and (max-width: 584px) {
     .partner-card {
         width: 30%;
+        padding: 30px;
+        margin: 15px;
+        
+        img {
+            width: 60%;
+        }
+    } 
+}
+
+@media (max-width: 579px) {
+    .partner-card {
+        width: 40%;
         padding: 30px;
         margin: 15px;
         
