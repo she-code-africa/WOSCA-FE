@@ -3,8 +3,8 @@ export function Card({ title, icon, subtitle, details, value, imgurl }) {
 
   return (
     <div className="card-box">
-      <div className="card-content">
-      <div className="card-title tr">
+      <div className="">
+      <div className="card-header tr">
         <div className="icon-cardbox">
           {icon}
         </div>
@@ -19,7 +19,7 @@ export function Card({ title, icon, subtitle, details, value, imgurl }) {
 export function BigCard({ title, subtitle, button }) {
   return (
     <div className="card-box-lg withOverflowingBackground">
-      <div className="card-title tr">
+      <div className="card-header tr">
         <h6 className="lx-s"> {title}</h6>
         <p>{subtitle}</p>
       </div>
