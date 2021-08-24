@@ -1,11 +1,12 @@
 .partner-cards{
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-    padding-left: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
+    // padding: 40px;
+    // padding-left: 20px;
+    // padding-top: 0;
+    // padding-bottom: 0;
+    // margin-bottom: 50px;
 }
 
 .partner-card {
@@ -24,6 +25,12 @@
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+@media (min-width: 768px) {
+    .partner-cards{
+        flex-wrap: nowrap;
+    }
 }
 
 @media (min-width: 1154px) and (max-width: 1359px) {
@@ -64,7 +71,7 @@
 
 @media (min-width: 580px) and (max-width: 584px) {
     .partner-card {
-        width: 30%;
+        // width: 30%;
         padding: 30px;
         margin: 15px;
         
@@ -76,9 +83,10 @@
 
 @media (max-width: 579px) {
     .partner-card {
-        width: 40%;
+        // width: 40%;
         padding: 30px;
-        margin: 15px;
+        width: 25%;
+        // margin: 15px;
         
         img {
             width: 60%;

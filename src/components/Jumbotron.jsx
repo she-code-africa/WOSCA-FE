@@ -19,7 +19,7 @@ const Jumbotron = () => {
         </div>
         <form className="homeform_">
           <div className="sub-div">
-            <input className="input-init form-control" placeholder="Enter Email Address" />
+            <input className="input-init" placeholder="Enter Email Address" />
             <button className="btn-sub btn-heading-sub">SUBSCRIBE</button>
           </div>
         </form>

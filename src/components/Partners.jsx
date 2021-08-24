@@ -20,6 +20,7 @@ const Partners = () => {
                 </div>
                 <div className="col"></div>
             </div>
+            <div className="partner-cards">
             <div className="partner-card">
                 <img alt="..." src={Busha} />
             </div>
@@ -35,6 +36,8 @@ const Partners = () => {
             <div className="partner-card">
                 <img alt="..." src={Decagon} />
             </div>
+            </div>
+            
         </div>
 
     )
