@@ -18,8 +18,9 @@
         margin-top: 2rem;
         margin-left: 6px;
     }
-    .card-title{
+    .card-header{
         margin-bottom: auto;
+        border-bottom: none !important;
         // padding: 0.8rem;
 
         .icon-cardbox{
@@ -74,14 +75,15 @@
     border: 1px solid #707070;
     border-radius: 20px;
     // width: 350px;
-    padding: 2em;
+    padding: 20px 15px;
     padding-right: 0;
-    padding-bottom: 0;
+    padding-bottom: 11px;
     z-index: -1;
-    .card-title{
+    .card-header{
         display: flex;
         flex-direction: column; 
         justify-content: space-between;
+        border-bottom: none !important;
     }
 
     button{
@@ -112,12 +114,17 @@
             }
         }
     }
+  
+}
+
+@media (min-width: 768px) {
+    .card-box-lg{
+        width: 365px
+    }
 }
 
 
-
-
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 50em) {
     .card-box {
       display: inline-block;
       width: 157px;
