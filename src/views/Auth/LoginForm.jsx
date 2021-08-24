@@ -9,31 +9,31 @@ const LoginForm = () => {
           <h1>Sign In</h1>
           <p>Please enter your registered details to sign in</p>
         </div>
-        <form className="form">
+        <form className="auth-form">
           <input
             type="text"
             id="email"
             name="email"
             className="input-init"
-            placeholder="Enter your email"
+            placeholder="Enter Email Address"
           />
 
           <input
-            type="text"
+            type="password"
             id="email"
             name="email"
             className="input-init"
-            placeholder="Enter your email"
+            placeholder="Enter Password"
           />
 
-          <a href="#" className="forgot-password">
+          <a href="#/" className="forgot-password">
             Forgot Password?
           </a>
 
-          <button className="btn-xl-pry-in">Sign In</button>
+          <button className="btn-xl-pry-in">SIGN IN</button>
 
           <div className="signup">
-            <p className="">
+            <p className="prompt">
               Don't have an account?
               <a href="/signup" className="signup-link">
                 Sign Up
