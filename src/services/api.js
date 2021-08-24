@@ -27,7 +27,7 @@ export default new (class Http {
         response.data.errorMsg !== null
       ) {
         localStorage.removeItem("jwt_token")
-        window.location.reload()
+        // window.location.reload()
       }
       return response
     } catch (err) {
@@ -42,7 +42,7 @@ export default new (class Http {
         response.data.errorMsg !== null
       ) {
         localStorage.removeItem("jwt_token")
-        window.location.reload()
+        // window.location.reload()
       }
       return response
     } catch (err) {
@@ -58,7 +58,7 @@ export default new (class Http {
         response.data.errorMsg !== null
       ) {
         localStorage.removeItem("jwt_token")
-        window.location.reload()
+        // window.location.reload()
       }
       return response
     } catch (err) {
@@ -73,7 +73,7 @@ export default new (class Http {
         response.data.errorMsg !== null
       ) {
         localStorage.removeItem("jwt_token")
-        window.location.reload()
+        // window.location.reload()
       }
       return response
     } catch (err) {

@@ -21,9 +21,14 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
      event.preventDefault()
       signin(state).then((response) => {
-        setState({ ...state });
-        if (response.data.message){
-          history.push(`/`);
+        console.log(response)
+        const {data} = response
+        console.log(data)
+        if (data.data.message){
+          history.push(`/dashboard`);
+        }
+        else{
+          return
         }
       });
     

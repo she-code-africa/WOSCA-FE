@@ -21,8 +21,13 @@ const SignUpForm = () => {
   const handleSubmit = (event) => {
      event.preventDefault()
       signup(state).then((response) => {
-        if (response.data.message){
-          history.push(`/`);
+        const {data} = response
+        console.log(data)
+        if (data.data.message){
+          history.push(`/dashboard`);
+        }
+        else{
+          return;
         }
       });
     
