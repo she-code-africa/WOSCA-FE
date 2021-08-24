@@ -1,3 +1,20 @@
 .home{
     margin: 20px;
+    padding: 20px;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.homepage_  {
+    margin: 100px 75px 50px;
+}
+
+@media (max-width: 490px) {
+
+    .homepage_ {
+        margin: 100px 30px 50px;
+    }
+
 }
