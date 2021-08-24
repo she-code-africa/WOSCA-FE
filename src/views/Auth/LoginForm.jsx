@@ -1,7 +1,34 @@
-import React from "react";
-import Auth from "./AuthPage"
+import React, {useState, useEffect} from "react";
+import Auth from "./AuthPage";
+import {signin, forgotPassword, resetPassword} from "./AuthService";
+import { useHistory } from "react-router-dom";
 
 const LoginForm = () => {
+  const initialState = {
+    email: "",
+    password: ""
+  }
+
+  const [state, setState] = useState(initialState);
+  const history = useHistory();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    console.log(state)
+    setState({ ...state, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+     event.preventDefault()
+      signin(state).then((response) => {
+        setState({ ...state });
+        if (response.data.message){
+          history.push(`/`);
+        }
+      });
+    
+  };
+
   return (
     <Auth>
       <div className="form-outline">
@@ -16,21 +43,23 @@ const LoginForm = () => {
             name="email"
             className="input-init"
             placeholder="Enter Email Address"
+            onChange ={handleChange}
           />
 
           <input
             type="password"
-            id="email"
-            name="email"
+            id="password"
+            name="password"
             className="input-init"
             placeholder="Enter Password"
+            onChange={handleChange}
           />
 
-          <a href="#/" className="forgot-password">
+          <a href="#/" className="forgot-password" onClick={forgotPassword}>
             Forgot Password?
           </a>
 
-          <button className="btn-xl-pry-in">SIGN IN</button>
+          <button className="btn-xl-pry-in" onClick={handleSubmit}>SIGN IN</button>
 
           <div className="signup">
             <p className="prompt">
