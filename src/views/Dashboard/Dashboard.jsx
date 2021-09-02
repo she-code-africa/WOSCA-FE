@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../assets/images/she-code-africa-logo.svg";
 import {Card, BigCard} from "../../components/Card";
 import Table from "../../components/Table"
