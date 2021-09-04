@@ -1,6 +1,37 @@
-import React from "react";
-import Auth from "./AuthPage"
-const LoginForm = () => {
+import React, {useEffect, useState} from "react";
+import Auth from "./AuthPage";
+import {signup} from "./AuthService";
+import { useHistory } from "react-router-dom";
+const SignUpForm = () => {
+  const initialState = {
+     username: "",
+     email: "",
+     password: "",
+  }
+
+  const [state, setState] = useState(initialState);
+  const history = useHistory();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    console.log(state)
+    setState({ ...state, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+     event.preventDefault()
+      signup(state).then((response) => {
+        const {data} = response
+        console.log(data)
+        if (data.data.message){
+          history.push(`/dashboard`);
+        }
+        else{
+          return;
+        }
+      });
+    
+  };
   return (
     <Auth>
       <div className="form-outline sign-up">
@@ -12,9 +43,10 @@ const LoginForm = () => {
           <input
             type="text"
             id="name"
-            name="name"
+            name="username"
             className="input-init"
             placeholder="Enter Full Name"
+            onChange={handleChange}
           />
 
           <input
@@ -23,6 +55,7 @@ const LoginForm = () => {
             name="email"
             className="input-init"
             placeholder="Enter Email Address"
+            onChange={handleChange}
           />
 
           <input
@@ -31,15 +64,15 @@ const LoginForm = () => {
             name="password"
             className="input-init"
             placeholder="Choose Password"
+            onChange={handleChange}
           />
 
           <div class="round">
               <input type="checkbox" id="checkbox" />
               <label for="checkbox"></label>
-              {/* <span>I accept the terms of use</span> */}
             </div>
 
-          <button className="btn-xl-pry-in">SIGN UP</button>
+          <button className="btn-xl-pry-in" onClick={handleSubmit}>SIGN UP</button>
 
           <div className="signup">
             <p className="prompt">
@@ -55,4 +88,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
