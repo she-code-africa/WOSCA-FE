@@ -24,7 +24,7 @@ form {
     background: #3F3F3F 0% 0% no-repeat padding-box;
     border: 1px solid #70707042;
     border-radius: .5rem;
-    color: #D1D1D1;
+    color: #FFF;
     padding: .375rem .0rem;
     font-size: 10px;
     height: 40px;
@@ -32,8 +32,8 @@ form {
 }
 
 .form-control:focus {
-    background-color: #FFFFFF50;
-   
+    background-color: #FFFFFF;
+    color: #000;
 }
 
 .btn {
