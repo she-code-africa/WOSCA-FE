@@ -44,7 +44,7 @@ const SignUpForm = () => {
             type="text"
             id="name"
             name="username"
-            className="input-init"
+            className="input-init aaa"
             placeholder="Enter Full Name"
             onChange={handleChange}
           />
@@ -53,7 +53,7 @@ const SignUpForm = () => {
             type="email"
             id="email"
             name="email"
-            className="input-init"
+            className="input-init aaa"
             placeholder="Enter Email Address"
             onChange={handleChange}
           />
@@ -62,7 +62,7 @@ const SignUpForm = () => {
             type="password"
             id="password"
             name="password"
-            className="input-init"
+            className="input-init aaa"
             placeholder="Choose Password"
             onChange={handleChange}
           />
