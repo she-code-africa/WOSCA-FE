@@ -44,6 +44,15 @@
     margin-bottom: 30px;
 }
 
+.aaa {
+    color: #FFF;
+}
+
+.aaa:focus {
+    background-color: #FFF;
+    color: #000;
+}
+
 @media (min-width: 30em) {
     .main-conatiner{
         background-position: 0 550px;
