@@ -46,7 +46,7 @@ const LoginForm = () => {
             type="text"
             id="email"
             name="email"
-            className="input-init"
+            className="input-init aaa"
             placeholder="Enter Email Address"
             onChange ={handleChange}
           />
@@ -55,7 +55,7 @@ const LoginForm = () => {
             type="password"
             id="password"
             name="password"
-            className="input-init"
+            className="input-init aaa"
             placeholder="Enter Password"
             onChange={handleChange}
           />
