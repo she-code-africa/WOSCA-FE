@@ -7,6 +7,9 @@ import Events from '../src/views/events/event';
 import Home from '../src/views/home/home';
 import Dashboard from "../src/views/Dashboard/Dashboard";
 import Resources from "../src/views/resources/resources";
+import ForgotPassword from "../src/views/Auth/ForgotPassword"
+import ResetPassword from "../src/views/Auth/ResetPassword"
+
 
 function App() {
   return (
@@ -15,15 +18,25 @@ function App() {
         <Route exact
           path="/signup"
           name="SignUpForm"
-          component={SignUpForm} />
+          component={SignUpForm} 
+        />
         <Route exact
           path="/signin"
           name="LoginForm"
-          component={LoginForm} />
-          <Route exact
-      path ="/dashboard"
-      component={Dashboard}
-      />
+          component={LoginForm}
+        />
+        <Route exact
+          path ="/dashboard"
+          component={Dashboard}
+        />
+        <Route exact
+          path ="/forgot-password"
+          component={ForgotPassword}
+        />
+        <Route exact
+          path ="/reset-password"
+          component={ResetPassword}
+        />
         <Route path="/faq"> <FAQ /> </Route>
         <Route path="/resources"> <Resources /> </Route>
         <Route path="/events"> <Events /> </Route>
