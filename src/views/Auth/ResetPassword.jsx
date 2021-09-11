@@ -6,6 +6,7 @@ import Logo from "../../assets/icons/Logo.png";
 const ResetPassword = () => {
   const initialState = {
     email: "",
+    password: ""
   }
 
   const [state, setState] = useState(initialState);
@@ -24,13 +25,12 @@ const ResetPassword = () => {
 //         const {data} = response
 //         console.log(data)
 //         if (data.data.message){
-//         //   history.push(`/dashboard`);
+//           history.push(`/dashboard`);
 //         }
 //         else{
 //           return
 //         }
-//       });
-    
+//       });   
 //   };
 
   return (
@@ -41,7 +41,8 @@ const ResetPassword = () => {
         </a>
         <div className="form-outline">
             <div className="form-text-box">
-            <h1>Reset Password</h1>
+            <h1>Change Password</h1>
+            <p>Please enter your registered email and new password</p>
             </div>
             <form className="auth-form">
             <input
@@ -52,6 +53,18 @@ const ResetPassword = () => {
                 placeholder="Enter Email Address"
                 onChange ={handleChange}
             />
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                className="input-init aaa"
+                placeholder="Enter Password"
+                onChange={handleChange}
+            />
+            {/* <a href="/reset-password" className="forgot-password">
+                Reset Password?
+            </a> */}
 
             <button className="btn-xl-pry-in">Submit</button>
             </form>

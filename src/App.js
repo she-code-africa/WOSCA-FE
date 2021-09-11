@@ -7,8 +7,8 @@ import Events from '../src/views/events/event';
 import Home from '../src/views/home/home';
 import Dashboard from "../src/views/Dashboard/Dashboard";
 import Resources from "../src/views/resources/resources";
-import ForgotPassword from "../src/views/Auth/ForgotPassword"
-import ResetPassword from "../src/views/Auth/ResetPassword"
+import ForgotPassword from "./views/Auth/ForgotPassword"
+import ResetPassword from "./views/Auth/ResetPassword"
 
 
 function App() {

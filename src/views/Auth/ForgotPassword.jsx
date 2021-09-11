@@ -2,14 +2,15 @@ import React, {useState} from "react";
 import {forgotPassword} from "./AuthService";
 import { useHistory } from "react-router-dom";
 import Logo from "../../assets/icons/Logo.png";
+import Modal from "../../components/Modal"
 
 const ForgotPassword = () => {
   const initialState = {
     email: "",
-    password: ""
   }
-
   const [state, setState] = useState(initialState);
+  const [showModal, setShowModal] =useState("none");
+  const [display, setDisplay] =useState("block")
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -18,20 +19,22 @@ const ForgotPassword = () => {
     setState({ ...state, [name]: value });
   };
 
-//   const handleSubmit = (event) => {
-//      event.preventDefault()
-//       forgotPassword(state).then((response) => {
-//         console.log(response)
-//         const {data} = response
-//         console.log(data)
-//         if (data.data.message){
-//           history.push(`/dashboard`);
-//         }
-//         else{
-//           return
-//         }
-//       });   
-//   };
+  const handleSubmit = (event) => {
+     event.preventDefault()
+      forgotPassword(state).then((response) => {
+        console.log(response)
+        const {data} = response
+        console.log(data)
+        if (data.data.message){
+            setShowModal("block")
+            setDisplay("none")
+        }
+        else{
+          return
+        }
+      });
+    
+  };
 
   return (
       <>
@@ -39,10 +42,9 @@ const ForgotPassword = () => {
         <a className="logo-box" href="/">
             <img src={Logo} alt="Logo" className="logo" />
         </a>
-        <div className="form-outline">
+        <div className="form-outline" style={{display: `${display}`}}>
             <div className="form-text-box">
-            <h1>Forgot Password?</h1>
-            <p>Please enter your registered details</p>
+            <h1>Reset Password</h1>
             </div>
             <form className="auth-form">
             <input
@@ -54,23 +56,18 @@ const ForgotPassword = () => {
                 onChange ={handleChange}
             />
 
-            <input
-                type="password"
-                id="password"
-                name="password"
-                className="input-init aaa"
-                placeholder="Enter Password"
-                onChange={handleChange}
-            />
-
-            <a href="/reset-password" className="forgot-password">
-                Reset Password?
-            </a>
-
-            <button className="btn-xl-pry-in">Submit</button>
+            <button className="btn-xl-pry-in" onClick={handleSubmit}>Submit</button>
             </form>
         </div>
+
+        <div className="form-outline" style={{display: `${showModal}`}}>
+            <div className="form-text-box">
+            <h1>Reset Password</h1>
+            </div>
+            <h6>Password has been reset, check your mail.</h6>
+        </div>
       </div>
+      
       </>
   );
 };

@@ -9,7 +9,7 @@ export const signin = (user) => {
 }
 
 export const forgotPassword = (user) => {
-    return http.delete('/auth/forgot-password/', user)
+    return http.post('/auth/forgot-password/', user)
 }
 export const resetPassword = (user) => {
     return http.post('/auth/reset-password-confirmation/', user)
