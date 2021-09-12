@@ -60,7 +60,7 @@ const LoginForm = () => {
             onChange={handleChange}
           />
 
-          <a href="#/" className="forgot-password" onClick={forgotPassword}>
+          <a href="/forgot-password" className="forgot-password" onClick={forgotPassword}>
             Forgot Password?
           </a>
 

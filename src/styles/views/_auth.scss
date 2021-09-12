@@ -77,6 +77,23 @@
     }
 }
 
+.password-recovery{
+    padding: 1.5rem;
+    .form-outline{
+        margin-right: auto; 
+        margin-left: auto;
+        margin-top: 40px;
+        // width: 400px
+    }
+}
+
+@media (max-width: 425px) {
+    .password-recovery{
+        .form-outline{
+            width: fit-content;
+        }
+    }
+}
 
 @media (min-width: 60em) {
     .main-container{
@@ -101,5 +118,13 @@
 
     .auth-forms{
         flex: 1
+    }
+
+    .password-recovery{
+        padding: 2rem;
+
+        .form-outline{
+            width: 600px
+        }
     }
 }
