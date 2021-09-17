@@ -7,8 +7,9 @@ import Events from '../src/views/events/event';
 import Home from '../src/views/home/home';
 import Dashboard from "../src/views/Dashboard/Dashboard";
 import Resources from "../src/views/resources/resources";
-import ForgotPassword from "./views/Auth/ForgotPassword"
-import ResetPassword from "./views/Auth/ResetPassword"
+import ForgotPassword from "./views/Auth/ForgotPassword";
+import ResetPassword from "./views/Auth/ResetPassword";
+import Admin from "./views/admin/joint";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           path ="/reset-password"
           component={ResetPassword}
         />
+        <Route path="/admin"> <Admin /> </Route>
         <Route path="/faq"> <FAQ /> </Route>
         <Route path="/resources"> <Resources /> </Route>
         <Route path="/events"> <Events /> </Route>
