@@ -9,7 +9,7 @@ class users extends Component {
             users: [
                 { 'id': 1, 'username': 'maryam', 'email': 'maryam@maryam.com', 'total': '12' },
                 { 'id': 2, 'username': 'ola', 'email': 'ola@ola.com', 'total': '13' },
-                { 'id': 3, 'username': 'ola', 'email': 'oal@ola.com', 'total': '14' },
+                { 'id': 3, 'username': 'elizabeth', 'email': 'oal@ola.com', 'total': '14' },
                 { 'id': 4, 'username': 'olu', 'email': 'olu@o.com', 'total': '16' },
                 { 'id': 5, 'username': 'esse', 'email': 'esse@ol.com', 'total': '22' },
             ],
@@ -38,6 +38,7 @@ class users extends Component {
             firstPage: 'First',
             lastPage: 'Last',
             paginationPosition: 'bottom',
+            noDataText: 'No registered users',
             onRowClick: (row) => {
                 this.setState({
                     email: row.email,
@@ -50,21 +51,21 @@ class users extends Component {
         return (
             <React.Fragment>
                 <div className="greeting">
-                    <p className="greeting-text">Registered Users</p>
+                    <h3 className="greeting-text">Registered Users</h3>
                 </div>
-                <BootstrapTable data={this.state.users} pagination={true} options={options}  bordered={false}>
-                    <TableHeaderColumn dataField='id' isKey>User ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='username'>Github Username</TableHeaderColumn>
+                <BootstrapTable className="b_table" ref='users' data={this.state.users} pagination options={options}  bordered={false} striped hover>
+                    <TableHeaderColumn dataField='id' isKey dataSort={ true }>User ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='username' dataSort={ true }>Github Username</TableHeaderColumn>
                     <TableHeaderColumn dataField='total'>Total Contributions</TableHeaderColumn>
                 </BootstrapTable>
                 <Modal
                     show={this.state.userSelected}
                     onHide={this.closeModal}
                     {...this.props}
-                    // size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                     backdrop="static"
+                    className="modal_fit"
                     keyboard={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>User Details</Modal.Title>

@@ -1,40 +1,27 @@
 import React, { Component } from "react";
 import Logo from "../../assets/icons/Logo.png";
-import { Card, BigCard } from "../../components/Card";
-import { AiOutlineLink, AiOutlineUser } from 'react-icons/ai';
-import { BsCheckAll, BsArrowRight } from 'react-icons/bs'
 import Events from './events';
 import User from './users';
 import Repos from './repos';
+import '../../styles/views/admin.css';
 
 class Admin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: true,
-            repo: false,
-            events: false,
+            value: 0
         };
     }
     showUsers = () => {
-        this.setState({ user: true });
-        this.setState({ repo: false });
-        this.setState({ events: false });
+        this.setState({ value: 0 });
     }
     showRepos = () => {
-        this.setState({ user: false });
-        this.setState({ repo: true });
-        this.setState({ events: false });
+        this.setState({ value: 1 });
     }
     showEvents = () => {
-        this.setState({ user: false });
-        this.setState({ repo: false });
-        this.setState({ events: true });
+        this.setState({ value: 2 });
     }
     render() {
-        const clickable_card = {
-            cursor: 'pointer'
-        }
         return (
             <div className="dashboard">
                 <div className="">
@@ -43,12 +30,26 @@ class Admin extends Component {
                     </div>
                     <div className="dashboard-body">
                         <div className="greeting"> <p className="greeting-text">Good Morning, Admin</p></div>
-                        <div className="contribution-cards">
-                            <BigCard onClick={() => { this.showEvents(); }} style={clickable_card} title="New" subtitle="Event" button={<button>Add New Event <div className="card-btn-icon"><BsArrowRight /></div></button>} />
-                            <Card onClick={() => { this.showUsers(); }} style={clickable_card} className="clickable_card" title="Total Users" value="35" icon={<AiOutlineUser color={'#fff'} />} />
-                            <Card onClick={() => { this.showRepos(); }} style={clickable_card} className="clickable_card" title="Total Contributions" value="345" icon={<AiOutlineLink color={'#fff'} />} />
+                        <div className="row contribution-cards">
+                            <div className="col">
+                                <button
+                                    className="sub-button admin_button" onClick={() => { this.showEvents(); }}>ADD EVENTS
+                                </button>
+                            </div>
+                            <div className="col">
+                                <button
+                                    className="sub-button admin_button" onClick={() => { this.showRepos(); }}> VIEW PRs
+                                </button>
+                            </div>
+                            <div className="col">
+                                <button
+                                    className="sub-button admin_button" onClick={() => { this.showUsers(); }}>VIEW USERS
+                                </button>
+                            </div>
                         </div>
-                        {this.state.events ? (<Events />) : this.state.repo ? (<Repos />) : (<User />)}
+                        {
+                            this.state.value === 2 ? (<Events />) : this.state.value === 1 ? (<Repos />) : (<User />)
+                        }
                     </div>
                 </div>
             </div>

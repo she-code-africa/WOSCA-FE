@@ -1,0 +1,31 @@
+.admin_button {
+    width: 80%;
+    color: white;
+    font-size: 12px;
+}
+
+.admin_button:hover {
+    color: #B70569 ;
+}
+
+.modal_fit {
+    color: #030124;
+}
+
+.b_table .btn {
+    padding: 1.0rem;
+}
+
+.react-bs-table-pagination {
+    margin-bottom: 25px;
+}
+
+.react-bs-table-pagination row col-md-6,
+.react-bs-table-pagination row col-xs-6,
+.react-bs-table-pagination row col-sm-6,
+.react-bs-table-pagination row col-lg-6 {
+    width: 40%;
+}
+
+/* react-bs-table-pagination */
+/* row col-md-6 */
