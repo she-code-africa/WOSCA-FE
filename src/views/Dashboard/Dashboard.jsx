@@ -4,9 +4,12 @@ import {Card, BigCard} from "../../components/Card";
 import Table from "../../components/Table"
 import {AiOutlineLink} from 'react-icons/ai'
 import {BsCheckAll, BsArrowRight} from 'react-icons/bs'
+import { useUserContext } from "../../context/AuthContext"
 
 function Dashboard() {
   const colunms = ["Date", "Contribution Link", "Status"]
+
+  const { user } = useUserContext()
     return (
       <div className="dashboard">
         <div className="">
@@ -14,7 +17,7 @@ function Dashboard() {
             <img src={Logo} alt="Logo" className="logo" />
           </div>
           <div className="dashboard-body">
-           <div className="greeting"> <p className="greeting-text">Good Morning, Lola</p></div>
+           <div className="greeting"> <p className="greeting-text">Good Morning, {user?.username}</p></div>
            <div className="contribution-cards">
             <BigCard title="New" subtitle="Contributions" button={<button>Submit New Pull Request <div className="card-btn-icon"><BsArrowRight/></div></button>}/>
 
