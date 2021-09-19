@@ -1,7 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import Auth from "./AuthPage";
-import {signin, forgotPassword, resetPassword} from "./AuthService";
+import { signin, forgotPassword } from "./AuthService";
 import { useHistory } from "react-router-dom";
+
+
+import { useUserContext } from "../../context/AuthContext"
 
 const LoginForm = () => {
   const initialState = {
@@ -10,6 +13,7 @@ const LoginForm = () => {
   }
 
   const [state, setState] = useState(initialState);
+  const { setToken, setUser } = useUserContext()
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -21,10 +25,10 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
      event.preventDefault()
       signin(state).then((response) => {
-        console.log(response)
-        const {data} = response
-        console.log(data)
-        if (data.data.message){
+        const {data} = response.data
+        setToken(data.token)
+        setUser(data.user)
+        if (data.message){
           history.push(`/dashboard`);
         }
         else{
