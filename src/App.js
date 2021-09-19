@@ -10,7 +10,7 @@ import Resources from "../src/views/resources/resources";
 import ForgotPassword from "./views/Auth/ForgotPassword"
 import ResetPassword from "./views/Auth/ResetPassword"
 
-import ProtectedRoute from './components/routes/ProtectedRoute';
+import { ProtectedRoute, GuestRoute } from './components/routes';
 
 import { UserProvider } from "./context/AuthContext"
 
@@ -19,12 +19,12 @@ function App() {
     <UserProvider>
       <BrowserRouter>
         <Switch>
-          <Route exact
+          <GuestRoute exact
             path="/signup"
             name="SignUpForm"
             component={SignUpForm} 
           />
-          <Route exact
+          <GuestRoute exact
             path="/signin"
             name="LoginForm"
             component={LoginForm}
