@@ -12,6 +12,13 @@
     color: #030124;
 }
 
+.react-bs-table-add-btn {
+    background-color: #B70569;
+    color: #FFFFFF;
+    border-radius: 2px;
+    border: none;
+}
+
 .b_table .btn {
     padding: 1.0rem;
 }
