@@ -18,6 +18,11 @@ class repos extends Component {
             user: "",
         };
     }
+    closeModal = () => {
+        this.setState({
+            repoSelected: false,
+        })
+    }
     render() {
         const options = {
             page: 1,
@@ -37,7 +42,7 @@ class repos extends Component {
             noDataText: 'No registered repository',
             onRowClick: (row) => {
                 this.setState({
-                    user: row.user,
+                    user: row.username,
                     link: row.link,
                 });
                 this.setState({
@@ -70,9 +75,9 @@ class repos extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <p>Owner: {this.state.user}</p>
-                        <p><a href={this.state.link}>Visit</a></p>
-                        <button>Accept</button>
-                        <button>Reject</button>
+                        <p><a href={this.state.link}>Visit Repo</a></p>
+                        <button className="btn btn-success">Accept</button>
+                        <button className="btn btn-danger">Reject</button>
                     </Modal.Body>
                 </Modal>
             </React.Fragment>

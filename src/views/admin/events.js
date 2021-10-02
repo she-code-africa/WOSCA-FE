@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BootstrapTable, TableHeaderColumn, InsertModalHeader, InsertButton } from 'react-bootstrap-table';
+import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
 import Modal from "react-bootstrap/Modal";
 
 class events extends Component {
@@ -38,18 +38,6 @@ class events extends Component {
         );
     }
 
-    // createCustomModalHeader = (closeModal, save) => {
-    //     return (
-    //         <InsertModalHeader
-    //             className='my-custom-class'
-    //             title='Add New Event'
-    //             onModalClose={() => this.handleModalClose(closeModal)}
-    //             onSave={ () => this.handleSave(save) }
-    //              />
-    //         // hideClose={ true } to hide the close button
-    //     );
-    // }
-
     closeDetails = () => {
         this.setState({
             eventSelected: false,
@@ -58,7 +46,6 @@ class events extends Component {
 
     render() {
         const options = {
-            insertModalHeader: this.createCustomModalHeader,
             page: 1,
             sizePerPageList: [{
                 text: '3', value: 3
@@ -90,7 +77,7 @@ class events extends Component {
                     <p className="greeting-text">Added Events</p>
                 </div>
                 <BootstrapTable className="b_table" ref='events' data={this.state.events} pagination options={options} bordered={false} striped hover insertRow>
-                    <TableHeaderColumn dataField='id' isKey dataSort={true}>Event ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='id' isKey dataSort={true} hiddenOnInsert>Event ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='name' dataSort={true}>Event Name</TableHeaderColumn>
                     <TableHeaderColumn dataField='location' dataSort={true}>Event Location</TableHeaderColumn>
                     <TableHeaderColumn dataField='startTime'>Start Time</TableHeaderColumn>
