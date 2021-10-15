@@ -1,7 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import Auth from "./AuthPage";
 import {signup} from "./AuthService";
 import { useHistory } from "react-router-dom";
+
+import { useUserContext } from "../../context/AuthContext"
+
 const SignUpForm = () => {
   const initialState = {
      username: "",
@@ -10,26 +13,32 @@ const SignUpForm = () => {
   }
 
   const [state, setState] = useState(initialState);
+  const { setToken, setUser } = useUserContext()
+  // const [errorMsg, setErrorMsg] = useState('')
   const history = useHistory();
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(state)
     setState({ ...state, [name]: value });
   };
 
   const handleSubmit = (event) => {
      event.preventDefault()
       signup(state).then((response) => {
-        const {data} = response
+        const { data } = response.data
         console.log(data)
-        if (data.data.message){
+        setToken(data.token)
+        setUser(data.user)
+        if (data.message){
           history.push(`/dashboard`);
         }
-        else{
-          return;
-        }
-      });
+      })
+      .catch((error) => {
+        console.log(error);
+        // setErrorMsg(error)
+      })
     
   };
   return (

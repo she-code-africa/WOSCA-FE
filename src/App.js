@@ -11,41 +11,46 @@ import ForgotPassword from "./views/Auth/ForgotPassword";
 import ResetPassword from "./views/Auth/ResetPassword";
 import Admin from "./views/admin/joint";
 
+import { ProtectedRoute, GuestRoute } from './components/routes';
+
+import { UserProvider } from "./context/AuthContext"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact
-          path="/signup"
-          name="SignUpForm"
-          component={SignUpForm} 
-        />
-        <Route exact
-          path="/signin"
-          name="LoginForm"
-          component={LoginForm}
-        />
-        <Route exact
-          path ="/dashboard"
-          component={Dashboard}
-        />
-        <Route exact
-          path ="/forgot-password"
-          component={ForgotPassword}
-        />
-        <Route exact
-          path ="/reset-password"
-          component={ResetPassword}
-        />
-        <Route path="/admin"> <Admin /> </Route>
-        <Route path="/faq"> <FAQ /> </Route>
-        <Route path="/resources"> <Resources /> </Route>
-        <Route path="/events"> <Events /> </Route>
-        <Route path="/"> <Home /> </Route>
+    <UserProvider>
+      <BrowserRouter>
+        <Switch>
+          <GuestRoute exact
+            path="/signup"
+            name="SignUpForm"
+            component={SignUpForm} 
+          />
+          <GuestRoute exact
+            path="/signin"
+            name="LoginForm"
+            component={LoginForm}
+          />
+          <ProtectedRoute exact
+            path ="/dashboard"
+            component={Dashboard}
+          />
+          <Route exact
+            path ="/forgot-password"
+            component={ForgotPassword}
+          />
+          <Route exact
+            path ="/reset-password"
+            component={ResetPassword}
+          />
+          <Route path="/admin"> <Admin /> </Route>
+          <Route path="/faq"> <FAQ /> </Route>
+          <Route path="/resources"> <Resources /> </Route>
+          <Route path="/events"> <Events /> </Route>
+          <Route path="/"> <Home /> </Route>
 
-      </Switch>
-    </BrowserRouter>
+        </Switch>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
