@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
 import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
 import Modal from "react-bootstrap/Modal";
+import { createEvent, getAllEvents, getEventById, updateEvent, deleteEvent} from "./EventService"
 
 class events extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            events: [
-                { 'id': 1, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
-                { 'id': 2, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
-                { 'id': 3, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
-                { 'id': 4, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
-                { 'id': 5, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
-            ],
-            eventSelected: false,
+    // constructor(props) {
+    //     super(props);
+    //     // this.state = {
+    //     //     events: [],
+    //     //     eventSelected: false,
+    //     // };
+    // }
 
-        };
+    state = {
+        events: [],
+        eventSelected: false
+    }
+
+    componentDidMount(){
+        console.log("ssssss")
+        this.getEvents()
+    }
+
+    async getEvents(){
+        console.log(this.state, "Sss")
+        let {data} = await getAllEvents()
+        this.setState({events: data.events})
+        console.log(this.state, "ss")
     }
 
     handleSave(save) {
