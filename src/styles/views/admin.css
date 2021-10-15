@@ -1,0 +1,94 @@
+.admin_button {
+    width: 80%;
+    color: white;
+    font-size: 12px;
+}
+
+.admin_button:hover {
+    color: #B70569 ;
+}
+
+.modal_fit {
+    color: #030124;
+}
+
+.react-bs-table-add-btn {
+    background-color: #B70569;
+    color: #FFFFFF;
+    border-radius: 2px;
+    border: none;
+}
+
+.react-bs-table-inser-modal-header {
+    display: flow-root !important;
+    padding-bottom: 0px;
+}
+
+
+/* .react-bs-table-insert-modal  */
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+
+.react-bs-table-insert-modal .modal-body .form-group {
+    margin-bottom: 0.5rem;
+}
+
+.react-bs-table-insert-modal .modal-body label {
+    color: #B70569;
+}
+
+.react-bs-table-insert-modal .modal-body .form-group .form-control {
+    color: #030124;
+    background-color: #fff;
+    font-size: 13px;
+    height: 30px;
+    border-radius: 0.3rem;
+
+}
+
+.react-bs-table-inser-modal-footer .btn {
+    padding: 12px;
+    width: 50px;
+}
+
+.b_table .btn {
+    padding: 1.0rem;
+}
+
+.react-bs-table-pagination {
+    margin-bottom: 25px;
+}
+
+.react-bs-table-pagination row col-md-6,
+.react-bs-table-pagination row col-xs-6,
+.react-bs-table-pagination row col-sm-6,
+.react-bs-table-pagination row col-lg-6 {
+    width: 40%;
+}
+
+.page-item .page-link {
+    color: #B70569;
+}
+
+.active .page-item .page-link {
+    color: #B70569;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.page-item.active .page-link {
+    color: #FFFFFF;
+    background-color: #B70569;
+    border-color: #B70569;
+}
+
+.repo-btn {
+    padding: 12px;
+}
+/* react-bs-table-pagination */
+/* row col-md-6 */

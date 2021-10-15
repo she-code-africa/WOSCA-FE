@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Table = ({colunms}) => {
-    console.log(colunms)
+    // console.log(colunms)
     return (
         <div className="table-container">
             <table>
