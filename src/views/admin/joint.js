@@ -4,6 +4,7 @@ import Events from './events';
 import User from './users';
 import Repos from './repos';
 import '../../styles/views/admin.css';
+import '../../styles/views/react-bootstrap-table-all.min.css';
 
 class Admin extends Component {
     constructor(props) {

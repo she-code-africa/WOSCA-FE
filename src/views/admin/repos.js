@@ -55,9 +55,9 @@ class repos extends Component {
                 <div className="greeting">
                     <h3 className="greeting-text">Submitted PRs</h3>
                 </div>
-                <BootstrapTable className="b_table" ref='users' data={this.state.repos} pagination options={options}  bordered={false} striped hover>
-                    <TableHeaderColumn dataField='id' isKey dataSort={ true }>Repo ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='username' dataSort={ true }>Owner</TableHeaderColumn>
+                <BootstrapTable className="b_table" ref='users' data={this.state.repos} pagination options={options} bordered={false} striped hover>
+                    <TableHeaderColumn dataField='id' isKey dataSort={true}>Repo ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='username' dataSort={true}>Owner</TableHeaderColumn>
                     <TableHeaderColumn dataField='link'>Link</TableHeaderColumn>
                     <TableHeaderColumn dataField='status'>Status</TableHeaderColumn>
                 </BootstrapTable>
@@ -76,9 +76,11 @@ class repos extends Component {
                     <Modal.Body>
                         <p>Owner: {this.state.user}</p>
                         <p><a href={this.state.link}>Visit Repo</a></p>
-                        <button className="btn btn-success">Accept</button>
-                        <button className="btn btn-danger">Reject</button>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <button className="btn btn-success repo-btn">Accept</button>
+                        <button className="btn btn-danger repo-btn">Reject</button>
+                    </Modal.Footer>
                 </Modal>
             </React.Fragment>
         )

@@ -72,5 +72,23 @@
     width: 40%;
 }
 
+.page-item .page-link {
+    color: #B70569;
+}
+
+.active .page-item .page-link {
+    color: #B70569;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.page-item.active .page-link {
+    color: #FFFFFF;
+    background-color: #B70569;
+    border-color: #B70569;
+}
+
+.repo-btn {
+    padding: 12px;
+}
 /* react-bs-table-pagination */
 /* row col-md-6 */
