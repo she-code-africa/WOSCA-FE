@@ -32,7 +32,7 @@ function Events() {
                         </div>
                         <div className="col-md-7 mid">
                             <h1>All Events</h1>
-                            <p className="lead"> Support open source and pick a limited edition T-shirts</p>
+                            <p className="lead">Get free access to our events and programs designed to empower young African girls and women in tech with the technical skills needed to scale in Africa's open-source ecosystem.</p>
                         </div>
                         <div className="col down">
                             <img src={man} alt="..." />

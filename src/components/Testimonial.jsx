@@ -18,7 +18,7 @@ const Jumbotron = () => {
             What do you stand to gain when I join You
           </h2>
           <p className="heading-sub tac">
-            Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!
+            It is important that we reach more African women with the information that the Open Source community is (by and large) mature and friendly, and that contributing to Open Source is valuable for both social and professional reasons.
           </p>
         </div>
 

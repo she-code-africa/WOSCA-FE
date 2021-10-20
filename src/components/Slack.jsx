@@ -11,10 +11,10 @@ const Slack = () => {
             Join our conversation on Slack
           </h2>
           <p className="heading-sub">
-            Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!
+          Be a part of women software developers, designers, technical writers within Africa that support open source. Join our community to get updates on upcoming initiatives.
           </p>
           <div className="sub-div">
-            <button className="btn-sub btn-heading-sub">Join conversation</button>
+            <a href="http://bit.ly/scaslacksignup"><button className="btn-sub btn-heading-sub">Join conversation</button></a>
           </div>
         </div>
       </div>

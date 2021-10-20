@@ -16,7 +16,7 @@ const Jumbo = () => {
                     </div>
                     <div className="col-md-7">
                         <h1>All Resources</h1>
-                        <p className="lead"> Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!</p>
+                        <p className="lead">Get free access to resources and mentors that will help kickstart your journey to world-known contributor. Build allies to drive gender diversity within the open-source ecosystem.</p>
                         <div className="row rr">
                             <div className="col">
                                 <img src={r2} alt=".." className="resources_card r_right" />

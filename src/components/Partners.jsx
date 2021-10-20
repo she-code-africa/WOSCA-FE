@@ -1,9 +1,8 @@
 import React from 'react';
-import Busha from '../assets/images/Busha-Logo.png'
-import Cowrywise from '../assets/images/Cowrywise-Logo.png'
-import Flutterwave from '../assets/images/Flutterwave-Logo.png'
-import Flipay from '../assets/images/Fliqpay-Logo.png'
-import Decagon from '../assets/images/Decagon-Logo.png'
+import CDF from '../assets/images/cdfoundation.png'
+import CB from '../assets/images/cloudbees.png'
+import DH from '../assets/images/deployhub.png'
+import TAC from '../assets/images/theatcompany.png'
 
 const Partners = () => {
     return (
@@ -14,30 +13,30 @@ const Partners = () => {
                     <span className="sub-text">OUR PARTNERS</span>
                     <div className="heading">
                         <p className="heading-sub">
-                            Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we’ll see you next year!
+                        Our sponsors are organizations with interests in the African tech ecosystem and gender diversity, willing to pave the way by helping cover costs involved in running our programs.
                         </p>
                     </div>
                 </div>
                 <div className="col"></div>
             </div>
             <div className="partner-cards">
-            <div className="partner-card">
-                <img alt="..." src={Busha} />
+                <div className="partner-card">
+                    <img alt="..." src={CDF} />
+                </div>
+                <div className="partner-card">
+                    <img alt="..." src={DH} />
+                </div>
+                <div className="partner-card">
+                    <img alt="..." src={TAC} />
+                </div>
+                <div className="partner-card">
+                    <img alt="..." src={CB} />
+                </div>
+                <div className="partner-card">
+                    <img alt="..." src={DH} />
+                </div>
             </div>
-            <div className="partner-card">
-                <img alt="..." src={Cowrywise} />
-            </div>
-            <div className="partner-card">
-                <img alt="..." src={Flutterwave} />
-            </div>
-            <div className="partner-card">
-                <img alt="..." src={Flipay} />
-            </div>
-            <div className="partner-card">
-                <img alt="..." src={Decagon} />
-            </div>
-            </div>
-            
+
         </div>
 
     )

@@ -22,7 +22,7 @@ class Subscribe extends Component {
                             <div className="col"></div>
                             <div className="col-md-7">
                                 <h2>Subscribe to our Newsletter</h2>
-                                <p className="leads"> Support open source and pick a limited edition T-shirt or plant a tree.</p>
+                                <p className="leads"> Sign up to receive email updates on our programs, events and cool prizes.</p>
                                 <Form>
                                     <Form.Row>
                                         <Col md={8} sm={7}>
