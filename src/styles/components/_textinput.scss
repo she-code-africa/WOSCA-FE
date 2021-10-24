@@ -19,9 +19,15 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px $color-white inset !important;
+    background: rgba(63, 63, 63, 0.48) 0% 0% no-repeat padding-box !important;
 }
 input, select, textarea, button {   
     font-family:inherit;
+}
+
+input:-internal-autofill-selected{
+    background: rgba(63, 63, 63, 0.48) 0% 0% no-repeat padding-box !important;
+
 }
 
 input{
@@ -53,7 +59,10 @@ input{
         font-size: 1rem
     }
     height: 10px;
-    background: rgba(63, 63, 63, 0.48) 0% 0% no-repeat padding-box
+    background: rgba(63, 63, 63, 0.48) 0% 0% no-repeat padding-box !important;
+    ::-webkit-autofill{
+        box-shadow: rgba(63, 63, 63, 0.48);
+    }
 }
 
 .input-init::placeholder {
