@@ -7,7 +7,6 @@ import Terms from "../../components/Terms";
 
 import { useUserContext } from "../../context/AuthContext";
 
-
 const SignUpForm = () => {
   const initialState = {
     username: "",
@@ -17,44 +16,68 @@ const SignUpForm = () => {
 
   const [state, setState] = useState(initialState);
   const { setToken, setUser } = useUserContext()
-  // const [errorMsg, setErrorMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
   const history = useHistory();
-
+  const [loading, setLoading] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [showPassword, setShowPassword] = useState(false)
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword)
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState({ ...state, [name]: value });
   };
 
+  const handleCheck = (e) =>{
+    console.log(e.target.checked)
+    setIsChecked(!isChecked)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    signup(state).then((response) => {
-      const { data } = response.data
-      console.log(data)
-      setToken(data.token)
-      setUser(data.user)
-      if (data.message) {
-        history.push(`/dashboard`);
-      }
-    })
-      .catch((error) => {
-        console.log(error);
-        // setErrorMsg(error)
+    if (!isChecked){
+      setErrorMsg("Please Accept Terms of Use")
+    }else{
+      setLoading(true)
+      signup(state).then((response) => {
+        if(response.data){
+          const { data } = response.data
+          if (data.message) {
+            setToken(data.token)
+            setUser(data.user)
+            history.push(`/dashboard`);
+          }
+          setLoading(false)
+        }
+        else{
+          console.log(response)
+          setErrorMsg("Could not Create Account, Check Credentials")
+          setLoading(false)
+        }
       })
-
+      .catch((error) => {
+          console.log(error);
+          setLoading(false)
+          setErrorMsg(error)
+      })
+    }
   };
   return (
     <Auth>
       <div className="form-outline sign-up">
         <div className="form-text-box">
           <h1>Sign Up</h1>
-          <p>Please enter your registered details to sign in</p>
+          <p>Please enter your details to sign up</p>
         </div>
-        <form className="auth-form">
+        <div className="error-message">{errorMsg}</div>
+        <form className="auth-form" >
           <input
             type="text"
             id="name"
@@ -62,6 +85,7 @@ const SignUpForm = () => {
             className="input-init aaa"
             placeholder="Enter Full Name"
             onChange={handleChange}
+            required
           />
 
           <input
@@ -71,25 +95,33 @@ const SignUpForm = () => {
             className="input-init aaa"
             placeholder="Enter Email Address"
             onChange={handleChange}
+            required
           />
 
-          <input
-            type="password"
+         <div className="password-box">
+         <input
+            type={showPassword ? 'text' : 'password'}
             id="password"
             name="password"
             className="input-init aaa"
             placeholder="Choose Password"
             onChange={handleChange}
+            required
           />
+          <i  style={{margin:"auto", zIndex:"2", position:"relative"}}
+              onClick={togglePassword}
+              className={showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'}
+            />
+         </div>
 
-          <div class="round">
-            <input type="checkbox" id="checkbox" />
-            <label for="checkbox"></label>
+          <div className="round">
+            <input type="checkbox" id="checkbox" onClick={handleCheck}/>
+            <label htmlFor="checkbox"></label>
             <span onClick={handleShow}>I accept the  terms of use</span>
           </div>
 
 
-          <button className="btn-xl-pry-in" onClick={handleSubmit}>SIGN UP</button>
+          <button className="btn-xl-pry-in" onClick={handleSubmit}>{loading ? <i className="fa fa-circle-o-notch fa-spin" style={{display:`${loading}`}}></i> : "SIGN UP"}</button>
 
           <div className="signup">
             <p className="prompt">

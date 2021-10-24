@@ -53,6 +53,28 @@
     color: #000;
 }
 
+.error-message{
+    color: red;
+    font-size: .8rem;
+    margin-bottom: 2rem;
+}
+
+.password-box{
+    // background: rgba(63, 63, 63, 0.48) 0% 0% padding-box;
+    height: 55px;
+    margin-bottom: 2rem;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    input{
+        border: 0 !important;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    overflow: hidden;
+}
+
 @media (min-width: 30em) {
     .main-conatiner{
         background-position: 0 550px;

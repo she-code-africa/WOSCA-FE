@@ -14,7 +14,15 @@ const LoginForm = () => {
 
   const [state, setState] = useState(initialState);
   const { setToken, setUser } = useUserContext()
+  const [errorMsg, setErrorMsg] = useState(" ")
+  const [loading, setLoading] = useState(false)
   const history = useHistory();
+
+  const [showPassword, setShowPassword] = useState(false)
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword)
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,19 +31,24 @@ const LoginForm = () => {
   };
 
   const handleSubmit = (event) => {
+    console.log("hi")
+    setLoading(true)
      event.preventDefault()
       signin(state).then((response) => {
-        const {data} = response.data
-        setToken(data.token)
-        setUser(data.user)
-        if (data.message){
-          history.push(`/dashboard`);
-        }
+        if(response.data){
+          const {data} = response?.data
+          if (data.message){
+            setToken(data.token)
+            setUser(data.user)
+            history.push(`/dashboard`);
+          }
+          setLoading(false)
+        }        
         else{
-          return
+          setErrorMsg("Could not Sign User In, Check Credentials")
+          setLoading(false)
         }
       });
-    
   };
 
   return (
@@ -45,7 +58,8 @@ const LoginForm = () => {
           <h1>Sign In</h1>
           <p>Please enter your registered details to sign in</p>
         </div>
-        <form className="auth-form">
+        <form className="auth-form" >
+          <div className="error-message">{errorMsg}</div>
           <input
             type="text"
             id="email"
@@ -53,22 +67,30 @@ const LoginForm = () => {
             className="input-init aaa"
             placeholder="Enter Email Address"
             onChange ={handleChange}
+            required
           />
 
-          <input
-            type="password"
+<div className="password-box">
+         <input
+            type={showPassword ? 'text' : 'password'}
             id="password"
             name="password"
             className="input-init aaa"
-            placeholder="Enter Password"
+            placeholder="Choose Password"
             onChange={handleChange}
+            required
           />
+          <i  style={{margin:"auto", zIndex:"2", position:"relative"}}
+              onClick={togglePassword}
+              className={showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'}
+            />
+         </div>
 
           <a href="/forgot-password" className="forgot-password" onClick={forgotPassword}>
             Forgot Password?
           </a>
 
-          <button className="btn-xl-pry-in" onClick={handleSubmit}>SIGN IN</button>
+          <button className="btn-xl-pry-in" onClick={handleSubmit}>{loading ? <i className="fa fa-circle-o-notch fa-spin" style={{display:`${loading}`}}></i> : "SIGN IN"}</button>
 
           <div className="signup">
             <p className="prompt">
