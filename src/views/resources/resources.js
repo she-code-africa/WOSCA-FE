@@ -5,7 +5,7 @@ import Subscribe from "../../components/subscribe";
 import '../../styles/views/resources.css';
 import Jumbotron from '../../components/resource_jumbo';
 import Number from '../../components/resource_number';
-import Values from '../../components/resource_values';
+import Values from '../../components/resource_values'; 
 
 function Resources() {
     return (

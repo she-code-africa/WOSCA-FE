@@ -23,13 +23,13 @@ const Rewards = () => {
             <div className="reward-1">
               <img src={shirt} alt="t-shirt" />
               <p className="heading">T-Shirt and Swags</p>
-              <p>Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!</p>
+              <p>Support open source and pick a limited edition T-shirt or plant a tree. Gain referrals from participating mentor organization and build career potentials within the field. </p>
             </div>
           </div>
           <div className="col reward-2s">
             <div className="reward-2">
               <p className="heading">Contributions</p>
-              <p>Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!</p>
+              <p>Contribute to get hands-on experience with dedicated mentoring in OS development & contribution. Also an opportunity to give back to the open source community by helping create more diversity & newer talents within the ecosystem.</p>
             </div>
           </div>
         </div>

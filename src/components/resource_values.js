@@ -83,9 +83,9 @@ class Values extends Component {
                         {
                             this.state.beginners ? (
                                 <>
-                                    <p className="r_value_h_active">Getting Started</p>
+                                    <p className="r_value_h_active">Beginners</p>
                                     <p className="r_value_b_active">
-                                        Getting started with Hacktoberfest
+                                        If you’re new to open source
                                     </p>
                                     <img src={arrow} alt=".." className="r_value_active_img2" />
                                 </>
@@ -102,9 +102,9 @@ class Values extends Component {
                         {
                             this.state.maintainers ? (
                                 <>
-                                    <p className="r_value_h_active">Getting Started</p>
+                                    <p className="r_value_h_active">Maintainers</p>
                                     <p className="r_value_b_active">
-                                        Getting started with Hacktoberfest
+                                        If you’re new to open source
                                     </p>
                                     <img src={arrow} alt=".." className="r_value_active_img2" />
                                 </>

@@ -10,11 +10,11 @@ const Jumbotron = () => {
         <div className="heading">
           <h1 className="heading-primary">
             <span className="heading-main">
-              Open Source Projects Rewarded heavily
+              Open Source Projects Rewarded Heavily
             </span>
           </h1>
           <p className="heading-sub">
-            Support open source and pick a limited edition T-shirt or plant a tree. SCA Open source challenge 2020 has ended. Keep contributing to open source & we'll see you next year!
+          Support open source and win cool prizes while helping us create more gender diversity and inclusion of African women within the open-source ecosystem.
           </p>
         </div>
         <form className="homeform_">

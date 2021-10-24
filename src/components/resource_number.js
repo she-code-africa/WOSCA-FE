@@ -12,7 +12,7 @@ const Number = () => {
                 </div>
                 <div className="col">
                     <p className="resource_lead">
-                        Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we’ll see you next year!
+                        To be able to participate in our challenges, you have to be a female who resides in Africa. You must be able to demonstrate prior experience and background knowledge in field of interest by submitting role descriptions and work samples. No prior experience or knowledge? Don't worry. Sign up for our events and learn with us.
                     </p>
                 </div>
             </div>
@@ -22,7 +22,7 @@ const Number = () => {
                 </div>
                 <div className="col">
                     <p className="resource_lead">
-                        Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we’ll see you next year!
+                        Register for challenges and get matched with mentor organizations. Get the oppourtunity to improve your tehnical skills while getting hands-on experience with your dedicated mentor(s). You can also gain referrals from participating mentor organizations and build your career potentials within the field.
                     </p>
                 </div>
             </div>
@@ -32,7 +32,7 @@ const Number = () => {
                 </div>
                 <div className="col">
                     <p className="resource_lead">
-                        Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we'll see you next year!Support open source and pick a limited edition T-shirt or plant a tree. Hacktoberfest 2020 has ended. Keep contributing to open source & we’ll see you next year!
+                        While in the program, you're expected to submit high-quality work and regularly communicate with your mentor and the broader community, listen and respond to feedback, submit your project report and evaluation within the stipulated time frame, and re-evaluate work scope when significantly ahead of or behind expectations.
                     </p>
                 </div>
             </div>
