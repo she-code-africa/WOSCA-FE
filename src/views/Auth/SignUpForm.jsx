@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import Auth from "./AuthPage";
-import {signup} from "./AuthService";
+import { signup } from "./AuthService";
 import { useHistory } from "react-router-dom";
+import { Modal, Button } from "react-bootstrap";
+import Terms from "../../components/Terms";
 
-import { useUserContext } from "../../context/AuthContext"
+import { useUserContext } from "../../context/AuthContext";
+
 
 const SignUpForm = () => {
   const initialState = {
-     username: "",
-     email: "",
-     password: "",
+    username: "",
+    email: "",
+    password: "",
   }
 
   const [state, setState] = useState(initialState);
@@ -18,6 +21,9 @@ const SignUpForm = () => {
   const history = useHistory();
 
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,21 +31,21 @@ const SignUpForm = () => {
   };
 
   const handleSubmit = (event) => {
-     event.preventDefault()
-      signup(state).then((response) => {
-        const { data } = response.data
-        console.log(data)
-        setToken(data.token)
-        setUser(data.user)
-        if (data.message){
-          history.push(`/dashboard`);
-        }
-      })
+    event.preventDefault()
+    signup(state).then((response) => {
+      const { data } = response.data
+      console.log(data)
+      setToken(data.token)
+      setUser(data.user)
+      if (data.message) {
+        history.push(`/dashboard`);
+      }
+    })
       .catch((error) => {
         console.log(error);
         // setErrorMsg(error)
       })
-    
+
   };
   return (
     <Auth>
@@ -77,9 +83,11 @@ const SignUpForm = () => {
           />
 
           <div class="round">
-              <input type="checkbox" id="checkbox" />
-              <label for="checkbox"></label>
-            </div>
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox"></label>
+            <span onClick={handleShow}>I accept the  terms of use</span>
+          </div>
+
 
           <button className="btn-xl-pry-in" onClick={handleSubmit}>SIGN UP</button>
 
@@ -93,6 +101,27 @@ const SignUpForm = () => {
           </div>
         </form>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        // size="lg"
+        backdrop="static"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Terms & Conditions of Use</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Terms />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleClose}>
+            UNDERSTOOD
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Auth>
   );
 };
