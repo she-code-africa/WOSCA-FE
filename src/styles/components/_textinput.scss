@@ -286,12 +286,22 @@ input{
 /* Text area - Init */
 
 .texta-init{
-    @include border;
-    @include border-radius;
-    @include padding-sm;
-    width: 40rem;
-    height: 12.8rem;
+    border: solid thin rgba(112, 112, 112, 0.48);
+    // @include padding-sm;
+    // height: 12.8rem;
     background: transparent;
+    padding:1rem;
+    margin-bottom: 2rem;
+    ::-webkit-input-placeholder{
+        color: #fff;
+        font-size: 1rem
+    }
+    background: rgba(63, 63, 63, 0.48) 0% 0% no-repeat padding-box !important;
+}
+
+.texta-init::placeholder {
+    color: rgb(209, 209, 209, 0.69);
+    font-size: 12px;
 }
 
 .texta-actv{

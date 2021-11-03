@@ -10,6 +10,8 @@ import Resources from "../src/views/resources/resources";
 import ForgotPassword from "./views/Auth/ForgotPassword";
 import ResetPassword from "./views/Auth/ResetPassword";
 import Admin from "./views/admin/joint";
+import AdminLogin from "./views/admin/LoginForm"
+import AdminSignup from "./views/admin/SignUpForm"
 
 import { ProtectedRoute, GuestRoute } from './components/routes';
 
@@ -20,6 +22,16 @@ function App() {
     <UserProvider>
       <BrowserRouter>
         <Switch>
+          <GuestRoute exact
+            path="/admin/login"
+            name="AdminLogin"
+            component={AdminLogin}
+          />
+          <GuestRoute exact
+            path="/admin/request_access"
+            name="AdminSignup"
+            component={AdminSignup}
+          />
           <GuestRoute exact
             path="/signup"
             name="SignUpForm"
