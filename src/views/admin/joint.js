@@ -1,55 +1,81 @@
 import React, { Component } from "react";
 import Logo from "../../assets/icons/Logo.png";
+import Dashboard from "./custom";
 import Events from './events';
 import User from './users';
 import Repos from './repos';
 import '../../styles/views/admin.css';
-import '../../styles/views/react-bootstrap-table-all.min.css';
+import { FiBell } from 'react-icons/fi';
+import { MdKeyboardArrowDown } from 'react-icons/md';
+
 
 class Admin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 0
+            value: 0,
+            subMenu: false
         };
     }
-    showUsers = () => {
+    showDashboard = () => {
         this.setState({ value: 0 });
     }
-    showRepos = () => {
+    showUsers = () => {
         this.setState({ value: 1 });
     }
-    showEvents = () => {
+    showRepos = () => {
         this.setState({ value: 2 });
     }
+    showEvents = () => {
+        this.setState({ value: 3 });
+    }
+    showsubmenu = () => {
+        this.setState(prevState => ({
+            subMenu: !prevState.subMenu
+        }));
+    }
+
     render() {
+        const { value, subMenu } = this.state;
         return (
             <div className="dashboard">
                 <div className="">
-                    <div className="logo-box">
+                    <div className="logo-box a-box">
                         <img src={Logo} alt="Logo" className="logo" />
-                    </div>
-                    <div className="dashboard-body">
-                        <div className="greeting"> <p className="greeting-text">Good Morning, Admin</p></div>
-                        <div className="row contribution-cards">
-                            <div className="col">
-                                <button
-                                    className="sub-button admin_button" onClick={() => { this.showEvents(); }}>ADD EVENTS
-                                </button>
+                        <ul>
+                            <li className={value === 0 ? "admin-active" : ""} onClick={() => { this.showDashboard(); }} >Dashboard</li>
+                            <li className={value === 1 ? "admin-active" : ""} onClick={() => { this.showUsers(); }} >My Users</li>
+                            <li className={value === 3 ? "admin-active" : ""} onClick={() => { this.showEvents(); }} >All Events</li>
+                            <li className={value === 2 ? "admin-active" : ""} onClick={() => { this.showRepos(); }} >All PRs</li>
+                        </ul>
+                        <div className="right-bar">
+                            <div>
+                                <FiBell className="belln" />
+                                <span className="far-right" onClick={() => { this.showsubmenu(); }} >
+                                    <icon>LK</icon>
+                                    <text>
+                                        Lola
+                                    </text>
+                                    < MdKeyboardArrowDown  />
+                                </span>
                             </div>
-                            <div className="col">
-                                <button
-                                    className="sub-button admin_button" onClick={() => { this.showRepos(); }}> VIEW PRs
-                                </button>
-                            </div>
-                            <div className="col">
-                                <button
-                                    className="sub-button admin_button" onClick={() => { this.showUsers(); }}>VIEW USERS
-                                </button>
-                            </div>
+                            {
+                                subMenu ?
+                                    <div className="below">
+                                        <ol>
+                                            <li><a href="#">My Profile</a></li>
+                                            <li><a href="#">Log Out</a></li>
+                                        </ol>
+                                    </div>
+                                    :
+                                    <></>
+                            }
+
                         </div>
+                    </div>
+                    <div className="dashboard-body admin-body">
                         {
-                            this.state.value === 2 ? (<Events />) : this.state.value === 1 ? (<Repos />) : (<User />)
+                            this.state.value === 3 ? (<Events />) : this.state.value === 2 ? (<Repos />) : this.state.value === 1 ? (<User />) : (<Dashboard />)
                         }
                     </div>
                 </div>

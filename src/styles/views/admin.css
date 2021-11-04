@@ -1,75 +1,133 @@
-.admin_button {
-    width: 80%;
-    color: white;
-    font-size: 12px;
+.logo-box img {
+    margin-right: 1rem;
 }
 
-.admin_button:hover {
-    color: #B70569 ;
-}
-
-.modal_fit {
-    color: #030124;
-}
-
-.react-bs-table-add-btn {
-    background-color: #B70569;
-    color: #FFFFFF;
-    border-radius: 2px;
-    border: none;
-}
-
-.react-bs-table-inser-modal-header {
+.a-box {
     display: flow-root !important;
-    padding-bottom: 0px;
 }
 
-
-/* .react-bs-table-insert-modal  */
-.modal-body {
-    max-height: 60vh;
-    overflow-y: auto;
+.logo-box ul {
+    list-style: none;
+    display: inline;
 }
 
-.modal-dialog{
-    overflow-y: initial !important
+.logo-box ul li {
+    display: inline;
+    margin-top: 50px;
+    font-size: 16px;
+    border-bottom: #5e4d5630 solid 5px;
+    padding: 1px 10px 3px 0px;
+    cursor: pointer;
 }
 
-.react-bs-table-insert-modal .modal-body .form-group {
-    margin-bottom: 0.5rem;
+.admin-active {
+    border-bottom: #B70569 solid 5px !important;
 }
 
-.react-bs-table-insert-modal .modal-body label {
+.admin-greeting {
+    margin-top: 30px;
+    margin-left: 14px;
+}
+
+.admin-greeting p {
+    font-size: 20px;
+}
+
+.admin-body {
+    max-width: 85% !important;
+}
+
+.right-bar {
+    float: right;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.right-bar .belln {
+    padding: 30px 15px 5px 5px;
+    font-size: 30px;
     color: #B70569;
 }
 
-.react-bs-table-insert-modal .modal-body .form-group .form-control {
-    color: #030124;
+.right-bar .belln:hover {
+    border-radius: 20%;
     background-color: #fff;
-    font-size: 13px;
-    height: 30px;
-    border-radius: 0.3rem;
-
+    color: gray;
+    padding: 5px;
+    margin: 25px 10px 0px 0px;
 }
 
-.react-bs-table-inser-modal-footer .btn {
-    padding: 12px;
-    width: 50px;
+.right-bar span {
+    padding: 12px 4px 2px 10px;
+    margin: 20px 15px 5px 5px;
 }
 
-.b_table .btn {
-    padding: 1.0rem;
+.admin-cards {
+    margin-top: 2rem !important;
+    margin-left: 18px !important;
 }
 
-.react-bs-table-pagination {
+.right-bar span svg {
+    padding: 0px 5px 5px 5px;
+    font-size: 30px;
+    color: grey;
+    float: right;
+}
+
+.far-right {
+    position: absolute;
+}
+
+.far-right:hover {
+    background-color: #3F3F3F42;
+    border-radius: 2%;
+}
+
+.far-right icon {
+    background-color: #fff;
+    color: #84024A;
+    border-radius: 15%;
+    padding: 10px;
+}
+
+.far-right text {
+    padding: 8px;
+}
+
+.below {
+    /* float: right; */
+    margin-top: 5px;
+    background-color: #3F3F3F42;
+    border: 1px solid #70707042;
+    border-radius: 2%;
+}
+
+.below ol {
+    list-style-type: none;
+    padding: 2px 0px 1px 0px;
+}
+
+.below ol li {
+    list-style-type: none;
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+}
+
+.below ol li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.below ol li:hover {
+    background-color: #B70569;
+}
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* PREVIOUS STYLES */
+/* .react-bs-table-pagination {
     margin-bottom: 25px;
-}
-
-.react-bs-table-pagination row col-md-6,
-.react-bs-table-pagination row col-xs-6,
-.react-bs-table-pagination row col-sm-6,
-.react-bs-table-pagination row col-lg-6 {
-    width: 40%;
 }
 
 .page-item .page-link {
@@ -81,14 +139,9 @@
     background-color: #FFFFFF;
     border-color: #FFFFFF;
 }
+
 .page-item.active .page-link {
     color: #FFFFFF;
     background-color: #B70569;
     border-color: #B70569;
-}
-
-.repo-btn {
-    padding: 12px;
-}
-/* react-bs-table-pagination */
-/* row col-md-6 */
+} */
