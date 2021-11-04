@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Logo from "../assets/icons/Logo.png";
 import '../styles/components/header.css';
+import { UserContext } from "../context/AuthContext"
 
 class Header extends Component {
     constructor(props) {
@@ -10,7 +11,9 @@ class Header extends Component {
         };
     }
 
+    
     render() {
+       const { token, user } = this.context
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-md navbar-lighter bg-lighter">
@@ -36,12 +39,15 @@ class Header extends Component {
                                 <a className="nav-link" href="/faq">FAQs</a>
                             </li>
                         </ul>
-                        <a className="nav-link" href="signin">Sign In</a>
-                        <a href="signup"><button className="btn btn-outline my-2 my-sm-0">GET STARTED</button></a>
+                        {!token ? <a className="nav-link" href="signin">Sign In</a>: ''}
+                        {user?.username ? 
+                            <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">VISIT DASHBOARD</button></a> : 
+                            <a href="signup"><button className="btn btn-outline my-2 my-sm-0">GET STARTED</button></a>}
                     </div>
                 </nav>
             </React.Fragment>
         )
     }
 }
+Header.contextType = UserContext
 export default Header;

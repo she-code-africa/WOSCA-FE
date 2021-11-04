@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/images/she-code-africa-logo.svg";
 import {Card, BigCard} from "../../components/Card";
+import { Link } from "react-router-dom";
 import Table from "../../components/Table"
 import {AiOutlineLink} from 'react-icons/ai'
 import {BsCheckAll, BsArrowRight} from 'react-icons/bs'
@@ -14,7 +15,9 @@ function Dashboard() {
       <div className="dashboard">
         <div className="">
           <div className="logo-box">
-            <img src={Logo} alt="Logo" className="logo" />
+            <Link to="/">
+              <img src={Logo} alt="Logo" className="logo" />
+            </Link>
           </div>
           <div className="dashboard-body">
            <div className="greeting"> <p className="greeting-text">Good Morning, {user?.username}</p></div>
