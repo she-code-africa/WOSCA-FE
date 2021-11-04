@@ -51,12 +51,12 @@ class Admin extends Component {
                         <div className="right-bar">
                             <div>
                                 <FiBell className="belln" />
-                                <span className="far-right">
+                                <span className="far-right" onClick={() => { this.showsubmenu(); }} >
                                     <icon>LK</icon>
                                     <text>
                                         Lola
                                     </text>
-                                    < MdKeyboardArrowDown onClick={() => { this.showsubmenu(); }} />
+                                    < MdKeyboardArrowDown  />
                                 </span>
                             </div>
                             {
