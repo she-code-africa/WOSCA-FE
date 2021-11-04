@@ -88,11 +88,11 @@ const SignUpForm = () => {
             />
          </div> */}
 
-          <textarea className="texta-init" name="access" rows="4" cols="50" placeholder="Why do you want access?" onChange={handleChange}>
+          <textarea className="texta-init aaa" name="access" rows="4" cols="50" placeholder="Why do you want access?" onChange={handleChange}>
              
           </textarea>
 
-          <button className="btn-xl-pry-in" onClick={handleSubmit}>{loading ? <i className="fa fa-circle-o-notch fa-spin" style={{display:`${loading}`}}></i> : "Log In"}</button>
+          <button className="btn-xl-pry-in" onClick={handleSubmit}>{loading ? <i className="fa fa-circle-o-notch fa-spin" style={{display:`${loading}`}}></i> : "Request Access"}</button>
 
           <div className="signup">
             <p className="prompt">
