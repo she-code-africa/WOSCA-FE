@@ -1,0 +1,46 @@
+.auth-logo{
+    height: 60px;
+}
+
+.admin-page{
+    background-position: 0 350px !important;
+    height: 100vh
+}
+
+.admin-form{
+    border-radius: 8px !important;
+    padding: 25px !important;
+    width: 400px !important;
+
+    form{
+        margin-top: 0 !important;
+    }
+
+    input{
+        border-radius: 0 !important;
+    }
+
+    button{
+        border-radius: 0 !important;
+    }
+}
+
+.admin{
+    display: flex;
+    justify-content: center;
+
+    .logo-box{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-form{
+        width: auto !important;
+    }
+
+    .auth-logo{
+        margin-bottom: 30px;
+    }
+}
