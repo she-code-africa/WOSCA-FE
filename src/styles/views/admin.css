@@ -122,26 +122,45 @@
     background-color: #B70569;
 }
 
-/* ============================ */
-/* ============================ */
-/* ============================ */
-/* PREVIOUS STYLES */
-/* .react-bs-table-pagination {
-    margin-bottom: 25px;
+.MuiPaper-root {
+    background-color: transparent !important;
 }
 
-.page-item .page-link {
+/*  */
+.MuiSelect-select.MuiSelect-select {
+    color: #B70569;
+ }
+
+.MuiTablePagination-input svg {
+    color: #B70569 !important;
+}
+
+.MuiList-root li {
+    background: #FFFFFF;
     color: #B70569;
 }
 
-.active .page-item .page-link {
-    color: #B70569;
-    background-color: #FFFFFF;
-    border-color: #FFFFFF;
-}
-
-.page-item.active .page-link {
-    color: #FFFFFF;
+/*  */
+.MuiList-root li:hover {
     background-color: #B70569;
-    border-color: #B70569;
-} */
+    color: #FFFFFF;
+    
+}
+.MuiList-root .Mui-selected {
+    background-color: #B70569 !important;
+    color: #FFFFFF !important;
+}
+
+.MuiTablePagination-spacer {
+    flex: none !important;
+}
+
+.MuiToolbar-gutters {
+    padding-left: 0px !important;
+}
+
+@media (min-width: 600px) {
+    .MuiToolbar-gutters {
+        padding-left: 0px !important;
+    }
+}

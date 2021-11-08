@@ -63,8 +63,8 @@ class Admin extends Component {
                                 subMenu ?
                                     <div className="below">
                                         <ol>
-                                            <li><a href="#">My Profile</a></li>
-                                            <li><a href="#">Log Out</a></li>
+                                            <li><a href="/">My Profile</a></li>
+                                            <li><a href="/">Log Out</a></li>
                                         </ol>
                                     </div>
                                     :
