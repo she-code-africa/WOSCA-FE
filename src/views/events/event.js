@@ -57,9 +57,10 @@ function Events() {
                     </Form>
                 </div>
                 <div className="row events">
-                    { eventCards }
+                    {eventCards}
                 </div>
-                <Subscribe />
+                {/* <Subscribe /> */}
+                <div className="jumbotron"></div>
             </div>
             <Footer />
         </React.Fragment >

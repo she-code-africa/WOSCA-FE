@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-import Subscribe from "../../components/subscribe";
+// import Subscribe from "../../components/subscribe";
 import '../../styles/views/resources.css';
 import Jumbotron from '../../components/resource_jumbo';
 import Number from '../../components/resource_number';
@@ -14,7 +14,8 @@ function Resources() {
             <Jumbotron />
             <Values />
             <Number />
-            <Subscribe />
+            {/* <Subscribe /> - remove jumbotron when subscribe returns */}
+            <div className="jumbotron"></div>
             <Footer />
         </React.Fragment>
     )
