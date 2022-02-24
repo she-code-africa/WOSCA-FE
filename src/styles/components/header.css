@@ -4,6 +4,12 @@
     top: 40px;
 } */
 
+.navbar-toggler-icon {
+  content: "<i class='fas fa-bars'></i>" !important;
+  background-color: #B70569;
+  color: #B70569;
+}
+
 .logo{
     height: 65px;
 }

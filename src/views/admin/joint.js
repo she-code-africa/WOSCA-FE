@@ -9,7 +9,6 @@ import '../../styles/views/admin.css';
 import { FiBell } from 'react-icons/fi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-
 class Admin extends Component {
     constructor(props) {
         super(props);
@@ -42,50 +41,52 @@ class Admin extends Component {
     render() {
         const { value, subMenu } = this.state;
         return (
-            <div className="dashboard">
-                <div className="">
-                    <div className="logo-box a-box">
-                        <img src={Logo} alt="Logo" className="logo" />
-                        <ul>
-                            <li className={value === 0 ? "admin-active" : ""} onClick={() => { this.showDashboard(); }} >Dashboard</li>
-                            <li className={value === 1 ? "admin-active" : ""} onClick={() => { this.showUsers(); }} >My Users</li>
-                            <li className={value === 3 ? "admin-active" : ""} onClick={() => { this.showEvents(); }} >All Events</li>
-                            <li className={value === 4 ? "admin-active" : ""} onClick={() => { this.showPrograms(); }} >All Programs</li>
-                            <li className={value === 2 ? "admin-active" : ""} onClick={() => { this.showRepos(); }} >All PRs</li>
-                        </ul>
-                        <div className="right-bar">
-                            <div>
-                                <FiBell className="belln" />
-                                <span className="far-right" onClick={() => { this.showsubmenu(); }} >
-                                    <icon>LK</icon>
-                                    <text>
-                                        Lola
-                                    </text>
-                                    < MdKeyboardArrowDown />
-                                </span>
-                            </div>
-                            {
-                                subMenu ?
-                                    <div className="below">
-                                        <ol>
-                                            <li><a href="/">Main Site</a></li>
-                                            <li><a href="/">My Profile</a></li>
-                                            <li><a href="/">Log Out</a></li>
-                                        </ol>
-                                    </div>
-                                    :
-                                    <></>
-                            }
+            <>
+                <div className="dashboard">
+                    <div className="">
+                        <div className="logo-box a-box">
+                            <img src={Logo} alt="Logo" className="logo" />
+                            <ul>
+                                <li className={value === 0 ? "admin-active" : ""} onClick={() => { this.showDashboard(); }} >Dashboard</li>
+                                <li className={value === 1 ? "admin-active" : ""} onClick={() => { this.showUsers(); }} >My Users</li>
+                                <li className={value === 3 ? "admin-active" : ""} onClick={() => { this.showEvents(); }} >All Events</li>
+                                <li className={value === 4 ? "admin-active" : ""} onClick={() => { this.showPrograms(); }} >All Programs</li>
+                                <li className={value === 2 ? "admin-active" : ""} onClick={() => { this.showRepos(); }} >All PRs</li>
+                            </ul>
+                            <div className="right-bar">
+                                <div>
+                                    <FiBell className="belln" />
+                                    <span className="far-right" onClick={() => { this.showsubmenu(); }} >
+                                        <icon>LK</icon>
+                                        <text>
+                                            Lola
+                                        </text>
+                                        < MdKeyboardArrowDown />
+                                    </span>
+                                </div>
+                                {
+                                    subMenu ?
+                                        <div className="below">
+                                            <ol>
+                                                <li><a href="/">Main Site</a></li>
+                                                <li><a href="/">My Profile</a></li>
+                                                <li><a href="/">Log Out</a></li>
+                                            </ol>
+                                        </div>
+                                        :
+                                        <></>
+                                }
 
+                            </div>
+                        </div>
+                        <div className="dashboard-body admin-body">
+                            {
+                                this.state.value === 4 ? (<Programs />) : this.state.value === 3 ? (<Events />) : this.state.value === 2 ? (<Repos />) : this.state.value === 1 ? (<User />) : (<Dashboard />)
+                            }
                         </div>
                     </div>
-                    <div className="dashboard-body admin-body">
-                        {
-                            this.state.value === 4 ? (<Programs />) : this.state.value === 3 ? (<Events />) : this.state.value === 2 ? (<Repos />) : this.state.value === 1 ? (<User />) : (<Dashboard />)
-                        }
-                    </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
