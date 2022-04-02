@@ -6,6 +6,7 @@ import Programs from './programs';
 import User from './users';
 import Repos from './repos';
 import '../../styles/views/admin.css';
+import Header from '../../components/admin-head';
 import { FiBell } from 'react-icons/fi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
@@ -17,32 +18,36 @@ class Admin extends Component {
             subMenu: false
         };
     }
-    showDashboard = () => {
-        this.setState({ value: 0 });
-    }
-    showUsers = () => {
-        this.setState({ value: 1 });
-    }
-    showRepos = () => {
-        this.setState({ value: 2 });
-    }
-    showEvents = () => {
-        this.setState({ value: 3 });
-    }
-    showPrograms = () => {
-        this.setState({ value: 4 });
-    }
-    showsubmenu = () => {
-        this.setState(prevState => ({
-            subMenu: !prevState.subMenu
-        }));
-    }
+    // showDashboard = () => {
+    //     this.setState({ value: 0 });
+    // }
+    // showUsers = () => {
+    //     this.setState({ value: 1 });
+    // }
+    // showRepos = () => {
+    //     this.setState({ value: 2 });
+    // }
+    // showEvents = () => {
+    //     this.setState({ value: 3 });
+    // }
+    // showPrograms = () => {
+    //     this.setState({ value: 4 });
+    // }
+    // showsubmenu = () => {
+    //     this.setState(prevState => ({
+    //         subMenu: !prevState.subMenu
+    //     }));
+    // }
 
     render() {
         const { value, subMenu } = this.state;
         return (
             <>
-                <div className="dashboard">
+                <Header />
+                <div className="container">
+                    <Dashboard />
+                </div>
+                {/* <div className="dashboard">
                     <div className="">
                         <div className="logo-box a-box">
                             <img src={Logo} alt="Logo" className="logo" />
@@ -85,7 +90,7 @@ class Admin extends Component {
                             }
                         </div>
                     </div>
-                </div>
+                </div> */}
             </>
         )
     }

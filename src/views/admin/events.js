@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../../components/admin-head';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import MuiTableCell from "@material-ui/core/TableCell";
 import {
@@ -75,8 +76,10 @@ function Events() {
 
     return (
         <React.Fragment>
-            <div className="admin-greeting"> <p>All Events</p></div>
-            <div className="contribution-cards admin-cards">
+            <Header />
+            <div className="container">
+                <div className="admin-greeting"> <p>All Events</p></div>
+                <div className="contribution-cards admin-cards">
                 <TableContainer component={Paper} className={classes.tableContainer}>
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead style={{ backgroundColor: '#3F3F3F99' }}>
@@ -127,6 +130,7 @@ function Events() {
                         </TableFooter>
                     </Table>
                 </TableContainer>
+            </div>
             </div>
         </React.Fragment>
     );
