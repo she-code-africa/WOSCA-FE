@@ -21,7 +21,9 @@ class Header extends Component {
                         <img src={Logo} alt="Logo" className="logo" />
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon">
+                        </span>
+                        {/* <i class="fas fa-bars"></i> */}
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -42,10 +44,7 @@ class Header extends Component {
                                 <a className="nav-link" href="/faq">FAQs</a>
                             </li>
                         </ul>
-                        {!token ? <a className="nav-link" href="signin">Sign In</a> : ''}
-                        {user?.username ?
-                            <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">VISIT DASHBOARD</button></a> :
-                            <a href="signup"><button className="btn btn-outline my-2 my-sm-0">GET STARTED</button></a>}
+                        <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">LOGOUT</button></a>
                     </div>
                 </nav>
             </React.Fragment>

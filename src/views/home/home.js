@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-import Subscribe from "../../components/subscribe";
+// import Subscribe from "../../components/subscribe";
 import Jumbotron from '../../components/Jumbotron';
 import Rewards from '../../components/Rewards';
 import Testimonial from '../../components/Testimonial';
@@ -19,7 +19,8 @@ function Home() {
                 <Partners />
                 <Slack />
             </div>
-            <Subscribe />
+            {/* <Subscribe /> */}
+            <div className="jumbotron"></div>
             <Footer />
         </React.Fragment>
     )

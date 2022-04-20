@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Header from '../../components/header';
-import Subscribe from '../../components/subscribe';
+// import Subscribe from '../../components/subscribe';
 import Footer from '../../components/footer';
 import '../../styles/views/faq.css';
 import Accordion from "react-bootstrap/Accordion";
@@ -193,7 +193,9 @@ function FAQ() {
 
                 </div>
 
-                <Subscribe />
+                {/* <Subscribe /> */}
+                <div className="jumbotron"></div>
+                {/* Remove when subscribe returns */}
             </div>
             <Footer />
 

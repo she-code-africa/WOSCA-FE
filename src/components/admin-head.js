@@ -11,7 +11,6 @@ class Header extends Component {
         };
     }
 
-
     render() {
         const { token, user } = this.context
         return (
@@ -21,31 +20,31 @@ class Header extends Component {
                         <img src={Logo} alt="Logo" className="logo" />
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon">
+                        </span>
+                        {/* <i class="fas fa-bars"></i> */}
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/admin">Dashboard <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/resources">Resources</a>
+                                <a className="nav-link" href="/users">Users</a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/events">Events</a>
+                                <a className="nav-link" href="/adm/events">Events</a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/programs">Programs</a>
+                                <a className="nav-link" href="/adm/programs">Programs</a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/faq">FAQs</a>
+                                <a className="nav-link" href="/repos">PRs</a>
                             </li>
                         </ul>
-                        {!token ? <a className="nav-link" href="signin">Sign In</a> : ''}
-                        {user?.username ?
-                            <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">VISIT DASHBOARD</button></a> :
-                            <a href="signup"><button className="btn btn-outline my-2 my-sm-0">GET STARTED</button></a>}
+                        <a className="nav-link" href="signout">Log Out</a>
+                        <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">Lola</button></a>
                     </div>
                 </nav>
             </React.Fragment>
