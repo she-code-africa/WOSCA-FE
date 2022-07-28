@@ -62,9 +62,6 @@ class Card extends Component {
                             REGISTER
                         </a>
                     </Button>
-                    {/* <a href={this.props.eventLink} target="_blank" rel="noreferrer">
-                        <Button className="eventcard-button event-button">REGISTER</Button>
-                        </a> */}
                     <Button className="eventcard-button event-button" onClick={this.handleClose}>CLOSE</Button>
                 </Modal.Footer>
 

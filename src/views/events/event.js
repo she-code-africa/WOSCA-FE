@@ -8,7 +8,7 @@ import '../../styles/views/event.css';
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import {events_} from './eventService';
+import {events_, events_search} from './eventService';
 import { CircularProgress } from '@material-ui/core';
 
 
@@ -22,17 +22,30 @@ class Events extends Component {
             show: false,
             setShow: false,
             eventsList: [],
-            message: ''
+            message: '',
+            location: '',
         };
     }
 
-    handleSearch = () => {
-        // start loading
+    changeHandler = (event) => {
+        this.setState({ [event.target.name]: event.target.value })
+    }
+
+    handleSearch = (e) => {
+        e.preventDefault();
         this.setState({ loading: true })
-        console.log("let's search")
-        // call API
-        // then if empty - diplay not found
-        // if not empty - replace displayed event
+        var locator = this.state.location;
+        events_search(locator)
+            .then((response) => {
+                var results = response.data.data.events;
+                this.setState({ loading: false })
+                if (results.length > 0) {
+                    this.setState({ message: ''})
+                    this.setState({ eventsList: results })
+                } else {
+                    this.setState({ message: `No events found for ${locator}!` })
+                }
+            })
     }
 
     render() {
@@ -54,16 +67,16 @@ class Events extends Component {
                                 <img src={man} alt="..." />
                             </div>
                         </div>
-                        <Form className="form">
+                        <Form className="form" onSubmit={this.handleSearch}>
                             <Form.Row>
                                 <Col>
                                     <Form.Control placeholder="Location" readOnly style={{visibility:'hidden'}} />
                                 </Col>
                                 <Col>
-                                    <Form.Control placeholder="Location"  />
+                                    <Form.Control placeholder="Location" name="location" value={this.state.location} onChange={this.changeHandler}  />
                                 </Col>
                                 <Col >
-                                    <Button className="sub-button event-button" onClick>SEARCH</Button>
+                                    <Button className="sub-button event-button" type="submit">SEARCH</Button>
                                 </Col>
                                 <Col className="hide-form"></Col>
                             </Form.Row>
@@ -78,7 +91,7 @@ class Events extends Component {
                     {
                         this.state.message ? 
                         <div className='row'>
-                            <p  style={{marginLeft:'auto', marginRight:'auto' }}>{this.state.message}</p>
+                            <p  style={{marginLeft:'auto', marginRight:'auto', color:'#B70569' }}>{this.state.message}</p>
                         </div>
                         :
                         <div className="row events">
@@ -103,13 +116,10 @@ class Events extends Component {
     async componentDidMount() {
         await events_()
             .then((response) => {
-                
-        console.log('here')
                 var vop = response.data
                 var all_events = vop.data.events
                 this.setState({ loading: false })
                 if (all_events.length > 0) {
-                    console.log(all_events.length)
                     this.setState({ eventsList: all_events })
                 } else {
                     this.setState({ message: 'No events found!' })
