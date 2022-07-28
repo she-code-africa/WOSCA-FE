@@ -148,9 +148,12 @@ function FAQ() {
                                     <Accordion.Collapse eventKey="a">
                                         <Card.Body>
                                             <div className="row">
-                                                <div className="col-md-11">
-                                                    <iframe src="https://docs.google.com/spreadsheets/d/1Bkvsd6hoAamrkOUMHrJA8VB-tyVfCVhY8bU9TN8SfA8?gid=0&amp;single=true&amp;widget=true&amp;headers=false" title='ContibuthonTimeline'>
+                                                    <div className="col-md-11">
+                                                    <iframe src="https://docs.google.com/spreadsheets/d/1Bkvsd6hoAamrkOUMHrJA8VB-tyVfCVhY8bU9TN8SfA8/" frameborder="0" marginheight="0" marginwidth="0">
+                                                        Loading…
                                                     </iframe>
+                                                    {/* <iframe src="https://docs.google.com/spreadsheets/d/1Bkvsd6hoAamrkOUMHrJA8VB-tyVfCVhY8bU9TN8SfA8?gid=0&amp;single=true&amp;widget=true&amp;headers=false" title='ContibuthonTimeline'>
+                                                    </iframe> */}
 
                                                 </div>
                                                 <div className="col"></div>

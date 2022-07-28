@@ -41,8 +41,8 @@ function Mentor() {
                     <div className="row">
                         <div className="col"></div>
                         <div className="col-md-9">
-                            <p className="lead">These are participating open-source organizations which participants will work directly with during the Bootcamp. Mentor organizations are also program sponsors who indicate interest to participate as mentor organizations during the program.</p>
-                            <p className="lead">However, in the event that funds contributed by sponsors is in excess and can pay more participants than sponsors are willing to mentor. She Code Africa (SCA) may choose to make a call for other mentor organizations who will not be required to sponsor</p>
+                            <p className="lead">These are participating open-source organizations which participants will work directly with during the Bootcamp. Mentor organizations are also program sponsors who indicate interest to participate as mentor organizations during the program. However, in the event that funds contributed by sponsors is in excess and can pay more participants than sponsors are willing to mentor. She Code Africa (SCA) may choose to make a call for other mentor organizations who will not be required to sponsor.</p>
+                            {/* <p className="lead">However, in the event that funds contributed by sponsors is in excess and can pay more participants than sponsors are willing to mentor. She Code Africa (SCA) may choose to make a call for other mentor organizations who will not be required to sponsor</p> */}
                         </div>
                         <div className="col"></div>
                     </div>
@@ -147,7 +147,7 @@ function Mentor() {
                                                             </ul>
                                                         </li>
                                                         <li>
-                                                            Submit Evaluation to success report to ascertain the success of the project. See <a href='/'>project evaluation for more details</a>  on the information required in the project evaluation.
+                                                            Submit Evaluation to success report to ascertain the success of the project. See <a href='#mentorz'><b>project evaluation below for more details</b></a>  on the information required in the project evaluation.
                                                         </li>
                                                         <li>
                                                             Communicate availability and interaction expectations to the participants
@@ -254,7 +254,7 @@ function Mentor() {
                                 <hr />
                                 <Card>
                                     <Card.Header>
-                                        <ContextAwareToggle eventKey="e"> Mentor Organizations’ Project</ContextAwareToggle>
+                                        <ContextAwareToggle eventKey="e" id="mentorz"> Mentor Organizations’ Project</ContextAwareToggle>
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="e">
                                         <Card.Body>
@@ -263,7 +263,7 @@ function Mentor() {
                                                     <p>
                                                         These are projects suggested or listed by participating mentor open-source organizations for participants to complete with the help of a mentor during Bootcamp.
                                                     </p>
-                                                    <p>Mentor Organizations will be required to <a href='https://docs.google.com/forms/d/e/1FAIpQLSfP9cCByuSLJ_-UqiyZmPOjxvWc2R1mYFpuBmYEjcllxW2ELA/viewform' target='_blank' rel='noreferrer'>fill a form</a> with project details and requirements, which will be used as a criterion for the selection process.</p>
+                                                    <p>Mentor Organizations will be required to <a href='/contributhon/report' target='_blank' rel='noreferrer'>fill this form</a> with project details and requirements, which will be used as a criterion for the selection process.</p>
                                                     <p>
                                                         Mentor organizations are typically advised to focus on one or two projects, however, if an organization has the capacity to mentor on more than two projects, then there’s the liberty to submit more. For each project, there's a need for at least one mentor who is committed to work as a mentor specifically for that project.
                                                     </p>

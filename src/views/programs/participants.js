@@ -214,7 +214,7 @@ function Part() {
                                         <Card.Body>
                                             <div className="row">
                                                 <div className="col-md-10">
-                                                    <p>In the last week of the Bootcamp, you will be required to submit your project report by completing <a href='https://docs.google.com/forms/d/e/1FAIpQLSeEq8fvTUM7kfYgSMr4UUxcQChiYSHeokjVynrOP0XHQS3wDg' target='_blank' rel='noreferrer'>this form.</a></p>
+                                                    <p>In the last week of the Bootcamp, you will be required to submit your project report by completing <a href='/contributhon/report' target='_blank' rel='noreferrer'>this form.</a></p>
                                                     <p>
                                                         Project Report Details:
                                                     </p>
@@ -273,7 +273,7 @@ function Part() {
                                             <div className="row">
                                                 <div className="col-md-10">
                                                     <p>
-                                                        When the participant evaluation phase opens, you will be able to submit your evaluation by completing <a href="https://docs.google.com/forms/d/e/1FAIpQLSd--S7jESQVt7RFy4yGPz6gg1L41irlh4UWB8BzYob_QLTmYA" target="_blank" rel="noreferrer">this form</a>.
+                                                        When the participant evaluation phase opens, you will be able to submit your evaluation by completing <a href="/contributhon/evaluation" target="_blank" rel="noreferrer">this form</a>.
                                                     </p>
                                                     <p>Failure to submit a Project Report or an Evaluation of Success and Experience would mean that the participant did not successfully complete the boot camp and would not be awarded.</p>
                                                 </div>

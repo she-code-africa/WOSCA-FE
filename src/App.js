@@ -19,6 +19,10 @@ import ProgramOverview from "./views/programs/overview";
 import ConParticipant from "./views/programs/participants";
 import ConMentor from "./views/programs/mentors";
 import ConSponsor from "./views/programs/sponsors";
+import Report from "./views/programs/report";
+import Evaluation from "./views/programs/evaluation";
+import Project from "./views/programs/project";
+// 
 
 
 import { ProtectedRoute, GuestRoute } from './components/routes';
@@ -62,6 +66,9 @@ function App() {
           <Route path="/events"> <Events /> </Route>
           <Route exact path="/programs"> <Programs /> </Route>
           <Route exact path="/contributhon/overview"> <ProgramOverview /> </Route>
+          <Route exact path="/contributhon/report"> <Report /> </Route>
+          <Route exact path="/contributhon/evaluation"> <Evaluation /> </Route>
+          <Route exact path="/contributhon/projects"> <Project /> </Route>
           <Route exact path="/contributhon/participants"> <ConParticipant /> </Route>
           <Route exact path="/contributhon/mentors"> <ConMentor /> </Route>
           <Route exact path="/contributhon/sponsors"> <ConSponsor /> </Route>
