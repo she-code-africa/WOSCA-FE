@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-import Subscribe from '../../components/subscribe';
 import Card from '../../components/eventcard';
 import woman from '../../assets/images/eventwoman.png';
 import man from '../../assets/images/eventman.png';
@@ -9,7 +8,8 @@ import '../../styles/views/event.css';
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import axios from 'axios';
+import {events_, events_search} from './eventService';
+import { CircularProgress } from '@material-ui/core';
 
 
 class Events extends Component {
@@ -17,10 +17,37 @@ class Events extends Component {
         super(props);
         this.state = {
             status: null,
+            selectedEvent: null,
+            loading: true,
+            show: false,
+            setShow: false,
             eventsList: [],
+            message: '',
+            location: '',
         };
     }
-  
+
+    changeHandler = (event) => {
+        this.setState({ [event.target.name]: event.target.value })
+    }
+
+    handleSearch = (e) => {
+        e.preventDefault();
+        this.setState({ loading: true })
+        var locator = this.state.location;
+        events_search(locator)
+            .then((response) => {
+                var results = response.data.data.events;
+                this.setState({ loading: false })
+                if (results.length > 0) {
+                    this.setState({ message: ''})
+                    this.setState({ eventsList: results })
+                } else {
+                    this.setState({ message: `No events found for ${locator}!` })
+                }
+            })
+    }
+
     render() {
 
         return (
@@ -40,16 +67,13 @@ class Events extends Component {
                                 <img src={man} alt="..." />
                             </div>
                         </div>
-                        <Form className="form">
+                        <Form className="form" onSubmit={this.handleSearch}>
                             <Form.Row>
                                 <Col>
-                                    <Form.Control placeholder="Location" />
+                                    <Form.Control placeholder="Location" readOnly style={{visibility:'hidden'}} />
                                 </Col>
                                 <Col>
-                                    <Form.Control placeholder="Time Zone" />
-                                </Col>
-                                <Col>
-                                    <Form.Control placeholder="Keyword" />
+                                    <Form.Control placeholder="Location" name="location" value={this.state.location} onChange={this.changeHandler}  />
                                 </Col>
                                 <Col >
                                     <Button className="sub-button event-button" type="submit">SEARCH</Button>
@@ -58,17 +82,31 @@ class Events extends Component {
                             </Form.Row>
                         </Form>
                     </div>
-                    <div className="row events">
-                        {this.state.eventsList.map((event) => (
-                            <Card
-                                key={event.id}
-                                eventTitle={event.name}
-                                eventLocation={event.location}
-                                eventTime={event.startTime}
-                            />
-                        ))}
+                    <div className='row'>
+                        {this.state.loading ?
+                            <CircularProgress style={{marginLeft:'auto', marginRight:'auto' }} />
+                            : <p></p>
+                        }
                     </div>
-                    {/* <Subscribe /> */}
+                    {
+                        this.state.message ? 
+                        <div className='row'>
+                            <p  style={{marginLeft:'auto', marginRight:'auto', color:'#B70569' }}>{this.state.message}</p>
+                        </div>
+                        :
+                        <div className="row events">
+                            {this.state.eventsList.map((event) => (
+                                <Card
+                                    key={event._id}
+                                    eventTitle={event.name}
+                                    eventLocation={event.location}
+                                    eventTime={event.startTime}
+                                    eventEndTime={event.endTime}
+                                    eventDetails={event.description}
+                                />
+                            ))}
+                        </div>    
+                    }
                     <div className="jumbotron"></div>
                 </div>
                 <Footer />
@@ -76,10 +114,16 @@ class Events extends Component {
         )
     }
     async componentDidMount() {
-        await axios.get('https://wosca-backend.herokuapp.com/api/v1/events')
+        await events_()
             .then((response) => {
                 var vop = response.data
-                this.setState({ eventsList: vop.data.events })
+                var all_events = vop.data.events
+                this.setState({ loading: false })
+                if (all_events.length > 0) {
+                    this.setState({ eventsList: all_events })
+                } else {
+                    this.setState({ message: 'No events found!' })
+                }
             })
     }
 }

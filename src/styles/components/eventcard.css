@@ -5,7 +5,13 @@
     border: 1px solid #70707042;
     border-radius: 15px;
     margin: 16px 16px;
+    cursor: pointer;
 }
+
+.event-card:hover {
+    background: rgb(3, 1, 36) 0% 0% no-repeat border-box;
+}
+
 
 .card-body {
    opacity: 1;
@@ -39,6 +45,33 @@
     color: #B70569;
     padding: 40px 25px 35px;
     font-weight: bold;
+}
+
+.eventcard-button {
+    width: 30% !important;
+    background: #B70569 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 18px #ffc6e633;
+    border-radius: 7px;
+    opacity: 1;
+    border: 0;
+    font-size: 10px;
+    height: 40px;
+}
+
+.eventcard-button:hover {
+    background-color: #FFFFFF;
+    color: #B70569;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #B70569;
+}
+
+.event-link-botton {
+    color: #FFFFFF;
+}
+
+.event-link-botton:hover {
+    color: #B70569;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {

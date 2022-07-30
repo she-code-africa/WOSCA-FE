@@ -41,11 +41,8 @@ function Sponsor() {
                     <div className="row">
                         <div className="col"></div>
                         <div className="col-md-9">
-                            {/* <p>These are organizations or individuals with interests in the African tech ecosystem and gender diversity, willing to pave the way by helping cover costs involved in running the Bootcamp.</p>
-                            <p>
-                                Sponsors are encouraged to also participate as mentor organizations, however, this is not compulsory. If you would like to participate as a mentor organization, see <a href='/contributhon/mentors'>the mentor organization section.</a>
-                            </p> */}
-                            <p className="lead">These are organizations or individuals with interests in the African tech ecosystem and gender diversity, willing to pave the way by helping cover costs involved in running the Bootcamp.</p>
+                            <p className="lead">These are organizations or individuals with interests in the African tech ecosystem and gender diversity, willing to pave the way by helping cover costs involved in running the Bootcamp. 
+                             </p> 
                             <p className="lead">
                                 Sponsors are encouraged to also participate as mentor organizations, however, this is not compulsory. If you would like to participate as a mentor organization, see <a href='/contibuthon/mentors'>the mentor organization section.</a>
                             </p>
@@ -238,7 +235,7 @@ function Sponsor() {
                                         <Card.Body>
                                             <div className="row">
                                                 <div className="col-md-10">
-                                                    <p>SCA handles payments to program participants Via our verified payment providers</p>
+                                                    <p>SCA handles payments to program participants via our verified payment providers</p>
                                                 </div>
                                                 <div className="col"></div>
                                             </div>
