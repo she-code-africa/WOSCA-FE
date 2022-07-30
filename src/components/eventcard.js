@@ -47,10 +47,11 @@ class Card extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <h4>{this.props.eventTitle}</h4>
-                    <h6> {Moment(this.props.eventTime).format('MMMM Do YYYY, h:mm:ss a')} to  {Moment(this.props.eventEndTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
+                    <h6>Starts: {Moment(this.props.eventTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
+                    <h6>Ends: {Moment(this.props.eventEndTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
                     <h6>{this.props.eventLocation}</h6>
                     <br/>
-                    <h5>Details: {this.props.eventDetails}</h5>
+                    <h5>Description: <br/>{this.props.eventDetails}</h5>
                     
                 </Modal.Body>
                 <Modal.Footer>
