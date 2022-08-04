@@ -1,0 +1,44 @@
+.MuiTableCell-body {
+    color: #FFFFFF !important;
+}
+
+.MuiTableCell-root {
+    border-bottom: 0px !important;
+}
+
+.MuiPaper-elevation2 {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.MTableToolbar-root-12 {
+    padding-right: 8px;
+    color: #B70569;
+}
+
+.MuiSvgIcon-root {
+color: #B70569;
+}
+
+.MuiInputBase-input {
+color: #FFFFFF !important;
+/* color: #B70569 !important; */
+}
+
+.MuiTypography-caption {
+    color: #FFFFFF !important;
+}
+
+.MuiTypography-h6 {
+    font-family: 'Axiforma' !important;
+    padding-left: 15px !important;
+    color: #B70569;
+}
+
+.MuiTypography-body1, .MuiTypography-body2, .MuiPickersYear-root {
+    color: #B70569 !important;
+}
+
+.MuiPickersYear-yearSelected {
+    color: #FFFFFF !important;
+}

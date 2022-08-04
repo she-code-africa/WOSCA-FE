@@ -44,7 +44,7 @@ class Header extends Component {
                             </li>
                         </ul>
                         <a className="nav-link" href="signout">Log Out</a>
-                        <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">Lola</button></a>
+                        <a href="/dashboard"><button className="btn btn-outline my-2 my-sm-0">{user?.username}</button></a>
                     </div>
                 </nav>
             </React.Fragment>
