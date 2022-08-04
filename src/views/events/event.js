@@ -37,7 +37,8 @@ class Events extends Component {
         var locator = this.state.location;
         events_search(locator)
             .then((response) => {
-                var results = response.data.data.events;
+                var vop = response.data;
+                var results = vop.data;
                 this.setState({ loading: false })
                 if (results.length > 0) {
                     this.setState({ message: ''})
@@ -103,6 +104,7 @@ class Events extends Component {
                                     eventTime={event.startTime}
                                     eventEndTime={event.endTime}
                                     eventDetails={event.description}
+                                    eventLink={event.event_link}
                                 />
                             ))}
                         </div>    
@@ -117,7 +119,7 @@ class Events extends Component {
         await events_()
             .then((response) => {
                 var vop = response.data
-                var all_events = vop.data.events
+                var all_events = vop.data[0].data;
                 this.setState({ loading: false })
                 if (all_events.length > 0) {
                     this.setState({ eventsList: all_events })

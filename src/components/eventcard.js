@@ -47,8 +47,8 @@ class Card extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <h4>{this.props.eventTitle}</h4>
-                    <h6>Starts: {Moment(this.props.eventTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
-                    <h6>Ends: {Moment(this.props.eventEndTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
+                    <h6>Starts: <b> {Moment(this.props.eventTime).format('MMMM Do YYYY, h:mm:ss a')}</b></h6>
+                    <h6>Ends:  <b> {Moment(this.props.eventEndTime).format('MMMM Do YYYY, h:mm:ss a')}</b></h6>
                     <h6>{this.props.eventLocation}</h6>
                     <br/>
                     <h5>Description: <br/>{this.props.eventDetails}</h5>
@@ -56,14 +56,19 @@ class Card extends Component {
                 </Modal.Body>
                 <Modal.Footer>
                     {this.props.eventLink ?
-                        <Button className="sub-button event-button">REGISTER</Button>
+                        <Button className="sub-button event-button">
+                            <a href={this.props.eventLink} target="_blank" rel="noreferrer" className="event-link-botton">
+                                REGISTER
+                            </a>
+                        </Button>
                     : <></> }
-                    <Button className="eventcard-button event-button">
+                    <Button className="sub-button event-button"  onClick={this.handleClose}>CLOSE</Button>
+                    {/* <Button className="eventcard-button event-button">
                         <a href={this.props.eventLink} target="_blank" rel="noreferrer" className="event-link-botton">
                             REGISTER
                         </a>
                     </Button>
-                    <Button className="eventcard-button event-button" onClick={this.handleClose}>CLOSE</Button>
+                    <Button className="eventcard-button event-button" onClick={this.handleClose}>CLOSE</Button> */}
                 </Modal.Footer>
 
             </Modal>
