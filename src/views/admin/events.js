@@ -46,6 +46,7 @@ const tableIcons = {
 
 function Events() {
     var columns = [
+        {title: '#', cellStyle:{width: '3%'}, render: (rowData: any) => rowData.tableData.id + 1 },
         {title: "id", field: "_id", hidden: true, editable: false},
         {title: "slug", field: "slug", hidden: true, editable: false},
         {title: "Name", field: "name", validate: rowData => {
@@ -76,7 +77,7 @@ function Events() {
             }
             return true
         }},
-        {title: "Link", field: "event_link", type: "url", validate: rowData => {
+        {title: "Link", field: "event_link", type: "url", emptyValue:()=><em>No Event Link</em>, validate: rowData => {
             if (rowData.event_link === undefined || rowData.event_link === "") {
                 return "Required"
             } else if ((!rowData.event_link.startsWith('http://') && !rowData.event_link.startsWith('https://') ) || !rowData.event_link.includes('.') ) {
@@ -127,7 +128,6 @@ function Events() {
             errorList.push("Please enter event description")
         }
         if (errorList.length < 1) {
-            console.log(newData)
             _add_event(newData)
                 .then(res => {
                 let dataToAdd = [...data];
@@ -192,7 +192,6 @@ function Events() {
       const handleRowDelete = (oldData, resolve) => {
         _delete_event(oldData._id)
           .then(res => {
-            console.log(res);
             const dataDelete = [...data];
             const index = oldData.tableData._id;
             dataDelete.splice(index, 1);

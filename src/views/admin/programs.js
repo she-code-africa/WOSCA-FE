@@ -22,7 +22,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
-import { _all_events, _add_event, _update_event, _delete_event } from './adminService';
+import { _all_programs, _add_programs } from './adminService';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -46,10 +46,25 @@ const tableIcons = {
 
 function Programs() {
     var columns = [
-        {title: "id", field: "_id", hidden: true},
-        {title: "slug", field: "slug", hidden: true},
-        {title: "Name", field: "name"},
-        {title: "Description", field: "description"},
+        {title: '#', cellStyle:{width: '3%'}, render: (rowData: any) => rowData.tableData.id + 1 },
+        {title: "id", field: "_id", hidden: true, editable: false},
+        {title: "Name", field: "name", validate: rowData => {
+            if (rowData.name === undefined || rowData.name === "") {
+                return "Required"
+            } else if (rowData.name.length < 3) {
+                return "Name too short"
+            }
+            return true
+        }},
+        {title: "Description", field: "description", cellStyle: { width: '70%', minWidth: '70%' },
+            validate: rowData => {
+            if (rowData.description === undefined || rowData.description === "") {
+                return "Required"
+            } else if (rowData.description.length < 10 ) {
+                return "Too short"
+            }
+            return true
+        }},
     ]
 
     const [data, setData] = useState([]);
@@ -57,9 +72,10 @@ function Programs() {
     const [errorMessages, setErrorMessages] = useState([]);
 
     useEffect(() => {
-        _all_events()
+        _all_programs()
           .then(res => {
-            setData(res.data.data.events)
+            console.log(res.data.data[0])
+            setData(res.data.data[0].data)
           })
           .catch(error=>{
             setErrorMessages(["Cannot load programs data"])
@@ -68,6 +84,7 @@ function Programs() {
       }, [])
 
       const handleRowAdd = (newData, resolve) => {
+        console.log(newData)
         let errorList = []
         if (newData.name === undefined || newData.name === '') {
           errorList.push("Please enter event name")
@@ -77,8 +94,9 @@ function Programs() {
         }
         if (errorList.length < 1) {
             console.log(newData)
-            _add_event(newData)
+            _add_programs(newData)
                 .then(res => {
+                    console.log(res)
                 let dataToAdd = [...data];
                 dataToAdd.push(newData);
                 setData(dataToAdd);
@@ -98,53 +116,62 @@ function Programs() {
         }
       }
 
-      const handleRowUpdate = (newData, oldData, resolve) => {
-        let errorList = []
-        if (newData.name === undefined || newData.name === ''){
-        errorList.push("Please enter event name")
-        }
-        if(newData.description === undefined || newData.description === ''){
-            errorList.push("Please enter event description")
-        }
-        if(errorList.length < 1) {
-            _update_event(newData._id, newData)
-                .then(res => {
-                const dataUpdate = [...data];
-                const index = oldData.tableData._id;
-                dataUpdate[index] = newData;
-                setData([...dataUpdate]);
-                resolve()
-                setIserror(false)
-                setErrorMessages([])
-                })
-                .catch(error => {
-                setErrorMessages(["Update failed! Server error"])
-                setIserror(true)
-                resolve()
-            })
-        }else{
-          setErrorMessages(errorList)
-          setIserror(true)
-          resolve()
-        }
-      }
+    //   const handleRowUpdate = (newData, oldData, resolve) => {
+    //     let errorList = []
+    //     if (newData.name === undefined || newData.name === ''){
+    //     errorList.push("Please enter event name")
+    //     }
+    //     if(newData.location === undefined || newData.location === ''){
+    //     errorList.push("Please enter event location")
+    //     }
+    //     if(newData.startTime === undefined || newData.startTime === ''){
+    //     errorList.push("Please enter the start time")
+    //     }
+    //     if(newData.endTime === undefined || newData.endTime === ''){
+    //         errorList.push("Please enter the end time")
+    //     }
+    //     if(newData.description === undefined || newData.description === ''){
+    //         errorList.push("Please enter event description")
+    //     }
+    //     if(errorList.length < 1) {
+    //         _update_event(newData._id, newData)
+    //             .then(res => {
+    //             const dataUpdate = [...data];
+    //             const index = oldData.tableData._id;
+    //             dataUpdate[index] = newData;
+    //             setData([...dataUpdate]);
+    //             resolve()
+    //             setIserror(false)
+    //             setErrorMessages([])
+    //             })
+    //             .catch(error => {
+    //             setErrorMessages(["Update failed! Server error"])
+    //             setIserror(true)
+    //             resolve()
+    //         })
+    //     }else{
+    //       setErrorMessages(errorList)
+    //       setIserror(true)
+    //       resolve()
+    //     }
+    //   }
 
-      const handleRowDelete = (oldData, resolve) => {
-        _delete_event(oldData._id)
-          .then(res => {
-            console.log(res);
-            const dataDelete = [...data];
-            const index = oldData.tableData._id;
-            dataDelete.splice(index, 1);
-            setData([...dataDelete]);
-            resolve()
-          })
-          .catch(error => {
-            setErrorMessages(["Delete failed! Server error"])
-            setIserror(true)
-            resolve()
-          })
-      }
+    //   const handleRowDelete = (oldData, resolve) => {
+    //     _delete_event(oldData._id)
+    //       .then(res => {
+    //         console.log(res);
+    //         const dataDelete = [...data];
+    //         const index = oldData.tableData._id;
+    //         dataDelete.splice(index, 1);
+    //         setData([...dataDelete]);
+    //         resolve()
+    //       })
+    //       .catch(error => {
+    //         setErrorMessages(["Delete failed! Server error"])
+    //         setIserror(true)
+    //         resolve()
+    //       })
+    //   }
 
     // 
     return (
@@ -163,7 +190,7 @@ function Programs() {
                 </div>
                 <div className="contribution-cards admin-cards">
                     <MaterialTable 
-                        title="Added Events"
+                        title="Added Programs"
                         columns={columns}
                         data={data}
                         icons={tableIcons}
@@ -172,7 +199,7 @@ function Programs() {
                                 backgroundColor: '#3F3F3F40',
                                 fontSize: '14px !important',
                                 fontFamily: 'Axiforma',
-                               
+                                overflowWrap: 'break-word'
                             },
                             cellStyle: {
                                 color: '#FFFFFF !important',
@@ -188,17 +215,9 @@ function Programs() {
                               }
                           }}
                         editable={{
-                        onRowUpdate: (newData, oldData) =>
-                            new Promise((resolve) => {
-                            handleRowUpdate(newData, oldData, resolve);
-                        }),
                         onRowAdd: (newData) =>
                         new Promise((resolve) => {
                             handleRowAdd(newData, resolve)
-                        }),
-                        onRowDelete: (oldData) =>
-                        new Promise((resolve) => {
-                            handleRowDelete(oldData, resolve)
                         }),
                         }}
                     />

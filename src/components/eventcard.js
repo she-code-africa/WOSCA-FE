@@ -47,13 +47,8 @@ class Card extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <h4>{this.props.eventTitle}</h4>
-<<<<<<< Updated upstream
-                    <h6>Starts: {Moment(this.props.eventTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
-                    <h6>Ends: {Moment(this.props.eventEndTime).format('MMMM Do YYYY, h:mm:ss a')}</h6>
-=======
                     <h6>Starts: <b> {Moment(this.props.eventTime).format('MMMM Do YYYY, h:mm:ss a')}</b></h6>
                     <h6>Ends:  <b> {Moment(this.props.eventEndTime).format('MMMM Do YYYY, h:mm:ss a')}</b></h6>
->>>>>>> Stashed changes
                     <h6>{this.props.eventLocation}</h6>
                     <br/>
                     <h5>Description: <br/>{this.props.eventDetails}</h5>
