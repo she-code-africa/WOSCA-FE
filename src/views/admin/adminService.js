@@ -5,6 +5,10 @@ export const prs = () => {
     return http.get('/pulls/');   
 }
 
+export const update_prs = (s, e) => {
+    return http.put(`/pulls/${s}`, e);   
+}
+
 // EVENTS
 export const _all_events = () => {
     return http.get('/events/');   
@@ -29,4 +33,8 @@ export const _all_programs = () => {
 
 export const _add_programs = p => {
     return http.post(`/programs/`, p)
+}
+
+export const _update_programs = (p, e) => {
+    return http.put(`/programs/${p}`, e)
 }

@@ -22,7 +22,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
-import { _all_programs, _add_programs } from './adminService';
+import { _all_programs, _add_programs, _update_programs } from './adminService';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -87,16 +87,15 @@ function Programs() {
         console.log(newData)
         let errorList = []
         if (newData.name === undefined || newData.name === '') {
-          errorList.push("Please enter event name")
+          errorList.push("Please enter program name")
         }
         if (newData.description === undefined || newData.description === '') {
-            errorList.push("Please enter event description")
+            errorList.push("Please enter program description")
         }
         if (errorList.length < 1) {
             console.log(newData)
             _add_programs(newData)
                 .then(res => {
-                    console.log(res)
                 let dataToAdd = [...data];
                 dataToAdd.push(newData);
                 setData(dataToAdd);
@@ -105,7 +104,7 @@ function Programs() {
                 setIserror(false)
             })
             .catch(error => {
-                setErrorMessages(["Cannot add data. Server error!"])
+                setErrorMessages(["Cannot add data. Error!"])
                 setIserror(true)
                 resolve()
                 })
@@ -116,45 +115,36 @@ function Programs() {
         }
       }
 
-    //   const handleRowUpdate = (newData, oldData, resolve) => {
-    //     let errorList = []
-    //     if (newData.name === undefined || newData.name === ''){
-    //     errorList.push("Please enter event name")
-    //     }
-    //     if(newData.location === undefined || newData.location === ''){
-    //     errorList.push("Please enter event location")
-    //     }
-    //     if(newData.startTime === undefined || newData.startTime === ''){
-    //     errorList.push("Please enter the start time")
-    //     }
-    //     if(newData.endTime === undefined || newData.endTime === ''){
-    //         errorList.push("Please enter the end time")
-    //     }
-    //     if(newData.description === undefined || newData.description === ''){
-    //         errorList.push("Please enter event description")
-    //     }
-    //     if(errorList.length < 1) {
-    //         _update_event(newData._id, newData)
-    //             .then(res => {
-    //             const dataUpdate = [...data];
-    //             const index = oldData.tableData._id;
-    //             dataUpdate[index] = newData;
-    //             setData([...dataUpdate]);
-    //             resolve()
-    //             setIserror(false)
-    //             setErrorMessages([])
-    //             })
-    //             .catch(error => {
-    //             setErrorMessages(["Update failed! Server error"])
-    //             setIserror(true)
-    //             resolve()
-    //         })
-    //     }else{
-    //       setErrorMessages(errorList)
-    //       setIserror(true)
-    //       resolve()
-    //     }
-    //   }
+      const handleRowUpdate = (newData, oldData, resolve) => {
+        let errorList = []
+        if (newData.name === undefined || newData.name === '') {
+            errorList.push("Please enter program name")
+          }
+          if (newData.description === undefined || newData.description === '') {
+              errorList.push("Please enter program description")
+          }
+        if(errorList.length < 1) {
+            _update_programs(newData._id, newData)
+                .then(res => {
+                const dataUpdate = [...data];
+                const index = oldData.tableData._id;
+                dataUpdate[index] = newData;
+                setData([...dataUpdate]);
+                resolve()
+                setIserror(false)
+                setErrorMessages([])
+                })
+                .catch(error => {
+                setErrorMessages(["Update failed! Server error"])
+                setIserror(true)
+                resolve()
+            })
+        }else{
+          setErrorMessages(errorList)
+          setIserror(true)
+          resolve()
+        }
+      }
 
     //   const handleRowDelete = (oldData, resolve) => {
     //     _delete_event(oldData._id)
@@ -219,6 +209,10 @@ function Programs() {
                         new Promise((resolve) => {
                             handleRowAdd(newData, resolve)
                         }),
+                        onRowUpdate: (newData, oldData) =>
+                            new Promise((resolve) => {
+                            handleRowUpdate(newData, oldData, resolve);
+                            }),
                         }}
                     />
                 </div>

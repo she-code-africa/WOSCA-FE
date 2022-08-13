@@ -42,3 +42,27 @@ color: #FFFFFF !important;
 .MuiPickersYear-yearSelected {
     color: #FFFFFF !important;
 }
+
+.pr_pending {
+    background-color: white;
+    color: #B70569;
+    width:fit-content;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.pr_accepted {
+    background-color: white;
+    color: green;
+    width:fit-content;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.pr_declined {
+    background-color: red;
+    color: white;
+    width:fit-content;
+    padding: 6px 10px;
+    border-radius: 10px;
+}

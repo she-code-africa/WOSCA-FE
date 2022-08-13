@@ -22,7 +22,8 @@ import Alert from '@material-ui/lab/Alert';
 
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
-import { prs  } from './adminService';
+import { prs, update_prs  } from './adminService';
+import { withTheme } from '@material-ui/core';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -58,20 +59,16 @@ function Pulls() {
             </a>
           ) },
         {title: "Submitted by", field: "username", editable: false },
-        {title: "Status", field: "status", lookup: {pending: "Pending", approved: "Approved", declined: "Declined"},
-            cellStyle: (e, rowData) => {
-                if (rowData.status === "pending") {
-                    return { color: "red" };
-                  }
-            }
+        {title: "Status", field: "status", lookup: {pending: "Pending", accepted: "Accepted", declined: "Declined"},
         },
-        {title: "Status", field: "status",  
-            render: rowData => {
-                return
-                rowData.status === "pending" ? <p style={{ color: "#E87722", fontWeight: "bold" }}>Pending</p> : 
-                rowData.status === "approved" ? <p style={{ color: "#008240", fontWeight: "bold" }}>Accepted</p> :
-                <p style={{ color: "#B0B700", fontWeight: "bold" }}>Rejected</p>
-            }}
+        {field: "status",  editable: false,
+            render: (rowData) =><div 
+                                    className={rowData.status === 'pending' ? 'pr_pending' : 
+                                        rowData.status === 'accepted' ? 'pr_accepted' : 'pr_declined' }>
+                                            {rowData.status === 'pending' ? 'Pending' : rowData.status === 'accepted' ? 'Accepted' : 'Declined' }
+                                
+                                </div>
+        }
     ]
 
     const [data, setData] = useState([]);
@@ -91,7 +88,6 @@ function Pulls() {
         prs()
           .then(res => {
             var resp = res.data.data[0].data;
-            console.log(resp);
             setData(resp);
           })
           .catch(error=>{
@@ -100,45 +96,31 @@ function Pulls() {
           })
       }, [])
 
-    //   const handleRowUpdate = (newData, oldData, resolve) => {
-    //     let errorList = []
-    //     if (newData.name === undefined || newData.name === ''){
-    //     errorList.push("Please enter event name")
-    //     }
-    //     if(newData.location === undefined || newData.location === ''){
-    //     errorList.push("Please enter event location")
-    //     }
-    //     if(newData.startTime === undefined || newData.startTime === ''){
-    //     errorList.push("Please enter the start time")
-    //     }
-    //     if(newData.endTime === undefined || newData.endTime === ''){
-    //         errorList.push("Please enter the end time")
-    //     }
-    //     if(newData.description === undefined || newData.description === ''){
-    //         errorList.push("Please enter event description")
-    //     }
-    //     if(errorList.length < 1) {
-    //         _update_event(newData._id, newData)
-    //             .then(res => {
-    //             const dataUpdate = [...data];
-    //             const index = oldData.tableData._id;
-    //             dataUpdate[index] = newData;
-    //             setData([...dataUpdate]);
-    //             resolve()
-    //             setIserror(false)
-    //             setErrorMessages([])
-    //             })
-    //             .catch(error => {
-    //             setErrorMessages(["Update failed! Server error"])
-    //             setIserror(true)
-    //             resolve()
-    //         })
-    //     }else{
-    //       setErrorMessages(errorList)
-    //       setIserror(true)
-    //       resolve()
-    //     }
-    //   }
+      const handleRowUpdate = (newData, oldData, resolve) => {
+        let errorList = []
+        if(errorList.length < 1) {
+            update_prs(newData.id, newData)
+                .then(res => {
+                    console.log(res);
+                const dataUpdate = [...data];
+                const index = oldData.tableData._id;
+                dataUpdate[index] = newData;
+                setData([...dataUpdate]);
+                resolve()
+                setIserror(false)
+                setErrorMessages([])
+                })
+                .catch(error => {
+                setErrorMessages(["Update failed!"])
+                setIserror(true)
+                resolve()
+            })
+        }else{
+          setErrorMessages(errorList)
+          setIserror(true)
+          resolve()
+        }
+      }
 
     return (
         <React.Fragment>
@@ -178,14 +160,14 @@ function Pulls() {
                                 fontSize: '14px',
                                 fontFamily: 'Axiforma',
                                 fontWeight: 'bolder',
-                              }
+                            },
                           }}
-                        // editable={{
-                        // onRowAdd: (newData) =>
-                        // new Promise((resolve) => {
-                        //     handleRowAdd(newData, resolve)
-                        // }),
-                        // }}
+                        editable={{
+                            onRowUpdate: (newData, oldData) =>
+                            new Promise((resolve) => {
+                            handleRowUpdate(newData, oldData, resolve);
+                            }),
+                        }}
                     />
                 </div>
             </div>
