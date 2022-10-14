@@ -58,7 +58,6 @@ function Users() {
             render: (rowData) => <div
                                     className={rowData.role === 'user' ? 'user_styled' : 'admin_styled' } >
                                         {rowData.role === 'user' ? ' User' : 'Admin' }
-                                    {/*  &nbsp; or &#160; */}
                                 </div>
     
         },
@@ -103,7 +102,7 @@ function Users() {
                 </div>
                 <div className="contribution-cards admin-cards">
                 <MaterialTable 
-                        title="Added Programs"
+                        title="Registered users"
                         columns={columns}
                         data={data}
                         icons={tableIcons}
