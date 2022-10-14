@@ -56,6 +56,7 @@ function App() {
             path="/reset-password"
             component={ResetPassword}
           />
+          {/* <Route path="/logout"> <Repos /> </Route> */}
           <Route path="/repos"> <Repos /> </Route>
           <Route path="/users"> <User /> </Route>
           <Route path="/adm/events"> <AdminEvent /> </Route>
