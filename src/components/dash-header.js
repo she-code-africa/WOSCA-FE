@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Logo from "../assets/icons/Logo.png";
 import '../styles/components/header.css';
-import { UserContext } from "../context/AuthContext"
+import { UserContext } from "../context/AuthContext";
+import { withRouter } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
@@ -9,6 +11,14 @@ class Header extends Component {
         this.state = {
             status: true,
         };
+    }
+
+    // const history = useHistory();
+
+
+    logoutHandler = () => {
+        localStorage.clear();
+        this.props.history.push(`/`);
     }
 
 
@@ -44,7 +54,7 @@ class Header extends Component {
                                 <a className="nav-link" href="/faq">FAQs</a>
                             </li>
                         </ul>
-                        <a href="dashboard"><button className="btn btn-outline my-2 my-sm-0">LOGOUT</button></a>
+                        <a href="#" onClick={this.logoutHandler}><button className="btn btn-outline my-2 my-sm-0">LOGOUT</button></a>
                     </div>
                 </nav>
             </React.Fragment>
@@ -52,4 +62,5 @@ class Header extends Component {
     }
 }
 Header.contextType = UserContext
-export default Header;
+// export default Header;
+export default withRouter(Header);

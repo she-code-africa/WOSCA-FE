@@ -25,6 +25,7 @@ import MaterialTable from "material-table";
 import { prs, update_prs  } from './adminService';
 import { withTheme } from '@material-ui/core';
 
+
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
     Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -101,7 +102,6 @@ function Pulls() {
         if(errorList.length < 1) {
             update_prs(newData.id, newData)
                 .then(res => {
-                    console.log(res);
                 const dataUpdate = [...data];
                 const index = oldData.tableData._id;
                 dataUpdate[index] = newData;
@@ -109,6 +109,7 @@ function Pulls() {
                 resolve()
                 setIserror(false)
                 setErrorMessages([])
+                window.location.reload(false);
                 })
                 .catch(error => {
                 setErrorMessages(["Update failed!"])

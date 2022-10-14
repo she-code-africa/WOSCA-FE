@@ -66,3 +66,21 @@ color: #FFFFFF !important;
     padding: 6px 10px;
     border-radius: 10px;
 }
+
+.admin_styled {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+    width:fit-content;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.user_styled {
+    background-color: white;
+    color: #B70569;
+    width:fit-content;
+    font-weight: bold;
+    padding: 6px 17px;
+    border-radius: 10px;
+}

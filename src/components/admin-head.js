@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import Logo from "../assets/icons/Logo.png";
 import '../styles/components/header.css';
-import { UserContext } from "../context/AuthContext"
+import { UserContext } from "../context/AuthContext";
+import { withRouter } from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
             status: true,
-        };
+        }; 
+    }
+
+    logoutHandler = () => {
+        localStorage.clear();
+        this.props.history.push(`/`);
     }
 
     render() {
@@ -43,8 +49,9 @@ class Header extends Component {
                                 <a className="nav-link" href="/repos">PRs</a>
                             </li>
                         </ul>
-                        <a className="nav-link" href="signout">Log Out</a>
-                        <a href="/dashboard"><button className="btn btn-outline my-2 my-sm-0">{user?.username}</button></a>
+                        <a className="nav-link" href="#" onClick={this.logoutHandler}>Log Out</a>
+                        <a href="/"><button className="btn btn-outline my-2 my-sm-0">Visit Homepage</button></a>
+                        {/* <a href="/"><button className="btn btn-outline my-2 my-sm-0">{user?.username}</button></a> */}
                     </div>
                 </nav>
             </React.Fragment>
@@ -52,4 +59,4 @@ class Header extends Component {
     }
 }
 Header.contextType = UserContext
-export default Header;
+export default withRouter(Header);

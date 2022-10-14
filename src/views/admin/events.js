@@ -23,6 +23,7 @@ import Alert from '@material-ui/lab/Alert';
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
 import { _all_events, _add_event, _update_event, _delete_event } from './adminService';
+import { relativeTimeRounding } from 'moment';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -78,6 +79,9 @@ function Events() {
             return true
         }},
         {title: "Link", field: "event_link", type: "url", emptyValue:()=><em>No Event Link</em>, validate: rowData => {
+            if (rowData.editing == "delete"){
+                return true
+            }
             if (rowData.event_link === undefined || rowData.event_link === "") {
                 return "Required"
             } else if ((!rowData.event_link.startsWith('http://') && !rowData.event_link.startsWith('https://') ) || !rowData.event_link.includes('.') ) {
@@ -176,6 +180,7 @@ function Events() {
                 resolve()
                 setIserror(false)
                 setErrorMessages([])
+                window.location.reload(false);
                 })
                 .catch(error => {
                 setErrorMessages(["Update failed! Server error"])

@@ -4,7 +4,8 @@ export default new (class Http {
 
 
   AxiosSetup = () => {
-    const token = localStorage.getItem("jwt_token")
+    const token = localStorage.getItem("token")
+    // const token = localStorage.getItem("jwt_token")
     const axiosInstance = Axios.create({
       baseURL: this.API_URL,
     })

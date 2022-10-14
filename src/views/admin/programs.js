@@ -22,7 +22,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
-import { _all_programs, _add_programs, _update_programs } from './adminService';
+import { _all_programs, _add_programs, _update_programs, delete_programs } from './adminService';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -74,7 +74,6 @@ function Programs() {
     useEffect(() => {
         _all_programs()
           .then(res => {
-            console.log(res.data.data[0])
             setData(res.data.data[0].data)
           })
           .catch(error=>{
@@ -84,7 +83,7 @@ function Programs() {
       }, [])
 
       const handleRowAdd = (newData, resolve) => {
-        console.log(newData)
+        // console.log(newData)
         let errorList = []
         if (newData.name === undefined || newData.name === '') {
           errorList.push("Please enter program name")
@@ -93,7 +92,7 @@ function Programs() {
             errorList.push("Please enter program description")
         }
         if (errorList.length < 1) {
-            console.log(newData)
+            // console.log(newData)
             _add_programs(newData)
                 .then(res => {
                 let dataToAdd = [...data];
@@ -102,6 +101,7 @@ function Programs() {
                 resolve()
                 setErrorMessages([])
                 setIserror(false)
+                window.location.reload(false);
             })
             .catch(error => {
                 setErrorMessages(["Cannot add data. Error!"])
@@ -133,6 +133,7 @@ function Programs() {
                 resolve()
                 setIserror(false)
                 setErrorMessages([])
+                window.location.reload(false);
                 })
                 .catch(error => {
                 setErrorMessages(["Update failed! Server error"])
@@ -146,22 +147,24 @@ function Programs() {
         }
       }
 
-    //   const handleRowDelete = (oldData, resolve) => {
-    //     _delete_event(oldData._id)
-    //       .then(res => {
-    //         console.log(res);
-    //         const dataDelete = [...data];
-    //         const index = oldData.tableData._id;
-    //         dataDelete.splice(index, 1);
-    //         setData([...dataDelete]);
-    //         resolve()
-    //       })
-    //       .catch(error => {
-    //         setErrorMessages(["Delete failed! Server error"])
-    //         setIserror(true)
-    //         resolve()
-    //       })
-    //   }
+      const handleRowDelete = (oldData, resolve) => {
+        // console.log(oldData)
+        delete_programs(oldData._id)
+          .then(res => {
+            console.log(res);
+            const dataDelete = [...data];
+            const index = oldData.tableData._id;
+            dataDelete.splice(index, 1);
+            setData([...dataDelete]);
+            resolve()
+          })
+          .catch(error => {
+            console.log(error)
+            setErrorMessages(["Delete failed! Server error"])
+            setIserror(true)
+            resolve()
+          })
+      }
 
     // 
     return (
@@ -210,9 +213,13 @@ function Programs() {
                             handleRowAdd(newData, resolve)
                         }),
                         onRowUpdate: (newData, oldData) =>
-                            new Promise((resolve) => {
+                        new Promise((resolve) => {
                             handleRowUpdate(newData, oldData, resolve);
-                            }),
+                        }),
+                        onRowDelete: (oldData) =>
+                        new Promise((resolve) => {
+                            handleRowDelete(oldData, resolve)
+                        }),
                         }}
                     />
                 </div>

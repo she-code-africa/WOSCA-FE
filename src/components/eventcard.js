@@ -56,19 +56,13 @@ class Card extends Component {
                 </Modal.Body>
                 <Modal.Footer>
                     {this.props.eventLink ?
-                        <Button className="sub-button event-button">
+                        <Button className="sub-button event-button" >
                             <a href={this.props.eventLink} target="_blank" rel="noreferrer" className="event-link-botton">
                                 REGISTER
                             </a>
                         </Button>
                     : <></> }
                     <Button className="sub-button event-button"  onClick={this.handleClose}>CLOSE</Button>
-                    {/* <Button className="eventcard-button event-button">
-                        <a href={this.props.eventLink} target="_blank" rel="noreferrer" className="event-link-botton">
-                            REGISTER
-                        </a>
-                    </Button>
-                    <Button className="eventcard-button event-button" onClick={this.handleClose}>CLOSE</Button> */}
                 </Modal.Footer>
 
             </Modal>

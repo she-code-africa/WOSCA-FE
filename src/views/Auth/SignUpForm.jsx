@@ -48,10 +48,11 @@ const SignUpForm = () => {
       setLoading(true)
       signup(state).then((response) => {
         if(response.data){
-          const { data } = response.data
-          if (data.message) {
-            setToken(data.token)
-            setUser(data.user)
+          // const { data } = response.data
+          var vop = response.data.data
+          if (vop.token) {
+            setToken(vop.token)
+            setUser(vop.user)
             history.push(`/dashboard`);
           }
           setLoading(false)
@@ -63,7 +64,7 @@ const SignUpForm = () => {
         }
       })
       .catch((error) => {
-          console.log(error);
+          // console.log(error);
           setLoading(false)
           setErrorMsg(error)
       })

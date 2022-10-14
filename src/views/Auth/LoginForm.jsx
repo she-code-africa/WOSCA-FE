@@ -26,21 +26,29 @@ const LoginForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(state)
+    // console.log(state)
     setState({ ...state, [name]: value });
   };
 
   const handleSubmit = (event) => {
     console.log("hi")
+    console.log(state)
     setLoading(true)
      event.preventDefault()
       signin(state).then((response) => {
         if(response.data){
-          const {data} = response?.data
-          if (data.message){
-            setToken(data.token)
-            setUser(data.user)
+          var vop = response.data.data
+          // console.log(vop)
+          // console.log(vop.user)
+          if (vop.token){
+            console.log(vop.token)
+            setToken(vop.token)
+            setUser(vop.user)
+            if (vop.user.role === 'admin'){
+              history.push(`/admin`);
+            } else {
             history.push(`/dashboard`);
+            }
           }
           setLoading(false)
         }        
