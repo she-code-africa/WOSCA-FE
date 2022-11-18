@@ -129,3 +129,27 @@
     }
     
 }
+
+@media screen and (max-width: 768px) and (min-width: 481px)  {
+    .r_value_h_active {
+        font-size: 24px;
+    }
+    .r_value_b_active {
+        font-size: 11px;
+    }
+    .r_value_b {
+        font-size: 9px;
+    }
+    .r_value_h {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 480px) {
+    .r_value_h_active, .r_value_h {
+        font-size: 20px;
+    }
+    .r_value_b_active, .r_value_b {
+        font-size: 9px;
+    }
+}

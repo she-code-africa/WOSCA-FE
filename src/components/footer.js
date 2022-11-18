@@ -16,7 +16,7 @@ function Footer() {
                         </a>
                     </div>
                     <div className="col">
-                        <p className="text">© 2021 SheCodeAfrica. All rights reserved.</p>
+                        <p className="text">© 2022 SheCodeAfrica. All rights reserved.</p>
                     </div>
                     <div className="col ">
                         <div className="sm_link">
