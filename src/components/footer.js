@@ -4,6 +4,7 @@ import '../styles/components/footer.css';
 import facebook from "../assets/icons/facebook.png";
 import instagram from "../assets/icons/instagram.png";
 import twitter from "../assets/icons/twitter.png";
+import linkedin from "../assets/icons/linkedin.png";
 
 function Footer() {
     return (
@@ -23,6 +24,7 @@ function Footer() {
                             <a target="_blank" rel="noreferrer" href="https://twitter.com/SheCodeAfrica"><img className="f_img" src={twitter} alt="twitter" /></a>
                             <a target="_blank" rel="noreferrer" href="https://web.facebook.com/SheCodeAfrica/"><img className="f_img" src={facebook} alt="facebook" /></a>
                             <a target="_blank" rel="noreferrer" href="https://www.instagram.com/shecodeafrica/"><img className="f_img" src={instagram} alt="instagram" /></a>
+                            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/she-code-africa/"><img className="f_img" src={linkedin} alt="linkedin" /></a>
                         </div>
                     </div>
                 </div>
