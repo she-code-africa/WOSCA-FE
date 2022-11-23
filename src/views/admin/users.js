@@ -22,8 +22,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
-import { _all_users  } from './adminService';
-import { withTheme } from '@material-ui/core';
+import { _all_users, _update_user  } from './adminService';
 
 
 const tableIcons = {
@@ -54,36 +53,76 @@ function Users() {
         {title: "Username", field: "username", editable: false },
         {title: "Email", field: "email", editable: false },
         {title: "Joined", field: "created_at", type: "datetime", editable: false },
-        {title: "Role", field: "role", editable: false, 
+        // {title: "PRs Submitted", field: "role", editable: false },
+        {title: "Role", field: "role", editable: false,
             render: (rowData) => <div
                                     className={rowData.role === 'user' ? 'user_styled' : 'admin_styled' } >
                                         {rowData.role === 'user' ? ' User' : 'Admin' }
                                 </div>
     
         },
-        // {title: "PR Submitted", field: "role", editable: false },
+        {title: "Admin Access", field: "role", lookup: {user: "Not Granted", admin: "Granted"} },
         
     ]
 
     const [data, setData] = useState([]);
     const [iserror, setIserror] = useState(false);
+    const [issuccess, setIssuccess] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
+    const [successMessages, setSuccessErrorMessages] = useState([]);
 
     
 
     useEffect(() => {
         _all_users()
           .then(res => {
-            console.log(res)
+            // console.log(res)
             var resp = res.data.data[0].data;
             setData(resp);
           })
           .catch(error=>{
-            console.log(error)
+            // console.log(error)
             setErrorMessages(["Cannot load users data"])
             setIserror(true)
           })
       }, [])
+
+    const handleRowUpdate = (newData, oldData, resolve) => {
+        let errorList = []
+        // console.log('we here')
+        if (errorList.length < 1) {
+            // console.log(newData._id)
+            _update_user(newData._id, newData)
+                // console.log('00000', newData._id)
+                .then(res => {
+                    // console.log('went')
+                    // console.log(res)
+                    const dataUpdate = [...data]
+                    const index = oldData.tableData._id;
+                    dataUpdate[index] = newData;
+                    setData([...dataUpdate]);
+                    resolve()
+                    setSuccessErrorMessages([`${newData.username}'s role updated sucessfully`])
+                    setIssuccess(true)
+                    setIserror(false)
+                    setErrorMessages([])
+                    window.location.reload(false);
+                })
+                .catch(error => {
+                    console.log('didnt went')
+                    console.log(error)
+                    setErrorMessages(["Update failed!"])
+                    setIserror(true)
+                    setIssuccess(false)
+                    resolve()
+                })
+        } else {
+            // console.log('ok')
+            setErrorMessages(errorList)
+            setIserror(true)
+            resolve()
+        }
+    }
     
 
     return (
@@ -97,6 +136,16 @@ function Users() {
                             {errorMessages.map((msg, i) => {
                                 return <div key={i}>{msg}</div>
                             })}
+                        </Alert>
+                    }      
+                </div>
+                <div>
+                    {issuccess && 
+                        <Alert severity="success">
+                            {successMessages}
+                            {/* {errorMessages.map((msg, i) => {
+                                return <div key={i}>{msg}</div>
+                            })} */}
                         </Alert>
                     }      
                 </div>
@@ -125,6 +174,12 @@ function Users() {
                                 fontFamily: 'Axiforma',
                                 fontWeight: 'bolder',
                               }
+                          }}
+                          editable={{
+                            onRowUpdate: (newData, oldData) => 
+                            new Promise((resolve) => {
+                                handleRowUpdate(newData, oldData, resolve);
+                            }),
                           }}
                           />
                     

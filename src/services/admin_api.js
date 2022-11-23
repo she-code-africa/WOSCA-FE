@@ -66,6 +66,21 @@ export default new (class Http {
     }
   }
 
+  patch = async (urlpath, data, config) => {
+    try {
+      const response = await this.AxiosSetup().patch(urlpath, data, config)
+      if (
+        response.data.errorMsg !== null
+      ) {
+        localStorage.removeItem("jwt_token")
+        // window.location.reload()
+      }
+      return response
+    } catch (err) {
+      return err
+    }
+  }
+
   delete = async (urlpath, data) => {
     try {
       const response = await this.AxiosSetup().delete(urlpath, data)

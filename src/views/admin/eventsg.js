@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/admin-head';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Moment from 'moment';
 
 import '../../styles/views/admin-page.css';
 
+import Grid from '@material-ui/core/Grid';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -21,9 +24,19 @@ import ViewColumn from '@material-ui/icons/ViewColumn';
 import Alert from '@material-ui/lab/Alert';
 
 import { forwardRef } from 'react';
+
+// 
+import MuiTableCell from "@material-ui/core/TableCell";
+import {
+    Table, TableBody,
+    TableContainer, TablePagination,
+    TableHead, TableRow, Paper, TableFooter
+}
+    from '@material-ui/core';
+
+// 
 import MaterialTable from "material-table";
 import { _all_events, _add_event, _update_event, _delete_event } from './adminService';
-// import { relativeTimeRounding } from 'moment';
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -45,58 +58,80 @@ const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
+// const events = [
+//     { 'id': 1, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
+//     { 'id': 2, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
+//     { 'id': 3, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
+//     { 'id': 4, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
+//     { 'id': 5, 'location': 'lagos', 'startTime': '2021-08-11T21:57:49.769Z', 'endTime': '2021-08-11T21:57:49.769Z', 'description': 'lorem iopsum delores', 'name': 'lagos event' },
+// ]
+
+// const TableCell = withStyles({
+//     root: {
+//         borderBottom: "none"
+//     }
+// })(MuiTableCell);
+
+// const useStyles = makeStyles({
+//     table: {
+//         minWidth: 650,
+//     },
+//     tableContainer: {
+//         borderRadius: '20px',
+//         marginBottom: '50px',
+//     },
+//     tableHeaderCell: {
+//         fontWeight: 'bolder',
+//         color: '#FFFFFF',
+//         fontSize: '14px',
+//         fontFamily: 'Axiforma',
+//     },
+//     tableRow: {
+//         backgroundColor: '#3F3F3F40',
+//     },
+//     tableRowCell: {
+//         color: '#FFFFFF !important',
+//         fontSize: '14px',
+//         fontFamily: 'Axiforma',
+//     },
+//     pagination: {
+//         color: 'white',
+//     },
+//     editRow: {
+//         fontSize: '12px',
+//         backgroundColor: '#B70569',
+//         color: '#FFFFFF',
+//         borderRadius: '2px',
+//         padding: '3px 15px',
+//         display: 'inline-block',
+//         marginTop: '1rem',
+//     },
+// });
+
 function Events() {
+    // const classes = useStyles();
+
+    // const [page, setPage] = React.useState(0);
+    // const [rowsPerPage, setRowsPerPage] = React.useState(2);
+
+    // const handleChangePage = (event, newPage) => {
+    //     setPage(newPage);
+    // };
+
+    // const handleChangeRowsPerPage = (event) => {
+    //     setRowsPerPage(+event.target.value);
+    //     setPage(0);
+    // };
+
+    // 
     var columns = [
-        {title: '#', cellStyle:{width: '3%'}, render: (rowData: any) => rowData.tableData.id + 1 },
-        {title: "id", field: "_id", hidden: true, editable: false},
-        {title: "slug", field: "slug", hidden: true, editable: false},
-        {title: "Name", field: "name", validate: rowData => {
-            if (rowData.name === undefined || rowData.name === "") {
-                return "Required"
-            } else if (rowData.name.length < 3) {
-                return "Name too short"
-            }
-            return true
-        }},
-        {title: "Location", field: "location", validate: rowData => {
-            if (rowData.location === undefined || rowData.location === "") {
-                return "Required"
-            }
-            return true
-        }},
-        {title: "Starts", field: "startTime", type: "datetime", validate: rowData => {
-            if (rowData.startTime === undefined || rowData.startTime === "") {
-                return "Select Date"
-            }
-            return true
-        }},
-        {title: "Ends", field: "endTime", type: "datetime", validate: rowData => {
-            if (rowData.endTime === undefined || rowData.endTime === "") {
-                return "Select Date"
-            } else if (rowData.endTime < rowData.startTime) {
-                return "Invalid end date/time"
-            }
-            return true
-        }},
-        {title: "Link", field: "event_link", type: "url", emptyValue:()=><em>No Event Link</em>, validate: rowData => {
-            if (rowData.editing === "delete"){
-                return true
-            }
-            if (rowData.event_link === undefined || rowData.event_link === "") {
-                return "Required"
-            } else if ((!rowData.event_link.startsWith('http://') && !rowData.event_link.startsWith('https://') ) || !rowData.event_link.includes('.') ) {
-                return "Include 'https://' in your address"
-            }
-            return true
-        }},
-        {title: "Description", field: "description", validate: rowData => {
-            if (rowData.description === undefined || rowData.description === "") {
-                return "Required"
-            } else if (rowData.description.length < 10 ) {
-                return "Too short"
-            }
-            return true
-        }},
+        {title: "id", field: "_id", hidden: true},
+        {title: "slug", field: "slug", hidden: true},
+        {title: "Name", field: "name"},
+        {title: "Location", field: "location"},
+        {title: "Starts", field: "startTime", type: "datetime",},
+        {title: "Ends", field: "endTime", type: "datetime",},
+        {title: "Description", field: "description"},
     ]
 
     const [data, setData] = useState([]);
@@ -106,7 +141,7 @@ function Events() {
     useEffect(() => {
         _all_events()
           .then(res => {
-            setData(res.data.data[0].data)
+            setData(res.data.data.events)
           })
           .catch(error=>{
             setErrorMessages(["Cannot load events data"])
@@ -116,22 +151,23 @@ function Events() {
 
       const handleRowAdd = (newData, resolve) => {
         let errorList = []
-        if (newData.name === undefined || newData.name === '') {
+        if(newData.name === undefined){
           errorList.push("Please enter event name")
         }
-        if (newData.location === undefined || newData.location === '') {
+        if(newData.location === undefined){
           errorList.push("Please enter event location")
         }
-        if (newData.startTime === undefined || newData.startTime === '') {
+        if(newData.startTime === undefined){
           errorList.push("Please enter the start time")
         }
-        if (newData.endTime === undefined || newData.endTime === '') {
+        if(newData.endTime === undefined){
             errorList.push("Please enter the end time")
         }
-        if (newData.description === undefined || newData.description === '') {
+        if(newData.description === undefined){
             errorList.push("Please enter event description")
         }
-        if (errorList.length < 1) {
+        if(errorList.length < 1){
+            console.log(newData)
             _add_event(newData)
                 .then(res => {
                 let dataToAdd = [...data];
@@ -155,32 +191,31 @@ function Events() {
 
       const handleRowUpdate = (newData, oldData, resolve) => {
         let errorList = []
-        if (newData.name === undefined || newData.name === ''){
+        if(newData.name === undefined){
         errorList.push("Please enter event name")
         }
-        if(newData.location === undefined || newData.location === ''){
+        if(newData.location === undefined){
         errorList.push("Please enter event location")
         }
-        if(newData.startTime === undefined || newData.startTime === ''){
+        if(newData.startTime === undefined){
         errorList.push("Please enter the start time")
         }
-        if(newData.endTime === undefined || newData.endTime === ''){
+        if(newData.endTime === undefined){
             errorList.push("Please enter the end time")
         }
-        if(newData.description === undefined || newData.description === ''){
+        if(newData.description === undefined){
             errorList.push("Please enter event description")
         }
-        if(errorList.length < 1) {
+        if(errorList.length < 1){
             _update_event(newData._id, newData)
                 .then(res => {
                 const dataUpdate = [...data];
-                const index = oldData.tableData._id;
+                const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
                 setData([...dataUpdate]);
                 resolve()
                 setIserror(false)
                 setErrorMessages([])
-                window.location.reload(false);
                 })
                 .catch(error => {
                 setErrorMessages(["Update failed! Server error"])
@@ -196,9 +231,11 @@ function Events() {
 
       const handleRowDelete = (oldData, resolve) => {
         _delete_event(oldData._id)
+        // api.delete("/users/"+oldData.id)
           .then(res => {
+            console.log(res);
             const dataDelete = [...data];
-            const index = oldData.tableData._id;
+            const index = oldData.tableData.id;
             dataDelete.splice(index, 1);
             setData([...dataDelete]);
             resolve()
@@ -216,15 +253,6 @@ function Events() {
             <Header />
             <div className="container">
                 <div className="admin-greeting"> <p>All Events</p></div>
-                <div>
-                    {iserror && 
-                        <Alert severity="error">
-                            {errorMessages.map((msg, i) => {
-                                return <div key={i}>{msg}</div>
-                            })}
-                        </Alert>
-                    }      
-                </div>
                 <div className="contribution-cards admin-cards">
                     <MaterialTable 
                         title="Added Events"
@@ -265,8 +293,60 @@ function Events() {
                             handleRowDelete(oldData, resolve)
                         }),
                         }}
+                        
                     />
-                </div>
+
+                {/* <TableContainer component={Paper} className={classes.tableContainer}>
+                    <Table className={classes.table} aria-label="simple table">
+                        <TableHead style={{ backgroundColor: '#3F3F3F99' }}>
+                            <TableRow >
+                                <TableCell className={classes.tableHeaderCell}>Event ID</TableCell>
+                                <TableCell className={classes.tableHeaderCell}>Event Name</TableCell>
+                                <TableCell className={classes.tableHeaderCell}>Location</TableCell>
+                                <TableCell className={classes.tableHeaderCell}>Start Date</TableCell>
+                                <TableCell className={classes.tableHeaderCell}>End Date</TableCell>
+                                <TableCell className={classes.tableHeaderCell}></TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody className="">
+                            <TableRow>
+                                <TableCell colSpan={6}></TableCell>
+                            </TableRow>
+                            {events.slice(page * rowsPerPage, (page * rowsPerPage) + rowsPerPage).map((row) => (
+                                <TableRow
+                                    key={row.id}
+                                    className={classes.tableRow}
+                                >
+                                    <TableCell className={classes.tableRowCell}>{row.id}</TableCell>
+                                    <TableCell className={classes.tableRowCell}>{row.name}</TableCell>
+                                    <TableCell className={classes.tableRowCell}>{row.location}</TableCell>
+                                    <TableCell className={classes.tableRowCell}>{row.startTime}</TableCell>
+                                    <TableCell className={classes.tableRowCell}>{row.endTime}</TableCell>
+                                    <TableCell className={classes.tableRowCell, classes.editRow}>
+                                        Edit</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                        <TableFooter>
+                            <TableRow>
+                                <TableCell align="center" colSpan={6}>
+                                    <TablePagination
+                                        rowsPerPageOptions={[3, 5, 10]}
+                                        component="div"
+                                        count={events.length}
+                                        rowsPerPage={rowsPerPage}
+                                        page={page}
+                                        onChangePage={handleChangePage}
+                                        onChangeRowsPerPage={handleChangeRowsPerPage}
+                                        className={classes.pagination}
+                                        labelRowsPerPage={"Items Selected:"}
+                                    />
+                                </TableCell>
+                            </TableRow>
+                        </TableFooter>
+                    </Table>
+                </TableContainer> */}
+            </div>
             </div>
         </React.Fragment>
     );

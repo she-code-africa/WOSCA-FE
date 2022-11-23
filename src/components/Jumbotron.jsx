@@ -17,12 +17,12 @@ const Jumbotron = () => {
           Support open source and win cool prizes while helping us create more gender diversity and inclusion of African women within the open-source ecosystem.
           </p>
         </div>
-        <form className="homeform_">
+        {/* <form className="homeform_">
           <div className="sub-div">
             <input className="input-init" placeholder="Enter Email Address" />
             <button className="btn-sub btn-heading-sub">SUBSCRIBE</button>
           </div>
-        </form>
+        </form> */}
       </div>
       <div className="col home_woman">
         <img src={lady} alt=".." className="" />

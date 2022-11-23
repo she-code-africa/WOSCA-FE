@@ -23,7 +23,6 @@ import Alert from '@material-ui/lab/Alert';
 import { forwardRef } from 'react';
 import MaterialTable from "material-table";
 import { prs, update_prs  } from './adminService';
-import { withTheme } from '@material-ui/core';
 
 
 const tableIcons = {
@@ -54,6 +53,7 @@ function Pulls() {
             <a
               href={rowData.pr_link}
               target="_blank"
+              rel="noreferrer"
               style={{ textDecoration: 'none' }}
             >
               {rowData.pr_link}

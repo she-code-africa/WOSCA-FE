@@ -64,16 +64,16 @@ class Values extends Component {
                         {
                             this.state.get_started ? (
                                 <>
-                                    <p className="r_value_h_active">Getting Started</p>
+                                    <p className="r_value_h_active">Get Started</p>
                                     <p className="r_value_b_active">
-                                        Getting started with Hacktoberfest
+                                        Get started with Hacktoberfest
                                     </p>
                                     <img src={arrow} alt=".." className="r_value_active_img1" />
                                 </>
                             ) : <>
-                                <p className="r_value_h">Getting Started</p>
+                                <p className="r_value_h">Get Started</p>
                                 <p className="r_value_b">
-                                    Getting started with Hacktoberfest
+                                    Get started with Hacktoberfest
                                 </p>
                             </>
                         }

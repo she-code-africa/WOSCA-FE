@@ -14,7 +14,7 @@ const Slack = () => {
           Be a part of women software developers, designers, technical writers within Africa that support open source. Join our community to get updates on upcoming initiatives.
           </p>
           <div className="sub-div">
-            <a href="http://bit.ly/scaslacksignup"><button className="btn-sub btn-heading-sub">Join conversation</button></a>
+            <a href="http://bit.ly/scaslacksignup"><button className="btn-sub btn-heading-sub">Join Conversation</button></a>
           </div>
         </div>
       </div>

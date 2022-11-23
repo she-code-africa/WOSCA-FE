@@ -17,7 +17,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { token, user } = this.context
+        const { user } = this.context
         return (
             <React.Fragment>
                 <div className="admin-greeting"> <p>Welcome Here, {user?.username}</p></div>
@@ -45,7 +45,7 @@ class Dashboard extends Component {
                     this.setState({ pr: count })
                     let accept = 0
                     for(let i=0; i<count; i++) {
-                        if (resp[i]["status"] == "accepted") {
+                        if (resp[i]["status"] === "accepted") {
                             accept += 1
                         }
                     }
