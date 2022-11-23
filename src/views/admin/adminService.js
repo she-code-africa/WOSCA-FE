@@ -51,4 +51,7 @@ export const delete_programs = (e) => {
 export const _all_users = () => {
     return http.get(`/user/`)
 }
-// update user role
+// update user role _update_user
+export const _update_user = (e, p) => {
+    return http.put(`/auth/role/${e}`, p)
+}

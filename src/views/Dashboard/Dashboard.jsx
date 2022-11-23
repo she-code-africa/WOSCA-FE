@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from '../../components/dash-header';
 import { Card, BigCard } from "../../components/Card";
 import { AiOutlineLink } from 'react-icons/ai';
-import { BsCheckAll, BsX, BsBackspaceReverse } from 'react-icons/bs';
+import { BsCheckAll, BsX } from 'react-icons/bs';
 import { useUserContext } from "../../context/AuthContext";
 
 import { useHistory } from "react-router-dom";
@@ -65,6 +65,7 @@ function Dashboard() {
         <a
           href={rowData.pr_link}
           target="_blank"
+          rel="noreferrer"
           style={{ textDecoration: 'none' }}
         >
           {rowData.pr_link}

@@ -23,7 +23,7 @@ class Header extends Component {
 
 
     render() {
-        const { token, user } = this.context
+        // const { token, user } = this.context
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-md navbar-lighter bg-lighter">
