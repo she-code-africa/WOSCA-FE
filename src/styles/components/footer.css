@@ -1,6 +1,14 @@
 footer {
     background: #000000 0% 0% no-repeat padding-box;
-    padding: 10px;
+    padding: 15px 0 15px 0;
+}
+
+.foot {
+    margin: auto;
+}
+
+.noflex {
+    flex-wrap: unset !important;
 }
 
 .navbar-brands{
@@ -13,23 +21,19 @@ footer {
 }
 
 .text {
-    font-size: 10px;
+    font-size: 11px;
     color: #FFFFFF75;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     font-family: 'FTPolar';
+    text-align: center;
+    margin: auto;
 }
 
 .f_img {
     height: 15px;
     width: 15px;
-    margin: 0px 30px 0px;
+    margin: 0px 20px 0px;
 }
 
 .sm_link {
-    padding: 13px 50px;
+    padding: 0px 0px;
 }

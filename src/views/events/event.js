@@ -74,7 +74,7 @@ class Events extends Component {
                                     <Form.Control placeholder="Location" readOnly style={{visibility:'hidden'}} />
                                 </Col>
                                 <Col>
-                                    <Form.Control placeholder="Location" name="location" value={this.state.location} onChange={this.changeHandler}  />
+                                    <Form.Control placeholder="Search Location" name="location" value={this.state.location} onChange={this.changeHandler}  />
                                 </Col>
                                 <Col >
                                     <Button className="sub-button event-button" type="submit">SEARCH</Button>
@@ -118,6 +118,7 @@ class Events extends Component {
     async componentDidMount() {
         await events_()
             .then((response) => {
+                // console.log(response);
                 var vop = response.data
                 var all_events = vop.data[0].data;
                 this.setState({ loading: false })
@@ -127,6 +128,11 @@ class Events extends Component {
                     this.setState({ message: 'No events found!' })
                 }
             })
+            .catch((error) => {
+                this.setState({ loading : false });
+                this.setState({ message: error })
+                alert.error("Check Your Connection");
+            });
     }
 }
 export default Events;
