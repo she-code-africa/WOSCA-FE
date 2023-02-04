@@ -1,13 +1,11 @@
 import React from 'react';
-// import lady from '../assets/images/home_pic.png'
 import lady from '../assets/images/home_woman.png'
-// import lady from '../assets/images/newig.jpeg'
 
 
 const Jumbotron = () => {
   return (
     <div className="row">
-      <div className="col">
+      <div className="col"> 
         <span className="sub-text">GET THE BALL ROLLING</span>
         <div className="heading">
           <h1 className="heading-primary">

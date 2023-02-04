@@ -21,7 +21,7 @@ function Programs() {
                             <img src={woman} style={{ 'border-radius': '50%' }} alt="..." />
                         </div>
                         <div className="col-md-7 mid">
-                            <h1>Contributhon by SheCodeAfrica</h1>
+                            <h1>Contributhon by She Code Africa</h1>
                             <p className="lead">Creating more diversity in the African open source ecosystem.</p>
                             <p className="lead"><a href="https://shecodeafrica.org/" target='_blank' rel='noreferrer'>Find Out More About SCA</a></p>
                         </div>

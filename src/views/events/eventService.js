@@ -5,5 +5,5 @@ export const events_ = () => {
  }
 
  export const events_search = e => {
-    return http.get(`/events/search?location=${e}`)
+    return http.get(`/events/search?location=${e}`)      
  }

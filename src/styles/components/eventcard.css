@@ -21,7 +21,7 @@
     text-align: left;
     letter-spacing: 2px;
     color: #FFFFFF;
-    font-size: 17px;
+    font-size: 16px;
     padding: 15px 25px;
     font-family: FTPolar;
     font-weight: bold;
@@ -29,7 +29,7 @@
 
 .card-subtitle {
     text-align: left;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 1px;
     color: #FFFFFF80;
     padding: 0px 25px;
@@ -40,7 +40,7 @@
 .card-text {
     text-align: left;
     font-family: Axiforma;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1px;
     color: #B70569;
     padding: 40px 25px 35px;

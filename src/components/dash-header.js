@@ -18,7 +18,7 @@ class Header extends Component {
 
     logoutHandler = () => {
         localStorage.clear();
-        window.location.reload();
+        this.props.history.push(`/`);
     }
 
 

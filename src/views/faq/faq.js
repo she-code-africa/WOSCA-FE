@@ -51,7 +51,7 @@ function FAQ() {
                 <div>
                     <div className="row">
                         <div className="faqs offset-md-2 col-md-8 offset-sm-1 col-sm-10">
-                            <h4>General Questions</h4>
+                            <h5>General Questions</h5>
                             <Accordion defaultActiveKey="b">
                                 <Card>
                                     <Card.Header>
@@ -120,7 +120,7 @@ function FAQ() {
                                 </Card>
                             </Accordion>
 
-                            <h4>Reward Questions</h4>
+                            <h5>Reward Questions</h5>
                             <Accordion defaultActiveKey="b">
                                 <Card>
                                     <Card.Header>

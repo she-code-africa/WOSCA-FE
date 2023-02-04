@@ -25,9 +25,10 @@ form {
     border: 1px solid #70707042;
     border-radius: .5rem;
     color: #FFF;
-    font-size: 11px;
+    padding: .375rem .0rem;
+    font-size: 10px;
     height: 40px;
-    padding: .375rem 0 .375rem 10px;
+    padding-left: 3px;
 }
 
 .form-control:focus {
@@ -46,9 +47,8 @@ form {
     border-radius: 7px;
     opacity: 1;
     border: 0;
-    font-size: 12px;
+    font-size: 10px;
     height: 40px;
-    margin-left: 10px;
 }
 
 .sub-button:hover {
