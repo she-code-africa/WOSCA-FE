@@ -168,7 +168,7 @@ function Dashboard() {
                 <BigCard title="Total" subtitle="Contributions" button={<button><h5 style={{paddingTop:'10px'}}>{contrib}</h5><div className="card-btn-icon"><AiOutlineLink color={'#fff'} /></div></button>} />
               </div>
               <Card title="Accepted Contributions" value={acpr} icon={<BsCheckAll color={'#fff'} />} />
-              <Card title="Declined Contributions" value={rjpr} icon={<BsX color={'#fff'} />} />
+              <Card title="Declined  Contributions" value={rjpr} icon={<BsX color={'#fff'} />} />
               {/* <Card title="Declined Contributions" value={rjpr} icon={<BsBackspaceReverse color={'#fff'} />} /> */}
             </div>
             <div className="greeting">

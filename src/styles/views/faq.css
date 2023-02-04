@@ -20,7 +20,7 @@ h1 {
 
 .lead {
     padding-top: 10px;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 2.0;
 }
 
@@ -44,6 +44,10 @@ h1 {
     font-size: 15px;
 }
 
+.open {
+    font-size: 17px;
+}
+
 .open::after {
     content: '+';
     font-size: 16px;
@@ -52,6 +56,7 @@ h1 {
 
 .clos, a {
     color: #B70569;
+    font-size: 18px;
 }
 
 a:hover {
@@ -85,7 +90,6 @@ a:hover {
     text-align: left;
     color: #FFFFFF;
     opacity: 0.54;
-    font-size: 12px;
 }
 
 hr {

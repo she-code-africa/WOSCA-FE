@@ -76,12 +76,10 @@ function Users() {
     useEffect(() => {
         _all_users()
           .then(res => {
-            // console.log(res)
             var resp = res.data.data[0].data;
             setData(resp);
           })
           .catch(error=>{
-            // console.log(error)
             setErrorMessages(["Cannot load users data"])
             setIserror(true)
           })
@@ -89,14 +87,9 @@ function Users() {
 
     const handleRowUpdate = (newData, oldData, resolve) => {
         let errorList = []
-        // console.log('we here')
         if (errorList.length < 1) {
-            // console.log(newData._id)
             _update_user(newData._id, newData)
-                // console.log('00000', newData._id)
                 .then(res => {
-                    // console.log('went')
-                    // console.log(res)
                     const dataUpdate = [...data]
                     const index = oldData.tableData._id;
                     dataUpdate[index] = newData;
@@ -109,15 +102,13 @@ function Users() {
                     window.location.reload(false);
                 })
                 .catch(error => {
-                    console.log('didnt went')
-                    console.log(error)
+                    // console.log(error)
                     setErrorMessages(["Update failed!"])
                     setIserror(true)
                     setIssuccess(false)
                     resolve()
                 })
         } else {
-            // console.log('ok')
             setErrorMessages(errorList)
             setIserror(true)
             resolve()

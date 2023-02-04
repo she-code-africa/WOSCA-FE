@@ -10,16 +10,16 @@ function Footer() {
     return (
         <React.Fragment>
             <footer>
-                <div className="row">
-                    <div className="col">
+                <div className="row noflex">
+                    <div className="col-md-3 col-xs-12 foot">
                         <a className="navbar-brands" href="#">
                             <img src={Logo} alt="Logo" className="flogo" />
                         </a>
                     </div>
-                    <div className="col">
+                    <div className="col-md-5 col-xs-12 foot">
                         <p className="text">© 2022 SheCodeAfrica. All rights reserved.</p>
                     </div>
-                    <div className="col ">
+                    <div className="col-md-4 col-xs-12 foot">
                         <div className="sm_link">
                             <a target="_blank" rel="noreferrer" href="https://twitter.com/SheCodeAfrica"><img className="f_img" src={twitter} alt="twitter" /></a>
                             <a target="_blank" rel="noreferrer" href="https://web.facebook.com/SheCodeAfrica/"><img className="f_img" src={facebook} alt="facebook" /></a>
